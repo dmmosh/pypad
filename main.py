@@ -12,7 +12,7 @@ r.geometry("20x20")
 r.attributes('-type', 'dialog')
 
 button = Button(r, text="quit", command=r.destroy())
-
+button.pack()
 '''
 ms.showinfo("showinfo", "Information") 
   
