@@ -13,7 +13,11 @@ def quit():
 def color():
     return cc.askcolor(title="background color:")
 
-
+class btn:
+    def __init__(self) -> None:
+        self.quit = Button(r, text="quit", command=quit)
+        self.color = Button(r, text="color", command=color)
+        self.settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
   
 
 window_w = r.winfo_screenwidth()//4
@@ -30,8 +34,10 @@ wid = termf.winfo_id()
 os.system(f'xterm -into %d -fg white -bg black -geometry {window_w}x{window_h} -sb &' % wid)
 
 
-button = Button(r, text="quit", command=quit)
-button.pack()
+btn_quit = Button(r, text="quit", command=quit)
+
+
+btn_quit.pack()
 
 
 r.mainloop()  
