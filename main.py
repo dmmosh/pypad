@@ -21,9 +21,9 @@ class buttons:
         self.color = Button(r, text="color", command=color)
         self.settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
     def pack_all(self):
-        self.quit.pack()
-        self.color.pack()
-        self.settings.pack()
+        self.quit.pack(side=RIGHT, anchor=NE)
+        self.color.pack(side=RIGHT, anchor=NE)
+        self.settings.pack(side=RIGHT, anchor=NE)
     
 
   
@@ -44,7 +44,7 @@ os.system(f'xterm -into %d -fg white -bg black -geometry {window_w-50}x{window_h
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
 
-btn = Button(r, text="quit", command=quit)
-btn.pack(side=RIGHT, anchor=NE)
+btn = buttons
+btn.pack_all()
 
 r.mainloop()  
