@@ -23,7 +23,7 @@ r.attributes('-type', 'dialog')
 r.geometry(f'{window_w}x{window_h}') 
 
 
-termf = Frame(r, height=window_h-100, width=window_w)
+termf = Frame(r, height=window_h, width=window_w-50)
 
 termf.pack(expand=YES)
 wid = termf.winfo_id()
