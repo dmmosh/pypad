@@ -36,7 +36,7 @@ r.geometry(f'{window_w}x{window_h}')
 
 
 main_box = Frame(r, height=window_h, width=window_w-50)
-main_box.pack(side=TOP, anchor=NW, expand=YES)
+main_box.pack(side=LEFT, anchor=NW, expand=YES)
 
 wid = main_box.winfo_id()
 os.system(f'xterm -into %d -fg white -bg black -geometry {window_w-50}x{window_h} -sb &' % wid)
@@ -45,6 +45,6 @@ os.system(f'xterm -into %d -fg white -bg black -geometry {window_w-50}x{window_h
 #settings.pack()
 
 btn = Button(r, text="quit", command=quit)
-btn.pack()
+btn.pack(side=RIGHT)
 
 r.mainloop()  
