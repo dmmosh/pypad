@@ -15,7 +15,7 @@ def color():
     return cc.askcolor(title="background color:")
 
 class buttons:
-    def __init__(self) -> None:
+    def __init__(self, r:Tk) -> None:
         self.quit = Button(r, text="quit", command=quit)
         self.color = Button(r, text="color", command=color)
         self.settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
