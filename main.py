@@ -45,6 +45,6 @@ os.system(f'xterm -into %d -fg white -bg black -geometry {window_w-50}x{window_h
 #settings.pack()
 
 btn = Button(r, text="quit", command=quit)
-btn.pack(side=RIGHT)
+btn.pack(side=RIGHT, anchor=NE)
 
 r.mainloop()  
