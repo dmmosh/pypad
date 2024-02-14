@@ -24,7 +24,7 @@ termf = Frame(r, height=window_w, width=window_h)
 
 termf.pack(fill=BOTH, expand=YES)
 wid = termf.winfo_id()
-os.system(f'xterm -into %d -geometry {window_w}x{window_h} -sb &' % wid)
+os.system(f'xterm -into %d -fn -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1 -geometry {window_w}x{window_h} -sb &' % wid)
 
 button = Button(r, text="quit", command=quit)
 button.pack()
