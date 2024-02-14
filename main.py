@@ -25,7 +25,7 @@ r.geometry(f'{window_w}x{window_h}')
 
 termf = Frame(r, height=window_h, width=window_w-50)
 
-termf.pack(expand=YES)
+termf.pack(side='left', expand=YES)
 wid = termf.winfo_id()
 os.system(f'xterm -into %d -fg white -bg black -geometry {window_w}x{window_h} -sb &' % wid)
 
