@@ -22,9 +22,9 @@ def quit():
 
 termf = Frame(r, height=window_w, width=window_h)
 
-termf.pack(fill=BOTH, expand=YES)
-wid = termf.winfo_id()
-os.system("xterm -into %d -fn -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1 -geometry {}x{}+0+0 +sb -bg black -fg white -e /root/.bashrc &".format(window_w,window_h) % wid);  
+termf.pack(side=BOTTOM, fill=X)
+id=termf.window_id()  
+os.system("xterm -into %d -fn -misc-fixed-medium-r-normal--8-80-75-75-c-50-iso10646-1 -geometry {}x{}+0+0 +sb -bg black -fg white -e /root/.bashrc &".format(window_w,window_h) % id);  
 
 
 button = Button(r, text="quit", command=quit)
