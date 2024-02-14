@@ -23,11 +23,11 @@ r.attributes('-type', 'dialog')
 r.geometry(f'{window_w}x{window_h}') 
 
 
-termf = Frame(r, height=window_w, width=window_h-100, bg='black')
+termf = Frame(r, height=window_w, width=window_h)
 
 termf.pack(fill=BOTH, expand=YES)
 wid = termf.winfo_id()
-os.system(f'xterm -into %d -fg white -bg -geometry {window_w}x{window_h} -sb &' % wid)
+os.system(f'xterm -into %d -fg white -bg black -geometry {window_w}x{window_h} -sb &' % wid)
 
 
 button = Button(r, text="quit", command=quit)
