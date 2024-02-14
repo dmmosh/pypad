@@ -9,10 +9,9 @@ from tkinter.simpledialog import askstring
 # ms only
 root = Tk() 
 root.geometry("20x20") 
-root.withdraw()
-
-
 root.attributes('-type', 'dialog')
+
+
 
 '''
 ms.showinfo("showinfo", "Information") 
