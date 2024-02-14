@@ -11,13 +11,8 @@ root = Tk()
 root.geometry("20x20") 
 root.withdraw()
 
-  
-w = Label(root, text ='GeeksForGeeks', font = "50")  
-w.pack() 
-  
 
-name = askstring('Name', 'What is your name?')
-ms.showinfo('Hello!', 'Hi, {}'.format(name))
+root.attributes('-type', 'dialog')
 
 '''
 ms.showinfo("showinfo", "Information") 
@@ -35,5 +30,5 @@ ms.askyesno("askyesno", "Find the value?")
 ms.askretrycancel("askretrycancel", "Try again?")   
   
 '''
-#root.mainloop()  
+root.mainloop()  
 root.destroy()
