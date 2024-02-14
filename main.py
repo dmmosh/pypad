@@ -25,7 +25,6 @@ class buttons:
         self.color.pack(side=RIGHT, anchor=NE)
         self.settings.pack(side=RIGHT, anchor=NE)
     
-
   
 
 window_w = r.winfo_screenwidth()//4
@@ -43,9 +42,11 @@ os.system(f'xterm -into %d -fg white -bg black -geometry {window_w-50}x{window_h
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
+set_img = PhotoImage(file='settings.png')
 
-#settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
-#settings.pack(side=RIGHT)
+
+settings = Button(r, image=set_img, command=quit)
+settings.pack(side=RIGHT)
 
 
 r.mainloop()  
