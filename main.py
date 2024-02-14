@@ -20,7 +20,7 @@ r.geometry(str(window_w)+'x'+str(window_h))
 def quit():
     r.destroy()
 
-termf = Frame(r, height=400, width=500)
+termf = Frame(r, height=window_w, width=window_h)
 
 termf.pack(fill=BOTH, expand=YES)
 wid = termf.winfo_id()
