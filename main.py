@@ -42,7 +42,9 @@ wid = termf.winfo_id()
 os.system(f'xterm -into %d -fg white -bg black -geometry {window_w}x{window_h} -sb &' % wid)
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
-#ettings.pack()
+#settings.pack()
+color = Button(r, text="color", command=color)
+color.pack()
 
 
 
