@@ -15,7 +15,7 @@ screen_w = r.winfo_screenwidth()
 screen_h = r.winfo_screenheight()
 
 r.attributes('-type', 'dialog')
-r.geometry(str(screen_w/2)+'x'+str(screen_h/2)) 
+r.geometry(str(screen_w//2)+'x'+str(screen_h//2)) 
 
 def quit():
     r.destroy()
