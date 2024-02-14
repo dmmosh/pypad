@@ -10,7 +10,6 @@ from tkinter.simpledialog import askstring
 root = Tk() 
 root.geometry("20x20") 
 root.withdraw()
-import os
 
   
 w = Label(root, text ='GeeksForGeeks', font = "50")  
@@ -18,7 +17,6 @@ w.pack()
   
 
 name = askstring('Name', 'What is your name?')
-
 ms.showinfo('Hello!', 'Hi, {}'.format(name))
 
 '''
@@ -37,6 +35,5 @@ ms.askyesno("askyesno", "Find the value?")
 ms.askretrycancel("askretrycancel", "Try again?")   
   
 '''
-
 #root.mainloop()  
 root.destroy()
