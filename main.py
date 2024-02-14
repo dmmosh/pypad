@@ -12,7 +12,7 @@ import os
 r = Tk() 
 
 window_w = r.winfo_screenwidth()//4
-window_h = r.winfo_screenheight()//6
+window_h = r.winfo_screenheight()//10
 
 r.attributes('-type', 'dialog')
 r.geometry(f'{window_w}x{window_h}') 
