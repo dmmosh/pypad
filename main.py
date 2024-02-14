@@ -8,11 +8,17 @@ from tkinter.simpledialog import askstring
 # root window, make it hidden
 # ms only
 r = Tk() 
-r.geometry("20x20") 
+r.geometry("100x20") 
 r.attributes('-type', 'dialog')
 
 def quit():
     r.destroy()
+
+termf = Frame(r, height=400, width=500)
+
+termf.pack(fill=BOTH, expand=YES)
+wid = termf.winfo_id()
+os.system('xterm -into %d -geometry 40x20 -sb &' % wid)
 
 button = Button(r, text="quit", command=quit)
 button.pack()
