@@ -7,17 +7,24 @@ import os
 # ROOT WINDOW
 r = Tk() 
 
+
 def quit():
     r.destroy()
 
 def color():
     return cc.askcolor(title="background color:")
 
-class btn:
+class buttons:
     def __init__(self) -> None:
         self.quit = Button(r, text="quit", command=quit)
         self.color = Button(r, text="color", command=color)
         self.settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
+    def pack_all(self) -> None:
+        self.quit.pack()
+        self.color.pack()
+        self.settings.pack()
+    
+
   
 
 window_w = r.winfo_screenwidth()//4
@@ -33,11 +40,10 @@ termf.pack(side='left', expand=YES)
 wid = termf.winfo_id()
 os.system(f'xterm -into %d -fg white -bg black -geometry {window_w}x{window_h} -sb &' % wid)
 
+btn = buttons
+btn.pack_all
 
-btn_quit = Button(r, text="quit", command=quit)
 
-
-btn_quit.pack()
 
 
 r.mainloop()  
