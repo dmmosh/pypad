@@ -11,8 +11,8 @@ import os
 # ROOT WINDOW
 r = Tk() 
 
-window_w = r.winfo_screenwidth()//2
-window_h = r.winfo_screenheight()//2
+window_w = r.winfo_screenwidth()//4
+window_h = r.winfo_screenheight()//6
 
 r.attributes('-type', 'dialog')
 r.geometry(f'{window_w}x{window_h}') 
@@ -28,20 +28,6 @@ os.system(f'xterm -into %d  -geometry {window_w}x{window_h} -sb &' % wid)
 
 button = Button(r, text="quit", command=quit)
 button.pack()
-'''
-ms.showinfo("showinfo", "Information") 
-  
-ms.showwarning("showwarning", "Warning") 
-  
-ms.showerror("showerror", "Error") 
-  
-ms.askquestion("askquestion", "Are you sure?") 
-  
-ms.askokcancel("askokcancel", "Want to continue?") 
-  
-ms.askyesno("askyesno", "Find the value?") 
-  
-ms.askretrycancel("askretrycancel", "Try again?")   
-  
-'''
+
+
 r.mainloop()  
