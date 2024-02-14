@@ -14,7 +14,7 @@ r.attributes('-type', 'dialog')
 def quit():
     r.destroy()
 
-button = Button(r, text="quit", command=quit())
+button = Button(r, text="quit", command=quit)
 button.pack()
 '''
 ms.showinfo("showinfo", "Information") 
