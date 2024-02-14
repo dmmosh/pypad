@@ -7,11 +7,11 @@ from tkinter.simpledialog import askstring
   
 # root window, make it hidden
 # ms only
-root = Tk() 
-root.geometry("20x20") 
-root.attributes('-type', 'dialog')
+r = Tk() 
+r.geometry("20x20") 
+r.attributes('-type', 'dialog')
 
-
+button = Button(r, text="quit", command=r.destroy())
 
 '''
 ms.showinfo("showinfo", "Information") 
@@ -29,5 +29,4 @@ ms.askyesno("askyesno", "Find the value?")
 ms.askretrycancel("askretrycancel", "Try again?")   
   
 '''
-root.mainloop()  
-root.destroy()
+r.mainloop()  
