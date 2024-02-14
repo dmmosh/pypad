@@ -42,7 +42,7 @@ os.system(f'xterm -into %d -fg white -bg black -geometry {window_w-50}x{window_h
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
-set_img = PhotoImage(file='settings.png')
+#set_img = PhotoImage(file='settings.png')
 
 
 #settings = Button(r, image=set_img, command=quit)
