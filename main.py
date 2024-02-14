@@ -11,7 +11,10 @@ r = Tk()
 r.geometry("20x20") 
 r.attributes('-type', 'dialog')
 
-button = Button(r, text="quit", command=r.destroy())
+def quit():
+    r.destroy()
+
+button = Button(r, text="quit", command=quit)
 button.pack()
 '''
 ms.showinfo("showinfo", "Information") 
