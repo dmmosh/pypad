@@ -11,11 +11,11 @@ import os
 # ROOT WINDOW
 r = Tk() 
 
-screen_w = r.winfo_screenwidth()
-screen_h = r.winfo_screenheight()
+window_w = r.winfo_screenwidth()//2
+window_h = r.winfo_screenheight()//2
 
 r.attributes('-type', 'dialog')
-r.geometry(str(screen_w//2)+'x'+str(screen_h//2)) 
+r.geometry(str(window_w)+'x'+str(window_h)) 
 
 def quit():
     r.destroy()
