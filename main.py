@@ -15,7 +15,6 @@ clear && /usr/bin/python -q
 '''
 
 # ROOT WINDOW
-r = Tk() 
 
 
 def quit():
@@ -39,6 +38,7 @@ def get_display_size():
 width, height = get_display_size()
 
 
+r = Tk() 
 
     
 btn = {
