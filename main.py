@@ -15,7 +15,7 @@ clear && /usr/bin/python -q
 '''
 
 # ROOT WINDOW
-
+r = Tk() 
 
 def quit():
     r.destroy()
@@ -23,22 +23,12 @@ def quit():
 def color():
     return cc.askcolor(title='background color:')
 
-def get_display_size():
-    temp = Tk()
-    temp.update_idletasks()
-    temp.attributes('-fullscreen', True)
-    temp.state('iconic')
-    height = temp.winfo_screenheight()
-    width = temp.winfo_screenwidth()
-    temp.destroy()
-    return width, height
 
 
 
-width, height = get_display_size()
+width, height = r.winfo_screenmmwidth, r.winfo_screenheight
 
 
-r = Tk() 
 
     
 btn = {
