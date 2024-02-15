@@ -35,7 +35,7 @@ r.attributes('-type', 'dialog')
 r.geometry(f'{window_w}x{window_h}') 
 
 
-term = Terminal(r, height=50, width=100)
+term = Terminal(r, height=window_h, width=window_w-100)
 term.shell = True
 term.linebar = True
 term.pack(side=LEFT, anchor=NW)
