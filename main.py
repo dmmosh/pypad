@@ -48,11 +48,15 @@ var = {
 
     'hover_quit': False #whether to quit when mouse goes out of box
 }
+
+img = {
+    'settings': PhotoImage(file='./settings.png', width=20, height=20)
+}
     
 btn = {
     'quit': Button(r, text='quit', command=quit),
     'color': Button(r, text='color', command=color),
-    'settings': Button(r, image=PhotoImage(file='./settings.png', width=20, height=20), command=quit)
+    'settings': Button(r, image=img['settings'], command=quit)
 }
 #var['loc_x'] = (r.winfo_screenwidth()//2) - (var['win_w']//2)
 #var['loc_y'] = (r.winfo_screenheight()//2) - (var['win_h']//2)
