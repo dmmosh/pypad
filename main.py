@@ -6,6 +6,14 @@ from numpy import array as arr
 
 import os
 
+
+'''
+SOURCE CODE
+
+clear && /usr/bin/python -q
+
+'''
+
 # ROOT WINDOW
 r = Tk() 
 
@@ -14,40 +22,44 @@ def quit():
     r.destroy()
 
 def color():
-    return cc.askcolor(title="background color:")
+    return cc.askcolor(title='background color:')
 
-class buttons:
-    def __init__(self):
-        self.quit = Button(r, text="quit", command=quit)
-        self.color = Button(r, text="color", command=color)
-        self.settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
-    def pack_all(self):
-        self.quit.pack(side=RIGHT, anchor=NE)
-        self.color.pack(side=RIGHT, anchor=NE)
-        self.settings.pack(side=RIGHT, anchor=NE)
     
-  
+btn = {
+    'quit': Button(r, text='quit', command=quit),
+    'color': Button(r, text='color', command=color),
+    'settings': Button(r, image=PhotoImage(file='./settings.png'), command=quit)
+}
 
-window_w = r.winfo_screenwidth()//4
-window_h = r.winfo_screenheight()//10
+var = {
+    'win_w': r.winfo_screenwidth()//4,
+    'win_h': r.winfo_screenheight()//10,
+    'color_bg': 'black',
+    'color_fg': 'white'
+}
+
+win_w = r.winfo_screenwidth()//4
+win_h = r.winfo_screenheight()//10
 
 r.attributes('-type', 'dialog')
-r.geometry(f'{window_w}x{window_h}') 
-r.wm_maxsize(width=window_w*2, height=window_h)
-r.wm_minsize(width=window_w//4, height=window_h)
+r.geometry(f'{win_w}x{win_h}') 
+r.wm_maxsize(width=win_w*2, height=win_h)
+r.wm_minsize(width=win_w//4, height=win_h)
 
-termf = Frame(r, height=window_h, width=window_w-50)
+termf = Frame(r, height=win_h, width=win_w-50)
+
+
 
 termf.pack(side=LEFT, anchor=NW, expand=YES)
 wid = termf.winfo_id()
-os.system(f'xterm -into %d -geometry {window_h}x{window_w-50} -sb &' % wid)
+os.system(f'xterm -into %d -geometry {win_h}x{win_w-50} -bg {var["color_bg"]} -fg {var["color_fg"]} -sb &' % wid)
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
 #set_img = PhotoImage(file='settings.png')
 
 
-settings = Button(r, text="fdsf", command=quit)
+settings = Button(r, text='fdsf', command=quit)
 settings.pack(side=RIGHT, anchor=NE)
 
 
