@@ -29,7 +29,8 @@ def color():
 width, height = r.winfo_screenwidth(), r.winfo_screenheight()
 
 
-print(width, height)
+os.system("xrandr  | grep \* | cut -d' ' -f4")
+
     
 btn = {
     'quit': Button(r, text='quit', command=quit),
