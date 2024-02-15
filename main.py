@@ -61,10 +61,10 @@ r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }
 
 term = Frame(r, height=var['win_h'], width=var['win_w']-50)
 #term = Text(r, height=var['win_h'], width=var['win_w']-50)
-wid = term.winfo_id()
-os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
 term.pack(side=LEFT, anchor=NW)
+wid = term.winfo_id()
 
+os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
 
 if not (term.winfo_ismapped()):
     print("DOESNT EXIST")
