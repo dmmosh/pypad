@@ -33,6 +33,7 @@ window_h = r.winfo_screenheight()//10
 
 r.attributes('-type', 'dialog')
 r.geometry(f'{window_w}x{window_h}') 
+r.wm_minsize(width=window_w, height=window_h)
 
 
 term = Terminal(r, height=window_h, width=window_w-100)
