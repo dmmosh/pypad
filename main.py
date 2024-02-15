@@ -43,7 +43,9 @@ var = {
     'color_bg': 'black', #default color for background
     'color_fg': 'white', # default color for text
     'loc_x': width-(int(width/5.7)), # x coordinate for the terminal window
-    'loc_y': height -(int(height/6)) # y coordinate for the terminal window
+    'loc_y': height -(int(height/6)), # y coordinate for the terminal window
+
+    'cursor_quit': False # if want to quit when cursor leaves the calculator
 }
 
     
@@ -66,7 +68,9 @@ term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
 
 #term.bind("<Enter>", exit)
-term.bind("<Leave>", exit)
+
+if(var['cursor_quit']): # if cursor quit is enabled
+    term.bind("<Leave>", exit)
 
 os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
 
