@@ -24,10 +24,19 @@ def quit():
 def color():
     return cc.askcolor(title='background color:')
 
+def get_display_size():
+    temp = Tk()
+    temp.update_idletasks()
+    temp.attributes('-fullscreen', True)
+    temp.state('iconic')
+    height = temp.winfo_screenheight()
+    width = temp.winfo_screenwidth()
+    temp.destroy()
+    return width, height
 
 
-height = r.winfo_screenheight()
-width = r.winfo_screenwidth()
+
+width, height = get_display_size()
 
 
 
@@ -39,12 +48,12 @@ btn = {
 }
 
 var = {
-    'win_w': height//4,
-    'win_h': width//10,
+    'win_w': width//4,
+    'win_h': height//10,
     'color_bg': 'black',
     'color_fg': 'white',
-    'loc_x': height - 100,
-    'loc_y': width - 100
+    'loc_x': width - 100,
+    'loc_y': height - 100
 }
 #var['loc_x'] = (r.winfo_screenwidth()//2) - (var['win_w']//2)
 #var['loc_y'] = (r.winfo_screenheight()//2) - (var['win_h']//2)
