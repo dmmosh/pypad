@@ -67,8 +67,6 @@ wid = term.winfo_id()
 os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
 
 
-if not (term.winfo_exists()):
-    print("DOESNT EXIST")
     
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
@@ -78,4 +76,6 @@ if not (term.winfo_exists()):
 settings = Button(r, text='fdsf', command=quit)
 settings.pack(side=RIGHT, anchor=NE)
 
+if not (term.winfo_exists()):
+    print("DOESNT EXIST")
 r.mainloop()  
