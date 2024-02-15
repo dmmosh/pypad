@@ -49,16 +49,17 @@ var = {
 #var['loc_x'] = (r.winfo_screenwidth()//2) - (var['win_w']//2)
 #var['loc_y'] = (r.winfo_screenheight()//2) - (var['win_h']//2)
 
-r.attributes('-type', 'dialog')
+#r.attributes('-type', 'dialog')
 r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }") 
-#r.wm_maxsize(width=win_w*2, height=win_h)
-#r.wm_minsize(width=win_w//4, height=win_h)
+
 
 #term = Frame(r, height=var['win_h'], width=var['win_w']-50)
 term = Text(r, height=var['win_h'], width=var['win_w']-50)
 term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
-os.system(f"xterm -fa 'Monospace' -fs 20 -rightbar -into %d -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb &" % wid)
+os.system(f"xterm -fa 'Monospace' -fs 20 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb &")
+os.system(f"echo hi > {wid}")
+
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
