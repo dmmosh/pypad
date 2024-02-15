@@ -75,10 +75,7 @@ if(var['cursor_quit']): # if cursor quit is enabled
 os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
 
 
-btn['exit'].bind("<Enter>", exit)
-btn['exit'].bind("<Leave>", exit)
 
-btn['exit'].pack(side=RIGHT, anchor=E)
 
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
