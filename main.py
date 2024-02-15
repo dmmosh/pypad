@@ -29,7 +29,7 @@ def color():
 width, height = r.winfo_screenwidth(), r.winfo_screenheight()
 
 
-
+print(width, height)
     
 btn = {
     'quit': Button(r, text='quit', command=quit),
