@@ -18,14 +18,20 @@ X11
 # ROOT WINDOW
 r = Tk() 
 
+
+# FUNCTIONS
 def quit():
     r.destroy()
 
 def color():
     return cc.askcolor(title='background color:')
 
+def sys(input:str) ->str:
+    return os.popen(input).read()
 
-print(os.popen('pwd').read())
+
+
+dir = sys('pwd')
 
 width, height = r.winfo_screenwidth(), r.winfo_screenheight()
 
@@ -57,10 +63,14 @@ term = Frame(r, height=var['win_h'], width=var['win_w']-50)
 #term = Text(r, height=var['win_h'], width=var['win_w']-50)
 term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
-os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q' &")
 
-if not (term.winfo_exists()):
+# TODO: in final build, change where the yes / no message gets sent to (.config folder)
+os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && no > {dir}/pypad/exists' &")
+
+if(sys(f'cat {dir}/pypad/exists') == 'no'){
+    sys(f'yes > {dir}/pypad/exists')
     quit()
+}
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
