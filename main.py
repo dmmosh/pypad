@@ -42,8 +42,8 @@ var = {
     'win_h': height//10,
     'color_bg': 'black',
     'color_fg': 'white',
-    'loc_x': width,
-    'loc_y': height
+    'loc_x': 0,
+    'loc_y': 0
 }
 #var['loc_x'] = (r.winfo_screenwidth()//2) - (var['win_w']//2)
 #var['loc_y'] = (r.winfo_screenheight()//2) - (var['win_h']//2)
