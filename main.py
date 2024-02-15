@@ -54,7 +54,7 @@ os.system(f"xterm -rightbar -into %d -geometry {var['win_h']}x{var['win_w']-50} 
 #set_img = PhotoImage(file='settings.png')
 
 
-settings = Button(r, text='fdsf', command=quit)
+settings = Button(termf, text='fdsf', command=quit)
 settings.pack(side=RIGHT, anchor=NE)
 
 
