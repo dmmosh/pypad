@@ -37,13 +37,6 @@ width, height = r.winfo_screenwidth(), r.winfo_screenheight()
 
 
 
-    
-btn = {
-    'quit': Button(r, text='quit', command=quit),
-    'color': Button(r, text='color', command=color),
-    'settings': Button(r, image=PhotoImage(file='./settings.png'), command=quit)
-}
-
 var = {
     'win_w': width//6, # window width
     'win_h': height//10, #window height
@@ -51,6 +44,14 @@ var = {
     'color_fg': 'white', # default color for text
     'loc_x': width-(int(width/5.7)), # x coordinate for the terminal window
     'loc_y': height -(int(height/6)) # y coordinate for the terminal window
+}
+
+    
+btn = {
+    'quit': Button(r, text='quit', command=quit),
+    'color': Button(r, text='color', command=color),
+    'settings': Button(r, image=PhotoImage(file='./settings.png'), command=quit),
+    'exit': Button(r, height=var['win_h'], width=var['win_w'], command=quit, bg='black')
 }
 #var['loc_x'] = (r.winfo_screenwidth()//2) - (var['win_w']//2)
 #var['loc_y'] = (r.winfo_screenheight()//2) - (var['win_h']//2)
@@ -66,8 +67,12 @@ wid = term.winfo_id()
 
 os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
 
+btn['quit'].bind("<Enter>", exit)
+btn['quit'].bind("<Leave>", exit)
 
-    
+btn.pack(side=LEFT, anchor=NW)
+
+
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
 #set_img = PhotoImage(file='settings.png')
