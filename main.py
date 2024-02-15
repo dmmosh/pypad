@@ -38,7 +38,7 @@ btn = {
 }
 
 var = {
-    'win_w': width//4,
+    'win_w': width//6,
     'win_h': height//10,
     'color_bg': 'black',
     'color_fg': 'white',
