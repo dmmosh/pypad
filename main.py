@@ -44,7 +44,9 @@ var = {
     'color_bg': 'black', #default color for background
     'color_fg': 'white', # default color for text
     'loc_x': width-(int(width/5.7)), # x coordinate for the terminal window
-    'loc_y': height -(int(height/6)) # y coordinate for the terminal window
+    'loc_y': height -(int(height/6)), # y coordinate for the terminal window
+
+    'hover_quit': True #whether to quit when mouse goes out of box
 }
     
 btn = {
@@ -63,6 +65,9 @@ term = Frame(r, height=var['win_h'], width=var['win_w']-50)
 #term = Text(r, height=var['win_h'], width=var['win_w']-50)
 term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
+
+if var['hover_quit']:
+    r.bind("<Leave>", quit)
 
 os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
 
