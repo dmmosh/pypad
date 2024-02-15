@@ -29,7 +29,6 @@ def color():
 width, height = r.winfo_screenwidth(), r.winfo_screenheight()
 
 
-os.system("xrandr  | grep \* | cut -d' ' -f4")
 
     
 btn = {
@@ -43,7 +42,7 @@ var = {
     'win_h': height//10,
     'color_bg': 'black',
     'color_fg': 'white',
-    'loc_x': width,
+    'loc_x': width-200,
     'loc_y': height -200
 }
 #var['loc_x'] = (r.winfo_screenwidth()//2) - (var['win_w']//2)
