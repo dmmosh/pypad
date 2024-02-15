@@ -36,10 +36,11 @@ var = {
     'win_h': r.winfo_screenheight()//10,
     'color_bg': 'black',
     'color_fg': 'white',
-    'loc_x': r.winfo_screenwidth(),
-    'loc_y': r.winfo_screenheight()
+    'loc_x': -1,
+    'loc_y': -1
 }
-
+var['loc_x'] = (r.winfo_screenwidth()//2) - (var['win_w']//2)
+var['loc_y'] = (r.winfo_screenheight()//2) - (var['win_h']//2)
 
 r.attributes('-type', 'dialog')
 r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }") 
