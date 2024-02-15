@@ -53,7 +53,7 @@ var = {
 }
 
 img = {
-    'settings': PhotoImage(file='./settings.png', width=20, height=20)
+    'settings': PhotoImage(file='./settings.png', width=30, height=30)
 }
     
 btn = {
