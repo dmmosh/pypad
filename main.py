@@ -60,7 +60,7 @@ r.attributes('-type', 'dialog')
 r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }") 
 
 
-term = Frame(r, height=var['win_h'], width=var['win_w']-50)
+term = Text(r, height=var['win_h'], width=var['win_w']-50)
 #term = Text(r, height=var['win_h'], width=var['win_w']-50)
 term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
