@@ -36,6 +36,7 @@ r.geometry(f'{window_w}x{window_h}')
 
 
 terminal = Terminal(pady=5, padx=5)
+terminal.shell = True
 terminal.pack(side=LEFT, anchor=NW)
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
