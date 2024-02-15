@@ -38,7 +38,7 @@ main_box = Frame(r, height=window_h, width=window_w-50)
 main_box.pack(side=LEFT, anchor=NW, expand=YES)
 
 wid = main_box.winfo_id()
-os.system(f'xterm -into %d -fg white -bg black -geometry {window_w-50}x{window_h} -sb &' % wid)
+os.system(f'xterm -into %d -fg -misc-fixed-medium-r-semicondensed--13-120-75-75-c-60-iso10646-1 white -bg black -geometry {window_w-50}x{window_h} -sb &' % wid)
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
