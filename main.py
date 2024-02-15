@@ -38,12 +38,12 @@ btn = {
 }
 
 var = {
-    'win_w': width//6,
-    'win_h': height//10,
-    'color_bg': 'black',
-    'color_fg': 'white',
-    'loc_x': width-(int(width/5.7)),
-    'loc_y': height -(int(height/6))
+    'win_w': width//6, # window width
+    'win_h': height//10, #window height
+    'color_bg': 'black', #default color for background
+    'color_fg': 'white', # default color for text
+    'loc_x': width-(int(width/5.7)), # x coordinate for the terminal window
+    'loc_y': height -(int(height/6)) # y coordinate for the terminal window
 }
 #var['loc_x'] = (r.winfo_screenwidth()//2) - (var['win_w']//2)
 #var['loc_y'] = (r.winfo_screenheight()//2) - (var['win_h']//2)
@@ -56,7 +56,7 @@ r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }
 term = Frame(r, height=var['win_h'], width=var['win_w']-50)
 term.pack(side=LEFT, anchor=NW, expand=YES)
 wid = term.winfo_id()
-os.system(f"xterm -rightbar -into %d -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb &" % wid)
+os.system(f"xterm -rightbar -into %d -geometry {var['win_h']}x{var['win_w']-50} +bg +fg -sb &" % wid)
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
