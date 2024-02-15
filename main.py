@@ -64,9 +64,7 @@ term = Frame(r, height=var['win_h'], width=var['win_w']-50)
 term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
 
-# TODO: in final build, change where the yes / no message gets sent to (.config folder)
-os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && pwd' &")
-
+os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
 
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
@@ -78,3 +76,6 @@ settings = Button(r, text='fdsf', command=quit)
 settings.pack(side=RIGHT, anchor=NE)
 
 r.mainloop()  
+
+if not (term.winfo_ismapped()):
+    print("DOESNT EXIST")
