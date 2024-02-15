@@ -23,6 +23,9 @@ r = Tk()
 def quit(any):
     r.destroy()
 
+def quit():
+    r.destroy()
+
 def color():
     return cc.askcolor(title='background color:')
 
