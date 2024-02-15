@@ -37,7 +37,7 @@ var = {
     'color_bg': 'black',
     'color_fg': 'white',
     'loc_x': 10,
-    'loc_y': -10
+    'loc_y': 10
 }
 
 
