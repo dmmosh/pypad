@@ -25,7 +25,7 @@ def color():
     return cc.askcolor(title='background color:')
 
 
-
+print(os.popen('pwd').read())
 
 width, height = r.winfo_screenwidth(), r.winfo_screenheight()
 
@@ -57,7 +57,7 @@ term = Frame(r, height=var['win_h'], width=var['win_w']-50)
 #term = Text(r, height=var['win_h'], width=var['win_w']-50)
 term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
-os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
+os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q' &")
 
 if not (term.winfo_exists()):
     quit()
