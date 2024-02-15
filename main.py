@@ -35,8 +35,10 @@ r.attributes('-type', 'dialog')
 r.geometry(f'{window_w}x{window_h}') 
 
 
-terminal = Terminal(pady=5, padx=5)
-terminal.pack(expand=True, fill='both')
+term = Terminal(pady=5, padx=5)
+term.shell = True
+
+term.pack(expand=True, fill='both')
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
