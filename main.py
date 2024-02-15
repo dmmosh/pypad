@@ -65,7 +65,7 @@ term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
 
 # TODO: in final build, change where the yes / no message gets sent to (.config folder)
-os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && firefox' &")
+os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && mkdir {dir}/hello' &")
 
 
 
