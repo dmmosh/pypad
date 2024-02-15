@@ -24,6 +24,16 @@ def quit():
 def color():
     return cc.askcolor(title='background color:')
 
+
+temp = Tk()
+temp.update_idletasks()
+temp.attributes('-fullscreen', True)
+temp.state('iconic')
+height = temp.winfo_screenheight()
+width = temp.winfo_screenwidth()
+temp.destroy()
+
+
     
 btn = {
     'quit': Button(r, text='quit', command=quit),
@@ -32,12 +42,12 @@ btn = {
 }
 
 var = {
-    'win_w': r.winfo_screenwidth()//4,
-    'win_h': r.winfo_screenheight()//10,
+    'win_w': height//4,
+    'win_h': width//10,
     'color_bg': 'black',
     'color_fg': 'white',
-    'loc_x': r.winfo_screenwidth() - 100,
-    'loc_y': r.winfo_screenheight() - 100
+    'loc_x': height - 100,
+    'loc_y': width - 100
 }
 #var['loc_x'] = (r.winfo_screenwidth()//2) - (var['win_w']//2)
 #var['loc_y'] = (r.winfo_screenheight()//2) - (var['win_h']//2)
@@ -59,7 +69,5 @@ os.system(f"xterm -rightbar -into %d -geometry {var['win_h']}x{var['win_w']-50} 
 
 settings = Button(r, text='fdsf', command=quit)
 settings.pack(side=RIGHT, anchor=NE)
-print(r.winfo_screenwidth())
-print(r.winfo_screenheight())
 
 r.mainloop()  
