@@ -46,7 +46,7 @@ var = {
     'loc_x': width-(int(width/5.7)), # x coordinate for the terminal window
     'loc_y': height -(int(height/6)), # y coordinate for the terminal window
 
-    'hover_quit': True #whether to quit when mouse goes out of box
+    'hover_quit': False #whether to quit when mouse goes out of box
 }
     
 btn = {
