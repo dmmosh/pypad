@@ -59,6 +59,7 @@ btn = {
 
 r.attributes('-type', 'dialog')
 r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }") 
+r.title('pypad')
 
 if var['hover_quit']:
     r.bind('<Leave>', quit)
@@ -76,9 +77,6 @@ os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['w
 #settings.pack()
 #set_img = PhotoImage(file='settings.png')
 
-
-settings = Button(r, text='fdsf', command=quit)
-settings.pack(side=RIGHT, anchor=NE)
 
 
 r.mainloop()  
