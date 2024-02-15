@@ -44,9 +44,9 @@ r.geometry(f"{var['win_w']}x{var['win_h']}")
 #r.wm_maxsize(width=win_w*2, height=win_h)
 #r.wm_minsize(width=win_w//4, height=win_h)
 
-termf = Frame(r, height=var['win_h'], width=var['win_w']-50)
-termf.pack(side=LEFT, anchor=NW, expand=YES)
-wid = termf.winfo_id()
+term = Frame(r, height=var['win_h'], width=var['win_w']-50)
+term.pack(side=LEFT, anchor=NW, expand=YES)
+wid = term.winfo_id()
 os.system(f"xterm -rightbar -into %d -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb &" % wid)
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
@@ -54,7 +54,7 @@ os.system(f"xterm -rightbar -into %d -geometry {var['win_h']}x{var['win_w']-50} 
 #set_img = PhotoImage(file='settings.png')
 
 
-settings = Button(termf, text='fdsf', command=quit)
+settings = Button(r, text='fdsf', command=quit)
 settings.pack(side=RIGHT, anchor=NE)
 
 
