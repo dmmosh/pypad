@@ -36,8 +36,11 @@ r.geometry(f'{window_w}x{window_h}')
 r.wm_maxsize(width=window_w*2, height=window_h)
 r.wm_minsize(width=window_w//4, height=window_h)
 
-term = Terminal(r, height=window_h, width=window_w-100)
-term.pack(side=LEFT, anchor=NW)
+termf = Frame(r, height=window_h, width=window_w-50)
+
+termf.pack(side=LEFT, anchor=NW, expand=YES)
+wid = termf.winfo_id()
+os.system(f'xterm -into %d -geometry {window_h}x{window_w-50} -sb &' % wid)
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
