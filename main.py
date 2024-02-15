@@ -79,6 +79,5 @@ os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['w
 settings = Button(r, text='fdsf', command=quit)
 settings.pack(side=RIGHT, anchor=NE)
 
-if not (term.winfo_exists()):
-    print("DOESNT EXIST")
+
 r.mainloop()  
