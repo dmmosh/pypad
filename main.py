@@ -20,7 +20,7 @@ r = Tk()
 
 
 # FUNCTIONS
-def quit():
+def quit(any):
     r.destroy()
 
 def color():
