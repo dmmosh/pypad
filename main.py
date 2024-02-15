@@ -51,7 +51,7 @@ btn = {
     'quit': Button(r, text='quit', command=quit),
     'color': Button(r, text='color', command=color),
     'settings': Button(r, image=PhotoImage(file='./settings.png'), command=quit),
-    'exit': Button(r, height=var['win_h'], width=var['win_w'], command=quit, bg='black')
+    'exit': Button(r, height=var['win_h'], width=var['win_w'], command=quit, bg='red')
 }
 #var['loc_x'] = (r.winfo_screenwidth()//2) - (var['win_w']//2)
 #var['loc_y'] = (r.winfo_screenheight()//2) - (var['win_h']//2)
@@ -79,7 +79,7 @@ btn['quit'].pack(anchor=NW)
 
 
 settings = Button(r, text='fdsf', command=quit)
-settings.pack(side=RIGHT, anchor=NE)
+settings.pack(anchor=NE)
 
 if not (term.winfo_exists()):
     print("DOESNT EXIST")
