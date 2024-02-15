@@ -59,6 +59,7 @@ os.system(f"xterm -rightbar -into %d -geometry {var['win_h']}x{var['win_w']-50} 
 
 settings = Button(r, text='fdsf', command=quit)
 settings.pack(side=RIGHT, anchor=NE)
-
+print(r.winfo_screenwidth())
+print(r.winfo_screenheight())
 
 r.mainloop()  
