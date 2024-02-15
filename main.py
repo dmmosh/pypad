@@ -77,6 +77,6 @@ os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['w
 #settings.pack()
 #set_img = PhotoImage(file='settings.png')
 
-
+btn['settings'].pack(side=RIGHT, anchor=NE)
 
 r.mainloop()  
