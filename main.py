@@ -57,7 +57,7 @@ r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }
 term = Text(r, height=var['win_h'], width=var['win_w']-50)
 term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
-os.system(f"xterm -fa 'Monospace' -fs 20 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb &")
+os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb &")
 
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
