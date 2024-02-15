@@ -70,7 +70,7 @@ os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['w
 btn['quit'].bind("<Enter>", exit)
 btn['quit'].bind("<Leave>", exit)
 
-btn.pack(side=LEFT, anchor=NW)
+btn['quit'].pack(side=LEFT, anchor=NW)
 
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
