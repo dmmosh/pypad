@@ -47,7 +47,7 @@ r.geometry(f"{var['win_w']}x{var['win_h']}")
 term = Frame(r, height=var['win_h'], width=var['win_w']-50)
 term.pack(side=LEFT, anchor=NW, expand=YES)
 wid = term.winfo_id()
-os.system(f"xterm -rightbar -into %d -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb &" % wid)
+os.system(f"xterm -into %d -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb &" % wid)
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
