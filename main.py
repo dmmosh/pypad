@@ -38,21 +38,19 @@ var = {
     'color_fg': 'white'
 }
 
-win_w = r.winfo_screenwidth()//4
-win_h = r.winfo_screenheight()//10
 
 r.attributes('-type', 'dialog')
-r.geometry(f'{win_w}x{win_h}') 
+r.geometry(f'{var['win_w']}x{var['win_h']}') 
 #r.wm_maxsize(width=win_w*2, height=win_h)
 #r.wm_minsize(width=win_w//4, height=win_h)
 
-termf = Frame(r, height=win_h, width=win_w-50)
+termf = Frame(r, height=var['win_h'], width=var['win_w']-50)
 
 
 
 termf.pack(side=LEFT, anchor=NW, expand=YES)
 wid = termf.winfo_id()
-os.system(f'xterm -into %d -geometry {win_h}x{win_w-50} -bg {var["color_bg"]} -fg {var["color_fg"]} -sb &' % wid)
+os.system(f'xterm -rightbar -into %d -geometry {var['win_h']}x{var['win_w']-50} -bg {var["color_bg"]} -fg {var["color_fg"]} -sb &' % wid)
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
 #settings.pack()
