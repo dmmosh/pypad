@@ -25,13 +25,14 @@ def color():
     return cc.askcolor(title='background color:')
 
 
-temp = Tk()
-temp.update_idletasks()
-temp.attributes('-fullscreen', True)
-temp.state('iconic')
-height = temp.winfo_screenheight()
-width = temp.winfo_screenwidth()
-temp.destroy()
+r.update_idletasks()
+r.attributes('-fullscreen', True)
+r.state('iconic')
+
+height = r.winfo_screenheight()
+width = r.winfo_screenwidth()
+
+r.attributes('-fullscreen', False)
 
 
     
