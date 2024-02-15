@@ -60,7 +60,7 @@ btn = {
 r.attributes('-type', 'dialog')
 r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }") 
 
-if var['hover_quit']:
+if (var['hover_quit']):
     r.bind("<Leave>", quit)
 
 term = Frame(r, height=var['win_h'], width=var['win_w']-50)
