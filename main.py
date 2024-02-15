@@ -26,7 +26,7 @@ def color():
 
 
 
-width, height = r.winfo_screenmmwidth(), r.winfo_screenheight()
+width, height = r.winfo_screenwidth(), r.winfo_screenheight()
 
 
 
