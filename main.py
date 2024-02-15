@@ -62,15 +62,15 @@ r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }
 
 term = Frame(r, height=var['win_h'], width=var['win_w']-50)
 #term = Text(r, height=var['win_h'], width=var['win_w']-50)
-term.pack(anchor=NW)
+term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
 
 os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
 
-btn['quit'].bind("<Enter>", exit)
-btn['quit'].bind("<Leave>", exit)
+btn['exit'].bind("<Enter>", exit)
+btn['exit'].bind("<Leave>", exit)
 
-btn['quit'].pack(anchor=W)
+btn['exit'].pack(side=LEFT, anchor=NW)
 
 
 #settings = Button(r, image=PhotoImage(file='./settings.png'), command=quit)
@@ -79,7 +79,7 @@ btn['quit'].pack(anchor=W)
 
 
 settings = Button(r, text='fdsf', command=quit)
-settings.pack(anchor=NE)
+settings.pack(side=RIGHT, anchor=NE)
 
 if not (term.winfo_exists()):
     print("DOESNT EXIST")
