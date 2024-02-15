@@ -40,7 +40,7 @@ var = {
 
 
 r.attributes('-type', 'dialog')
-r.geometry(f'{var['win_w']}x{var['win_h']}') 
+r.geometry(f"{var['win_w']}x{var['win_h']}") 
 #r.wm_maxsize(width=win_w*2, height=win_h)
 #r.wm_minsize(width=win_w//4, height=win_h)
 
