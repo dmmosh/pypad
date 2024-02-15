@@ -65,8 +65,8 @@ term = Text(r, height=var['win_h'], width=var['win_w']-50)
 term.pack(side=LEFT, anchor=NW)
 wid = term.winfo_id()
 
-term.bind("<Enter>", exit)
-term.bind("<Leave>", exit)
+#term.bind("<Enter>", exit)
+#term.bind("<Leave>", exit)
 
 os.system(f"xterm -fa 'Monospace' -fs 17 -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q && exit' &")
 
