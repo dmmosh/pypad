@@ -36,8 +36,8 @@ var = {
     'win_h': r.winfo_screenheight()//10,
     'color_bg': 'black',
     'color_fg': 'white',
-    'loc_x': 100,
-    'loc_y': -100
+    'loc_x': 10,
+    'loc_y': -10
 }
 
 
