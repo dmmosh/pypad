@@ -43,8 +43,8 @@ win_h = r.winfo_screenheight()//10
 
 r.attributes('-type', 'dialog')
 r.geometry(f'{win_w}x{win_h}') 
-r.wm_maxsize(width=win_w*2, height=win_h)
-r.wm_minsize(width=win_w//4, height=win_h)
+#r.wm_maxsize(width=win_w*2, height=win_h)
+#r.wm_minsize(width=win_w//4, height=win_h)
 
 termf = Frame(r, height=win_h, width=win_w-50)
 
