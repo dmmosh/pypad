@@ -65,7 +65,8 @@ def error(message:str, width:int = 300, height:int = 200):
     box.config(background=var['color_bg'])
     box.attributes('-type', 'dialog') # makes it a floating window
     box.bind('<Escape>', lambda event:quit(box))
-    
+    box.title('ERROR')
+
     text(box, '').pack()
     text(box, message).pack()
 
@@ -110,19 +111,20 @@ class settings:
 
     def __init__(self):
         # SETTINGS WINDOW ITSELF
-        self.color = new_window('colors', '500x800')
-        self.color.config(background=var['color_bg'])
+        self.settings = new_window('colors', '500x800')
+        self.settings.config(background=var['color_bg'])
         #color.bind('<Num_Lock>', lambda: quit(color))
-        self.color.bind('<Escape>', lambda event:quit(self.color))
+        self.settings.bind('<Escape>', lambda event:quit(self.settings))
+        self.settings.title('Settings')
 
         # FRAMES
-        self.bottom_btn = Frame(self.color, bg=var['color_bg'])
+        self.bottom_btn = Frame(self.settings, bg=var['color_bg'])
         self.bottom_btn.pack(side=BOTTOM)
 
-        self.top_btn = Frame(self.color, bg=var['color_bg'])
+        self.top_btn = Frame(self.settings, bg=var['color_bg'])
         self.top_btn.pack(side=TOP)
 
-        self.options = Frame(self.color, bg=var['color_bg'])
+        self.options = Frame(self.settings, bg=var['color_bg'])
         self.options.pack()
 
         # BOTTOM BUTTONS
@@ -131,10 +133,10 @@ class settings:
                              command=lambda:self.save())
         self.cancel_btn = make_btn(window=self.bottom_btn, 
                                text='cancel X', 
-                               command=lambda:quit(self.color))
+                               command=lambda:quit(self.settings))
         self.default_btn = make_btn(window=self.bottom_btn, 
                                 text='default ⟳',
-                                command=lambda:quit(self.color))
+                                command=lambda:quit(self.settings))
         
         # TOP BUTTONS
         self.theme_btn = make_btn(window=self.top_btn, 
@@ -190,7 +192,7 @@ class settings:
             error('error')
         else:
             r.update()
-            quit(self.color)
+            quit(self.settings)
 
         
             
