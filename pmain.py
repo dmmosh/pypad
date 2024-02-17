@@ -146,7 +146,7 @@ class settings:
                                 background=var['color_fg'],
                                 foreground=var['color_bg'])
         self.drop_bg.current(self.all_colors.index(var['color_bg']))
-        self.drop_bg.pack(anchor=NW)
+        self.drop_bg.pack(anchor=W)
 
     def save(self):
         pass
