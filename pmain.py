@@ -176,7 +176,7 @@ class settings:
         text(self.sudo_pop, 'Sudo access required.').pack(anchor=W, padx=7, pady=7)
         text(self.sudo_pop, 'Password:').pack(anchor=W, padx=7, pady=7)
         self.sudo_entry = Entry(self.sudo_pop, width = 150, font=var['global_font'], show='*')
-        self.sudo_entry.pack()
+        self.sudo_entry.pack(anchor=W, padx=7, pady=7)
 
         self.sudo_options = Frame(self.sudo_pop, bg=var['color_bg'])
         self.sudo_options.pack(side=BOTTOM)
