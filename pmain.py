@@ -220,7 +220,11 @@ class settings:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
             r.update()
-
+            var = pickle.load(open(dir+'/var.obj', 'rb'))
+            #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
+            #NOTE: pickle doesnt support tkinter,
+            var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
+                          size=var['font_size'])
             quit(self.settings)
 
         
