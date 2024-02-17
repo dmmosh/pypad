@@ -35,9 +35,8 @@ r = Tk()
 def quit(window):
     window.destroy()
 
-def get_from_dict(input:dict, key):
-    return input[key]
 
+# gets output of a system command
 def sys(cmd:str):
     return os.popen(cmd).read()
 
@@ -49,6 +48,7 @@ def new_window(title:str, geometry:str) -> Toplevel:
     out.attributes('-type', 'dialog')
     return out
 
+# makes a button
 def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, width =None, height =None):
     out = Button(window, 
                   text=text, 
@@ -80,28 +80,35 @@ def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, wi
     return out
 
 
-# opens the color window
-def color_window():
-    # SETTINGS WINDOW
-    color = new_window('colors', '500x800')
-    color.config(background=var['color_bg'])
-    #color.bind('<Num_Lock>', lambda: quit(color))
-    color.bind('<Escape>', lambda event:quit(color))
+# color window class
+class color_window:
+
+    def __init__(self):
+        # SETTINGS WINDOW
+        self.color = new_window('colors', '500x800')
+        self.color.config(background=var['color_bg'])
+        #color.bind('<Num_Lock>', lambda: quit(color))
+        self.color.bind('<Escape>', lambda event:quit(self.color))
 
 
-    # BUTTONS OPTIONS (on the bottom)
-    buttons = Frame(color, bg=var['color_bg'])
-    buttons.pack(side=BOTTOM)
+        # BUTTONS
+        self.save = make_btn(window=self.buttons, 
+                             height=10, 
+                             text='save',
+                             command=lambda:quit(self.color))
+        self.cancel = make_btn(window=self.buttons, 
+                               text='cancel', 
+                               command=lambda:quit(self.color))
+        self.default = make_btn(window=self.buttons, 
+                                text='default',
+                                command=lambda:quit(self.color))
+        # BUTTONS OPTIONS (on the bottom)
+        self.buttons = Frame(self.color, bg=var['color_bg'])
+        self.buttons.pack(side=BOTTOM)
 
-    # BUTTONS
-    save = make_btn(window=buttons, height=10, text='save', command=lambda:quit(color))
-    cancel = make_btn(window=buttons, text='cancel', command=lambda:quit(color))
-    default = make_btn(window=buttons, text='default', command=lambda:quit(color))
-
-    
-    save.pack(side=LEFT, padx=10, pady=10)
-    default.pack(side=RIGHT, padx=10, pady=10)
-    cancel.pack(padx=10, pady=10)
+        self.save.pack(side=LEFT, padx=10, pady=10)
+        self.default.pack(side=RIGHT, padx=10, pady=10)
+        self.cancel.pack(padx=10, pady=10)
 
     
 
