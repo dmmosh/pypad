@@ -120,13 +120,13 @@ class settings:
         
         
         # PACKS BOTTOM BUTTONS
-        self.save_btn.pack(side=LEFT, padx=10, pady=10)
-        self.default_btn.pack(side=RIGHT, padx=10, pady=10)
-        self.cancel_btn.pack(padx=10, pady=10)
+        self.save_btn.pack(side=LEFT, padx=7, pady=7)
+        self.default_btn.pack(side=RIGHT, padx=7, pady=7)
+        self.cancel_btn.pack(padx=7, pady=7)
 
         # PACKS TOP BUTTONS
-        self.theme_btn.pack(side=LEFT, padx=10, pady=10)
-        self.resolution_btn.pack(side=RIGHT, padx=10, pady=10)
+        self.theme_btn.pack(side=LEFT, padx=7, pady=7)
+        self.resolution_btn.pack(side=RIGHT, padx=7, pady=7)
 
         # ALL SETTINGS BUTTONS (will pack later)
         
