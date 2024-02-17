@@ -66,6 +66,7 @@ def error(message:str, width:int = 300, height:int = 200):
     box.attributes('-type', 'dialog') # makes it a floating window
     box.bind('<Escape>', lambda event:quit(box))
     
+    text(box, '\n').pack()
     text(box, message).pack()
 
     ok = make_btn(box, text='okie dokie ✓', command=lambda:quit(box))
