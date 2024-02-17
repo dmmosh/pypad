@@ -95,7 +95,7 @@ class color_window:
         self.buttons = Frame(self.color, bg=var['color_bg'])
         self.buttons.pack(side=BOTTOM)
 
-        # BUTTONS
+        # BOTTOM BUTTONS
         self.save = make_btn(window=self.buttons, 
                              height=10, 
                              text='save',
