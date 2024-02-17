@@ -234,7 +234,7 @@ class settings:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
             quit(r)
-            os.system('/usr/bin/python' + os.path.dirname(os.path.abspath(__file__)))
+            os.system('/usr/bin/python' + os.path.dirname(os.path.abspath(__file__)) + '/pmain.py')
     def resolution(self):
         pass
 
