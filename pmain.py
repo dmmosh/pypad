@@ -79,6 +79,8 @@ def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, wi
     
     return out
 
+def init_color():
+    c = color_window()
 
 # color window class
 class color_window:
@@ -141,7 +143,7 @@ btn = {
                      font=Font(size=20)), #quit button
 
     'settings': make_btn(window=term_btn,
-                         command=lambda:color_window(), 
+                         command=lambda:init_color(), 
                          text='⚙',
                          font=Font(size=20)) #settings button
 }
