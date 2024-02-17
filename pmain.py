@@ -71,7 +71,7 @@ def error(message:str, width:int = 300, height:int = 200):
 
     ok = make_btn(box, text='okie dokie ✓', command=lambda:quit(box))
 
-    ok.pack(side=BOTTOM) 
+    ok.pack(side=BOTTOM, padx=7, pady=7) 
 
 # makes a button
 def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, width =None, height =None):
