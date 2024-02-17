@@ -211,7 +211,7 @@ class settings:
         try:
             pickle.dump(var, open(dir+'/var.obj', 'wb'))
         except:
-            error('Cannot save due to lacking permissions. Try running \"sudo chown $USER /usr/share/pypad/\"')
+            error('Cannot save due to lacking permissions.\n Try running \"sudo chown $USER /usr/share/pypad/\"', width=400)
         else:
             r.update()
             quit(self.settings)
