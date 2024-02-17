@@ -94,7 +94,7 @@ def color_window():
     buttons.pack(side=BOTTOM)
 
     # BUTTONS
-    save = make_btn(window=buttons, height=var['font_size'], text='save', command=lambda:quit(color))
+    save = make_btn(window=buttons, height=10, text='save', command=lambda:quit(color))
     cancel = make_btn(window=buttons, text='cancel', command=lambda:quit(color))
     default = make_btn(window=buttons, text='default', command=lambda:quit(color))
 
