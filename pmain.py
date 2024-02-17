@@ -69,7 +69,6 @@ def msg_box(message:str = "Error", title:str = 'ERROR', width:int = 300, height:
     box.bind('<Escape>', lambda event:quit(box))
     box.title(title)
 
-    text(box, '').pack()
     text(box, message).pack()
 
     ok = make_btn(box, text='okie dokie ✓', command=lambda:quit(box))
