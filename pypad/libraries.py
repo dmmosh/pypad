@@ -8,12 +8,12 @@ from math import *
 # QUIT AND EXIT FUNCTION OVERRIDE
 #TODO: change what this closes
 def quit():
-    os.system("pkill -9 -f pypad && pkill -9 -f pmain.py") #kills the pypad executable
+    os.system("pkill -9 -f pypad") #kills the pypad executable
 
     sys.exit()
 
 def exit():
-    os.system("pkill -9 -f pypad && pkill -9 -f pmain.py") #kills the pypad executable
+    os.system("pkill -9 -f pypad") #kills the pypad executable
     sys.exit()
 
 def on_press(key):

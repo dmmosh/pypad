@@ -17,6 +17,10 @@ the final build will be a compiled, polished executable
 will probably run faster too
 make sure to repurpose the directories for a linux executable in /usr/bin rather than the project dir
 
+
+python file bug:
+python script doesnt close automatically when typing quit()/exit() or pressing num lock
+compiled file doesnt have the problem
 '''
 #TODO: change to '/usr/share'
 dir = '/usr/share/pypad'
@@ -119,11 +123,13 @@ term_btn.pack(side=RIGHT, anchor=NE)
 
 
 btn = {
-    'quit': make_btn(command=lambda: quit(r),
+    'quit': make_btn(window=term_btn,
+                     command=lambda: quit(r),
                      text='➥',
                      font=Font(size=20)), #quit button
 
-    'settings': make_btn(command=lambda:color_window(), 
+    'settings': make_btn(window=term_btn,
+                         command=lambda:color_window(), 
                          text='⚙',
                          font=Font(size=20)) #settings button
 }
@@ -147,7 +153,8 @@ if var['hover_quit']:
 
 # TERMINAL WIDGET 
 term = Frame(r, height=var['win_h'], width=var['win_w']-50)
-term.pack(side=LEFT, anchor=NW)
+term.pack(side=LEFT, anchor=NW, expand=TRUE)
+term.bind('<Num_Lock>', lambda event: quit(r))
 term.focus_set()
 wid = term.winfo_id()
 
@@ -155,11 +162,15 @@ wid = term.winfo_id()
 # python runs libraries.py and automatically opens afterwards
 os.system(f"xterm -fa \'{var['font']}\' -fs {var['font_size']} -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {dir}/libraries.py && exit' &")
 
-r.update()
-#mouse.move(term.winfo_rootx(), term.winfo_rooty())
 
+if var['auto_cursor'] == True:
+    r.update()
+    mouse.move(term.winfo_rootx()+30, term.winfo_rooty()+30) # moves the mouse
 
-btn['settings'].pack(anchor=NE)
-btn['quit'].pack(anchor=E)
+term_btn = Frame(r, height=var['win_h'], width=50)
+term_btn.pack(side=RIGHT)
+
+btn['settings'].pack(anchor=N)
+btn['quit'].pack(anchor=N)
 
 r.mainloop()  
