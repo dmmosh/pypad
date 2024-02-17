@@ -81,36 +81,59 @@ def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, wi
 
 
 # color window class
-class color_window:
+class settings:
 
     def __init__(self):
-        # SETTINGS WINDOW
+        # SETTINGS WINDOW ITSELF
         self.color = new_window('colors', '500x800')
         self.color.config(background=var['color_bg'])
         #color.bind('<Num_Lock>', lambda: quit(color))
         self.color.bind('<Escape>', lambda event:quit(self.color))
 
 
-        # BUTTONS OPTIONS (on the bottom)
-        self.buttons = Frame(self.color, bg=var['color_bg'])
-        self.buttons.pack(side=BOTTOM)
+        # BUTTONS OPTIONS 
+        self.bottom_btn = Frame(self.color, 
+                                bg=var['color_bg'])
+        self.bottom_btn.pack(side=BOTTOM)
+        self.top_btn = Frame(self.color, 
+                             bg=var['color_bg'])
+        self.top_btn.pack(side=TOP)
 
         # BOTTOM BUTTONS
-        self.save = make_btn(window=self.buttons, 
+        self.save = make_btn(window=self.bottom_btn, 
                              height=10, 
                              text='save',
                              command=lambda:quit(self.color))
-        self.cancel = make_btn(window=self.buttons, 
+        self.cancel = make_btn(window=self.bottom_btn, 
                                text='cancel', 
                                command=lambda:quit(self.color))
-        self.default = make_btn(window=self.buttons, 
+        self.default = make_btn(window=self.bottom_btn, 
                                 text='default',
                                 command=lambda:quit(self.color))
         
-
+        # packs bottom buttons
         self.save.pack(side=LEFT, padx=10, pady=10)
         self.default.pack(side=RIGHT, padx=10, pady=10)
         self.cancel.pack(padx=10, pady=10)
+
+
+        # ALL SETTINGS BUTTONS (will pack later)
+        
+        # RESOLUTION BUTTONS
+
+
+        # THEME BUTTONS
+
+
+    def resolution(self):
+        pass
+
+    def theme(self):
+        pass
+
+    def save(self):
+        pass
+
 
     
 
@@ -143,7 +166,7 @@ btn = {
                      font=Font(size=20)), #quit button
 
     'settings': make_btn(window=term_btn,
-                         command=lambda:color_window(), 
+                         command=lambda:settings(), 
                          text='⚙',
                          font=Font(size=20)) #settings button
 }
