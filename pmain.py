@@ -100,21 +100,29 @@ class settings:
         self.top_btn.pack(side=TOP)
 
         # BOTTOM BUTTONS
-        self.save = make_btn(window=self.bottom_btn, 
-                             height=10, 
+        self.save_btn = make_btn(window=self.bottom_btn, 
                              text='save',
                              command=lambda:quit(self.color))
-        self.cancel = make_btn(window=self.bottom_btn, 
+        self.cancel_btn = make_btn(window=self.bottom_btn, 
                                text='cancel', 
                                command=lambda:quit(self.color))
-        self.default = make_btn(window=self.bottom_btn, 
+        self.default_btn = make_btn(window=self.bottom_btn, 
                                 text='default',
                                 command=lambda:quit(self.color))
         
+        # TOP BUTTONS
+        self.theme_btn = make_btn(window=self.bottom_btn, 
+                             text='theme',
+                             command=lambda:self.theme())
+        self.resolution_btn = make_btn(window=self.bottom_btn, 
+                             text='resolution',
+                             command=lambda:self.resolution())
+        
+        
         # packs bottom buttons
-        self.save.pack(side=LEFT, padx=10, pady=10)
-        self.default.pack(side=RIGHT, padx=10, pady=10)
-        self.cancel.pack(padx=10, pady=10)
+        self.save_btn.pack(side=LEFT, padx=10, pady=10)
+        self.default_btn.pack(side=RIGHT, padx=10, pady=10)
+        self.cancel_btn.pack(padx=10, pady=10)
 
 
         # ALL SETTINGS BUTTONS (will pack later)
