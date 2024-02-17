@@ -44,12 +44,18 @@ def sys(cmd:str):
     return os.popen(cmd).read()
 
 # makes a new text object
-def text(window=r, input:str = "") -> Text:
-    return Label(window, 
+def text(window=r, input:str = "", width=None, height=None) -> Text:
+    out = Label(window, 
                  font=var['global_font'], 
                  text=input,
                  background=var['color_bg'],
                  foreground=var['color_fg'])
+    if width:
+        out.config(width=width)
+    if height:
+        out.config(height=height)
+
+    return out
 
 # opens new window
 def new_window(title:str, geometry:str) -> Toplevel:
@@ -69,7 +75,7 @@ def msg_box(message:str = "Error", title:str = 'ERROR', width:int = 300, height:
     box.bind('<Escape>', lambda event:quit(box))
     box.title(title)
 
-    text(box, message).pack()
+    text(window=box, input=message, width=width).pack()
 
     ok = make_btn(box, text='okie dokie ✓', command=lambda:quit(box))
 
