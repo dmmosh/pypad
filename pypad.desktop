@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=pypad
+Comment=python terminal designed for calculator use
+Terminal=false
+Exec=/usr/bin/pypad
+Categories=Math;Utility;Office;Science;Education;
+Type=Application

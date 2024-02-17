@@ -1,6 +1,7 @@
 from tkinter import *  # tkinter
 from tkinter.font import Font # imports font
 from pynput.keyboard import Key, Controller # imports key and controller
+import pickle
 import os # imports os
 
 
@@ -19,12 +20,9 @@ will probably run faster too
 make sure to repurpose the directories for a linux executable in /usr/bin rather than the project dir
 
 
-
-
-
 '''
 #TODO: change to '/usr/share'
-dir = os.path.dirname(os.path.realpath(__file__))
+dir = '/usr/share/pypad'
 
 # ROOT WINDOW
 r = Tk() 
@@ -101,7 +99,6 @@ def color_window():
     cancel.pack(side=RIGHT, padx=10, pady=10)
 
     
-    
 
 # COMPUTER INFORMATION
 width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
@@ -110,25 +107,15 @@ width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and h
 
 print(os.system("pwd"))
 
-var = {
-    'win_w': width//6, # window width
-    'win_h': height//10, #window height
-    'loc_x': width-(int(width/5.7)), # x coordinate for the terminal window
-    'loc_y': height -(int(height/6)), # y coordinate for the terminal window
-    'hover_quit': False, #whether to quit when mouse goes out of box
+var = pickle.load(open(dir+'/var.obj', 'rb'))
 
+#pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
+#NOTE: pickle doesnt support tkinter,
 
-
-    # theme settings
-    'font': 'Source Code Pro,Source Code Pro Semibold', # terminal font
-    'font_size': 17, # the font size
-    'global_font': None, # will access element inside it, leave None rn
-    'color_bg': 'Black', #default color for background
-    'color_fg': 'White' # default color for text
-    
-}
 var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
                           size=var['font_size'])
+
+
 
 
 # terminal buttons frame
