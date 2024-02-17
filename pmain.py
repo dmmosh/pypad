@@ -43,6 +43,7 @@ def quit(window):
 def sys(cmd:str):
     return os.popen(cmd).read()
 
+
 # opens new window
 def new_window(title:str, geometry:str) -> Toplevel:
     out = Toplevel(r)
@@ -140,6 +141,7 @@ class settings:
 
 
         # THEME BUTTONS
+
         self.all_colors = list(pickle.load(open(dir+'/data.obj', 'rb'))['name']) # imports the colors
         #print(self.all_colors)
         self.drop_bg = Combobox(self.options, 
@@ -149,13 +151,33 @@ class settings:
                                 foreground=var['color_bg'])
         self.drop_bg.current(self.all_colors.index(var['color_bg']))
         self.drop_bg.pack(anchor=W)
+        self.sudo_access = False
+
+    def get_sudo(self, input:str):
+        if sys(f'echo $(echo \'{str}\' | sudo -S su)') == '': # if everything went smoothly 
+            self.sudo_access = True
+       
+        
 
     def save(self):
+        self.sudo_pop = Toplevel(self.color)
+        self.sudo_pop.geometry('150x150')
+        self.color.config(background=var['color_bg'])
+
+        self.sudo_entry = Entry(self.sudo_pop, width = 150, font=var['global_font'], show='*')
+        self.sudo_entry.pack()
+
+        self.ok = make_btn(self.sudo_pop, text='ok', command=lambda:self.get_sudo(quit(self.color)))
+        self.ok.pack(side=BOTTOM)
+        # gets sudo access, 1 if true 0 if not
+
+
+
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
         pickle.dump(var, open(dir+'/var.obj', 'wb'))
         r.update()
         quit(self.color)
-
+    
     def resolution(self):
         pass
 
