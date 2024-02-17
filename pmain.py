@@ -101,7 +101,7 @@ def color_window():
     
     save.pack(side=LEFT, padx=10, pady=10)
     cancel.pack(side=RIGHT, padx=10, pady=10)
-    default.pack()
+    default.pack(padx=10, pady=10)
 
     
 
