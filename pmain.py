@@ -163,7 +163,7 @@ class settings:
     def get_sudo(self, input:str):
         os.system(f'sudo -S <<< \'{input}\' -l')
         
-        if sys('sudo -l | grep ALL') == '(ALL) ALL':
+        if sys('echo $(sudo -l | grep ALL)') == '(ALL) ALL':
             print("SUDO ACCESS GRANTED")
         else:
             print("NO SUDO ACCESS")
