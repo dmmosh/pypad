@@ -188,7 +188,7 @@ class settings:
 
 
         var['global_font'] = None # cant pickle tkinter objects
-        
+
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
         pickle.dump(var, open(dir+'/var.obj', 'wb'))
         r.update()

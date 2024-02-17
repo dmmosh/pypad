@@ -4,8 +4,9 @@ from pynput.keyboard import Key, Controller # imports key and controller
 import dill
 import os # imports os
 
-from pmain import width
-from pmain import height
+
+r = Tk()
+width, height = r.winfo_screenwidth(), r.winfo_screenheight()
 
 
 '''
