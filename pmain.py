@@ -30,7 +30,6 @@ dir = '/usr/share/pypad'
 # ROOT WINDOW
 global r
 r = Tk() 
-global var
 
 
 # FUNCTIONS
@@ -41,6 +40,7 @@ def quit(window):
 
 # loads the variables
 def load_var():
+    global var
     var = pickle.load(open(dir+'/var.obj', 'rb'))
     #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
     #NOTE: pickle doesnt support tkinter,
