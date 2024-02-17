@@ -59,7 +59,9 @@ def new_window(title:str, geometry:str) -> Toplevel:
     out.attributes('-type', 'dialog')
     return out
 
-def error(message:str, width:int = 300, height:int = 200):
+
+# error message
+def error(message:str = "Error", width:int = 300, height:int = 200):
     box = Toplevel(r)
     box.geometry(f'{width}x{height}')
     box.config(background=var['color_bg'])
@@ -73,6 +75,31 @@ def error(message:str, width:int = 300, height:int = 200):
     ok = make_btn(box, text='okie dokie ✓', command=lambda:quit(box))
 
     ok.pack(side=BOTTOM, padx=7, pady=7) 
+
+# yes or no prompt
+def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> bool:
+    box = Toplevel(r)
+    box.geometry('400x300')
+    box.config(background=var['color_bg'])
+    box.attributes('-type', 'dialog') # makes it a floating window
+    box.bind('<Escape>', lambda event:quit(box))
+    box.title('Yes or no?')
+
+    # options frame
+    options = Frame(box, bg=var['color_bg'])
+    options.pack(side=BOTTOM)
+
+    out = False # output 
+
+    # ok and cancel buttons
+    ok = make_btn(options, text='okie dokie ✓', command=lambda: out = True)
+    cancel = make_btn(options, text='cancel X', command=lambda: quit(box))
+
+    ok.pack(side=LEFT, padx=7, pady=7) 
+    cancel.pack(side= RIGHT, padx=7, pady=7)
+
+    return out
+
 
 # makes a button
 def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, width =None, height =None):
