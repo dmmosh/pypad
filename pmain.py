@@ -181,7 +181,7 @@ class settings:
         self.sudo_options = Frame(self.sudo_pop, bg=var['color_bg'])
         self.sudo_options.pack(side=BOTTOM)
 
-        self.ok = make_btn(self.sudo_options, text='ok ✓', command=lambda:print(self.sudo_entry.get()))
+        self.ok = make_btn(self.sudo_options, text='okie dokie ✓', command=lambda:print(self.sudo_entry.get()))
         self.cancel = make_btn(self.sudo_options, text='cancel X', command=lambda: quit(self.sudo_pop))
 
         self.cancel.pack(side= RIGHT, padx=7, pady=7)
