@@ -30,6 +30,7 @@ dir = '/usr/share/pypad'
 # ROOT WINDOW
 global r
 r = Tk() 
+global var
 
 
 # FUNCTIONS
@@ -40,7 +41,6 @@ def quit(window):
 
 # loads the variables
 def load_var():
-    global var
     var = pickle.load(open(dir+'/var.obj', 'rb'))
     #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
     #NOTE: pickle doesnt support tkinter,
@@ -48,6 +48,9 @@ def load_var():
     var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
                           size=var['font_size'])
 
+# dumps the variables
+def dump_var():
+    pickle.dump(var, open(dir+'/var.obj', 'wb'))
 
 # gets output of a system command
 def sys(cmd:str):
@@ -225,10 +228,11 @@ class settings:
 
         # if python throws an exception error
         try:
-            pickle.dump(var, open(dir+'/var.obj', 'wb'))
+            dump_var()
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
+
             load_var()
             r.update()
             quit(self.settings)
