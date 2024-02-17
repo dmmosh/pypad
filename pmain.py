@@ -83,7 +83,7 @@ def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, wi
 # opens the color window
 def color_window():
     # SETTINGS WINDOW
-    color = new_window('colors', '300x400')
+    color = new_window('colors', '500x800')
     color.config(background=var['color_bg'])
     #color.bind('<Num_Lock>', lambda: quit(color))
     color.bind('<Escape>', lambda event:quit(color))
