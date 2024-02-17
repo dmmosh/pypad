@@ -160,6 +160,7 @@ class settings:
         
 
     def save(self):
+        # sudo popup
         self.sudo_pop = Toplevel(self.color)
         self.sudo_pop.geometry('150x150')
         self.sudo_pop.config(background=var['color_bg'])
@@ -168,11 +169,11 @@ class settings:
         self.sudo_entry = Entry(self.sudo_pop, width = 150, font=var['global_font'], show='*')
         self.sudo_entry.pack()
 
-        self.ok = make_btn(self.sudo_pop, text='ok', command=lambda:self.get_sudo(self.sudo_entry.get()))
-        self.ok.pack(side=BOTTOM)
+        #self.ok = make_btn(self.sudo_pop, text='ok', command=lambda:self.get_sudo(self.sudo_entry.get()))
+        #self.ok.pack(side=BOTTOM)
         # gets sudo access, 1 if true 0 if not
-
-
+        self.cancel = make_btn(self.sudo_pop, text='ok', command=lambda: quit(self.sudo_pop))
+        self.cancel.pack(side=BOTTOM)
 
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
         pickle.dump(var, open(dir+'/var.obj', 'wb'))
