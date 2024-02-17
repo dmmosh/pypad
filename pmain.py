@@ -59,6 +59,19 @@ def new_window(title:str, geometry:str) -> Toplevel:
     out.attributes('-type', 'dialog')
     return out
 
+def error(message:str):
+    box = Toplevel(r)
+    box.geometry('400x300')
+    box.config(background=var['color_bg'])
+    box.attributes('-type', 'dialog') # makes it a floating window
+    box.bind('<Escape>', lambda event:quit(box))
+    
+    text(r, message).pack()
+
+    ok = make_btn(box, text='okie dokie ✓', command=lambda:quit(box))
+
+    ok.pack(side=BOTTOM) 
+
 # makes a button
 def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, width =None, height =None):
     out = Button(window, 
@@ -165,34 +178,21 @@ class settings:
         
 
     def save(self):
-        # sudo popup
-        self.sudo_pop = Toplevel(self.color)
-        self.sudo_pop.geometry('400x300')
-        self.sudo_pop.config(background=var['color_bg'])
-        self.sudo_pop.attributes('-type', 'dialog') # makes it a floating window
-
-        text(self.sudo_pop, 'Sudo access required.').pack(anchor=W, padx=7, pady=7)
-        text(self.sudo_pop, 'Password:').pack(anchor=W, padx=7, pady=7)
-        self.sudo_entry = Entry(self.sudo_pop, width = 150, font=var['global_font'], show='*')
-        self.sudo_entry.pack(anchor=W, padx=7, pady=7)
-
-        self.sudo_options = Frame(self.sudo_pop, bg=var['color_bg'])
-        self.sudo_options.pack(side=BOTTOM)
-
-        self.ok = make_btn(self.sudo_options, text='okie dokie ✓', command=lambda:self.get_sudo(self.sudo_entry.get()))
-        self.cancel = make_btn(self.sudo_options, text='cancel X', command=lambda: quit(self.sudo_pop))
-
-        self.cancel.pack(side= RIGHT, padx=7, pady=7)
-        self.ok.pack(side=LEFT, padx=7, pady=7) 
-
-
-
-        var['global_font'] = None # cant pickle tkinter objects
+        error('test sauhc')
 
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
-        pickle.dump(var, open(dir+'/var.obj', 'wb'))
-        r.update()
-        quit(self.color)
+
+        var['global_font'] = None # cant pickle tkinter objects
+        try:
+            pickle.dump(var, open(dir+'/var.obj', 'wb'))
+        except:
+            error('error')
+        else:
+            r.update()
+            quit(self.color)
+
+        
+            
     
     def resolution(self):
         pass
