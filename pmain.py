@@ -111,10 +111,10 @@ class settings:
                                 command=lambda:quit(self.color))
         
         # TOP BUTTONS
-        self.theme_btn = make_btn(window=self.bottom_btn, 
+        self.theme_btn = make_btn(window=self.top_btn, 
                              text='theme',
                              command=lambda:self.theme())
-        self.resolution_btn = make_btn(window=self.bottom_btn, 
+        self.resolution_btn = make_btn(window=self.top_btn, 
                              text='resolution',
                              command=lambda:self.resolution())
         
