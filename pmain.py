@@ -233,10 +233,7 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
-            os.execv(sys.executable, ['python'] + sys.argv)
-        
-            
-    
+            os.execv(os.path.dirname(os.path.abspath(__file__)))
     def resolution(self):
         pass
 
