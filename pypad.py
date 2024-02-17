@@ -1,8 +1,6 @@
 
-from tkinter import * 
-from tkinter import colorchooser as cc
-from tkinter.font import Font
-from tkterm import Terminal
+from tkinter import *  # tkinter
+from tkinter.font import Font # imports font
 from pynput.keyboard import Key, Controller
 import pandas as pd
 import os
