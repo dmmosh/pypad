@@ -2,24 +2,7 @@ import sys
 import os
 from pynput.keyboard import Key, Listener, KeyCode
 
-import math
-from math import sqrt
-from math import e
-from math import log
-from math import log10
-from math import log2
-from math import factorial
-from math import floor
-from math import ceil
-from math import isfinite
-from math import cbrt
-from math import sin
-from math import pow
-from math import cos
-from math import tan
-from math import pi
-from math import degrees
-from math import radians
+from math import *
 
 
 # QUIT AND EXIT FUNCTION OVERRIDE
