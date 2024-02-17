@@ -38,6 +38,16 @@ r = Tk()
 def quit(window):
     window.destroy()
 
+# loads the variables
+def load_var():
+    global var
+    var = pickle.load(open(dir+'/var.obj', 'rb'))
+    #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
+    #NOTE: pickle doesnt support tkinter,
+
+    var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
+                          size=var['font_size'])
+
 
 # gets output of a system command
 def sys(cmd:str):
@@ -219,12 +229,8 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
+            load_var()
             r.update()
-            var = pickle.load(open(dir+'/var.obj', 'rb'))
-            #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
-            #NOTE: pickle doesnt support tkinter,
-            var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
-                          size=var['font_size'])
             quit(self.settings)
 
         
@@ -245,14 +251,7 @@ width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and h
 #colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
 
-global var
-var = pickle.load(open(dir+'/var.obj', 'rb'))
-
-#pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
-#NOTE: pickle doesnt support tkinter,
-
-var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
-                          size=var['font_size'])
+load_var()
 
 
 
