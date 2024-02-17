@@ -61,13 +61,13 @@ def new_window(title:str, geometry:str) -> Toplevel:
 
 
 # error message
-def error(message:str = "Error", width:int = 300, height:int = 200):
+def msg_box(message:str = "Error", title:str = 'ERROR', width:int = 300, height:int = 200):
     box = Toplevel(r)
     box.geometry(f'{width}x{height}')
     box.config(background=var['color_bg'])
     box.attributes('-type', 'dialog') # makes it a floating window
     box.bind('<Escape>', lambda event:quit(box))
-    box.title('ERROR')
+    box.title(title)
 
     text(box, '').pack()
     text(box, message).pack()
@@ -203,7 +203,7 @@ class settings:
         self.drop_bg.pack(anchor=W)
 
     def save(self):
-        error('Cannot save due to lacking permissions. Try running \"sudo chown $USER /usr/share/pypad/\"')
+        msg_box('Cannot save due to lacking permissions. Try running \"sudo chown $USER /usr/share/pypad/\"')
 
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
 
@@ -211,7 +211,7 @@ class settings:
         try:
             pickle.dump(var, open(dir+'/var.obj', 'wb'))
         except:
-            error('Cannot save due to lacking permissions.\n Try running \"sudo chown $USER /usr/share/pypad/\"', width=400)
+            msg_box('Cannot save due to lacking permissions.\n Try running \"sudo chown $USER /usr/share/pypad/\"', width=400)
         else:
             r.update()
             quit(self.settings)
