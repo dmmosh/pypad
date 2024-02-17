@@ -43,6 +43,11 @@ def quit(window):
 def sys(cmd:str):
     return os.popen(cmd).read()
 
+# makes a new text object
+def text(window=r, input:str = "") -> Text:
+    out = Text(window, font=var['global_font'])
+    out.insert(END, input)
+    return out
 
 # opens new window
 def new_window(title:str, geometry:str) -> Toplevel:
@@ -166,7 +171,7 @@ class settings:
         self.sudo_pop.config(background=var['color_bg'])
         self.sudo_pop.attributes('-type', 'dialog') # makes it a floating window
 
-        Text(self.sudo_pop, font=var['global_font']).pack().insert(END, 'Enter password:')
+        text(self.sudo_pop, 'Enter password:').pack()
         self.sudo_entry = Entry(self.sudo_pop, width = 150, font=var['global_font'], show='*')
         self.sudo_entry.pack()
 
