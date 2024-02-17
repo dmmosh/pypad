@@ -9,10 +9,13 @@ from math import *
 #TODO: change what this closes
 def quit():
     os.system("pkill -9 -f pypad") #kills the pypad executable
+    os.system("pkill -9 -f pmain.py") # debug, comment out later
+
     sys.exit()
 
 def exit():
     os.system("pkill -9 -f pypad") #kills the pypad executable
+    os.system("pkill -9 -f pmain.py") # debug, comment out later
     sys.exit()
 
 def on_press(key):

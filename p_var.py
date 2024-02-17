@@ -3,7 +3,6 @@ from tkinter.font import Font # imports font
 from pynput.keyboard import Key, Controller # imports key and controller
 import dill
 import os # imports os
-dir = '/usr/share/pypad'
 
 from pmain import width
 from pmain import height

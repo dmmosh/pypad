@@ -2,23 +2,20 @@ from tkinter import *  # tkinter
 from tkinter.font import Font # imports font
 from pynput.keyboard import Key, Controller # imports key and controller
 import pickle
+import mouse
 import os # imports os
 
 
 '''
 SOURCE CODE
 
-
 REQUIREMENTS:
-
 xterm
-
 
 NOTE:
 the final build will be a compiled, polished executable
 will probably run faster too
 make sure to repurpose the directories for a linux executable in /usr/bin rather than the project dir
-
 
 '''
 #TODO: change to '/usr/share'
@@ -26,7 +23,6 @@ dir = '/usr/share/pypad'
 
 # ROOT WINDOW
 r = Tk() 
-
 
 
 # FUNCTIONS
@@ -105,7 +101,6 @@ width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and h
 #colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
 
-print(os.system("pwd"))
 
 var = pickle.load(open(dir+'/var.obj', 'rb'))
 
@@ -160,7 +155,8 @@ wid = term.winfo_id()
 # python runs libraries.py and automatically opens afterwards
 os.system(f"xterm -fa \'{var['font']}\' -fs {var['font_size']} -rightbar -into {wid} -geometry {var['win_h']}x{var['win_w']-50} -bg {var['color_bg']} -fg {var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {dir}/libraries.py && exit' &")
 
-
+r.update()
+#mouse.move(term.winfo_rootx(), term.winfo_rooty())
 
 
 btn['settings'].pack(anchor=NE)
