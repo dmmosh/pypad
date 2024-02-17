@@ -140,7 +140,9 @@ class settings:
         # THEME BUTTONS
         self.all_colors = list(pickle.load(open(dir+'/data.obj', 'rb'))['name']) # imports the colors
         #print(self.all_colors)
-        self.drop_bg = Combobox(self.options, values=self.all_colors)
+        self.drop_bg = Combobox(self.options, 
+                                values=self.all_colors, 
+                                font=var['global_font'])
         self.drop_bg.current(self.all_colors.index(var['color_bg']))
         self.drop_bg.pack()
 
