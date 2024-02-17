@@ -93,6 +93,10 @@ class color_window:
         self.color.bind('<Escape>', lambda event:quit(self.color))
 
 
+        # BUTTONS OPTIONS (on the bottom)
+        self.buttons = Frame(self.color, bg=var['color_bg'])
+        self.buttons.pack(side=BOTTOM)
+
         # BUTTONS
         self.save = make_btn(window=self.buttons, 
                              height=10, 
@@ -104,10 +108,8 @@ class color_window:
         self.default = make_btn(window=self.buttons, 
                                 text='default',
                                 command=lambda:quit(self.color))
-        # BUTTONS OPTIONS (on the bottom)
-        self.buttons = Frame(self.color, bg=var['color_bg'])
-        self.buttons.pack(side=BOTTOM)
-
+        
+        
         self.save.pack(side=LEFT, padx=10, pady=10)
         self.default.pack(side=RIGHT, padx=10, pady=10)
         self.cancel.pack(padx=10, pady=10)
