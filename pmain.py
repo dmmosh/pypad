@@ -107,7 +107,7 @@ class settings:
                                text='cancel X', 
                                command=lambda:quit(self.color))
         self.default_btn = make_btn(window=self.bottom_btn, 
-                                text='default ↻',
+                                text='default ⟳',
                                 command=lambda:quit(self.color))
         
         # TOP BUTTONS
