@@ -221,9 +221,6 @@ class settings:
         else:
             r.update()
 
-            var = pickle.load(open(dir+'/var.obj', 'rb'))
-            var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
-                                      size=var['font_size'])
             quit(self.settings)
 
         
