@@ -161,9 +161,9 @@ class settings:
         self.sudo_access = False
 
     def get_sudo(self, input:str):
-        os.system(f'echo \'{input}\' | sudo -l -S')
-
-        if sys('echo -l | grep ALL'):
+        os.system(f'sudo -S <<< \'{input}\' -l')
+        
+        if sys('sudo -l | grep ALL') == '    (ALL) ALL':
             print("SUDO ACCESS GRANTED")
         else:
             print("NO SUDO ACCESS")
