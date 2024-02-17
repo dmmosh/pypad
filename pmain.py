@@ -162,7 +162,7 @@ class settings:
     def save(self):
         # sudo popup
         self.sudo_pop = Toplevel(self.color)
-        self.sudo_pop.geometry('150x150')
+        self.sudo_pop.geometry('300x300')
         self.sudo_pop.config(background=var['color_bg'])
         self.sudo_pop.attributes('-type', 'dialog') # makes it a floating window
 
@@ -170,10 +170,10 @@ class settings:
         self.sudo_entry.pack()
 
         self.ok = make_btn(self.sudo_pop, text='ok', command=lambda:self.get_sudo(self.sudo_entry.get()))
-        self.ok.pack(side=BOTTOM)
+        self.ok.pack(anchor=SW)
         # gets sudo access, 1 if true 0 if not
         self.cancel = make_btn(self.sudo_pop, text='cancel', command=lambda: quit(self.sudo_pop))
-        self.cancel.pack(side=BOTTOM)
+        self.cancel.pack(anchor = SE)
 
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
         pickle.dump(var, open(dir+'/var.obj', 'wb'))
