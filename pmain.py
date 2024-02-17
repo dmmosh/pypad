@@ -131,7 +131,8 @@ class settings:
         # ALL SETTINGS BUTTONS (will pack later)
         
         # RESOLUTION BUTTONS
-        print(pickle.load(open(dir+'/data.obj', 'rb')))
+        self.all_colors = pickle.load(open(dir+'/data.obj', 'rb'))['name']
+        print(self.all_colors)
 
         # THEME BUTTONS
 
