@@ -118,8 +118,8 @@ var = {
     'font': 'Source Code Pro,Source Code Pro Semibold', # terminal font
     'font_size': 17, # the font size
     'global_font': None, # will access element inside it, leave None rn
-    'color_bg': colors.at[0,'name'], #default color for background
-    'color_fg': colors.at[15,'name'] # default color for text
+    'color_bg': 'Black', #default color for background
+    'color_fg': 'White' # default color for text
     
 }
 var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
