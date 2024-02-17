@@ -149,7 +149,7 @@ class settings:
         self.drop_bg.pack(anchor=W)
 
     def save(self):
-        pass
+        var['color_bg'] = self.all_colors[self.drop_bg.current()]
 
     def resolution(self):
         pass
