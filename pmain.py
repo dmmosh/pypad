@@ -24,9 +24,11 @@ python script doesnt close automatically when typing quit()/exit() or pressing n
 compiled file doesnt have the problem
 '''
 #TODO: change to '/usr/share'
+global dir 
 dir = '/usr/share/pypad'
 
 # ROOT WINDOW
+global r
 r = Tk() 
 
 
@@ -150,7 +152,7 @@ class settings:
 
     def save(self):
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
-        pickle.dump(var, open('pypad/var.obj', 'wb'))
+        pickle.dump(var, open(dir+'/var.obj', 'wb'))
         r.update()
         quit(self.color)
 
