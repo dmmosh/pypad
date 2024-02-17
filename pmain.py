@@ -45,9 +45,7 @@ def sys(cmd:str):
 
 # makes a new text object
 def text(window=r, input:str = "") -> Text:
-    out = Text(window, font=var['global_font'])
-    out.insert(END, input)
-    return out
+    return Label(window, font=var['global_font'], text=input)
 
 # opens new window
 def new_window(title:str, geometry:str) -> Toplevel:
