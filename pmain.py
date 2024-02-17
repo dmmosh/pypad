@@ -237,7 +237,7 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
-            restart = yes_or_no('Theme saved.\n Restart now?')
+            restart = 1
             if restart:
                 quit(r)
                 os.system('/usr/bin/python ' + os.path.dirname(os.path.abspath(__file__)) + '/pmain.py')
