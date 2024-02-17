@@ -169,7 +169,7 @@ class settings:
     def save(self):
         # sudo popup
         self.sudo_pop = Toplevel(self.color)
-        self.sudo_pop.geometry('300x300')
+        self.sudo_pop.geometry('300x150')
         self.sudo_pop.config(background=var['color_bg'])
         self.sudo_pop.attributes('-type', 'dialog') # makes it a floating window
 
