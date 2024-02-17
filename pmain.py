@@ -90,14 +90,15 @@ class settings:
         #color.bind('<Num_Lock>', lambda: quit(color))
         self.color.bind('<Escape>', lambda event:quit(self.color))
 
-
-        # BUTTONS OPTIONS 
-        self.bottom_btn = Frame(self.color, 
-                                bg=var['color_bg'])
+        # FRAMES
+        self.bottom_btn = Frame(self.color, bg=var['color_bg'])
         self.bottom_btn.pack(side=BOTTOM)
-        self.top_btn = Frame(self.color, 
-                             bg=var['color_bg'])
+
+        self.top_btn = Frame(self.color, bg=var['color_bg'])
         self.top_btn.pack(side=TOP)
+
+        self.options = Frame(self.color, bg=var['color_bg'])
+        self.options.pack()
 
         # BOTTOM BUTTONS
         self.save_btn = make_btn(window=self.bottom_btn, 
@@ -131,10 +132,17 @@ class settings:
         # ALL SETTINGS BUTTONS (will pack later)
         
         # RESOLUTION BUTTONS
-        self.all_colors = pickle.load(open(dir+'/data.obj', 'rb'))['name']
-        print(self.all_colors)
+
+
+
 
         # THEME BUTTONS
+        self.all_colors = pickle.load(open(dir+'/data.obj', 'rb'))['name'] # imports the colors
+        #print(self.all_colors)
+        self.clicked_bg = StringVar()
+        self.clicked_bg.set(var['color_bg'])
+        self.drop_bg = OptionMenu(self.options, self.clicked_bg, *self.all_colors)
+        self.drop_bg.pack()
 
 
     def resolution(self):
