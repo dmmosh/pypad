@@ -168,7 +168,7 @@ class settings:
         self.sudo_entry = Entry(self.sudo_pop, width = 150, font=var['global_font'], show='*')
         self.sudo_entry.pack()
 
-        self.ok = make_btn(self.sudo_pop, text='ok', command=lambda:self.get_sudo(quit(self.color)))
+        self.ok = make_btn(self.sudo_pop, text='ok', command=lambda:self.get_sudo(self.sudo_entry.get()))
         self.ok.pack(side=BOTTOM)
         # gets sudo access, 1 if true 0 if not
 
