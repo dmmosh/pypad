@@ -208,7 +208,7 @@ class settings:
         self.drop_bg.pack(anchor=W)
 
     def save(self):
-        msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=500, height=150)
+        msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
 
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
 
