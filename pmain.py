@@ -150,6 +150,7 @@ class settings:
 
     def save(self):
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
+        pickle.dump(var, open('pypad/var.obj', 'wb'))
         r.update()
         quit(self.color)
 
