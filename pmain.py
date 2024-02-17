@@ -169,11 +169,14 @@ class settings:
         self.sudo_entry = Entry(self.sudo_pop, width = 150, font=var['global_font'], show='*')
         self.sudo_entry.pack()
 
-        self.ok = make_btn(self.sudo_pop, text='ok', command=lambda:self.get_sudo(self.sudo_entry.get()))
-        self.ok.pack(anchor=SW)
-        # gets sudo access, 1 if true 0 if not
-        self.cancel = make_btn(self.sudo_pop, text='cancel', command=lambda: quit(self.sudo_pop))
-        self.cancel.pack(anchor = SE)
+        self.sudo_options = Frame(self.sudo_pop, bg=var['color_bg'])
+        self.sudo_options.pack(anchor=BOTTOM)
+
+        self.ok = make_btn(self.sudo_options, text='ok', command=lambda:self.get_sudo(self.sudo_entry.get()))
+        self.cancel = make_btn(self.sudo_options, text='cancel', command=lambda: quit(self.sudo_pop))
+
+        self.ok.pack(anchor=RIGHT, padx=7, pady=7)
+        self.cancel.pack(anchor = LEFT, padx=7, pady=7)
 
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
         pickle.dump(var, open(dir+'/var.obj', 'wb'))
