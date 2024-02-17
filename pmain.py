@@ -59,7 +59,7 @@ def new_window(title:str, geometry:str) -> Toplevel:
     out.attributes('-type', 'dialog')
     return out
 
-def error(message:str, width:int = 300, height:int = 400):
+def error(message:str, width:int = 300, height:int = 200):
     box = Toplevel(r)
     box.geometry(f'{width}x{height}')
     box.config(background=var['color_bg'])
