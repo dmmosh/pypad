@@ -28,6 +28,8 @@ folder (helper files, pickled files): /usr/share
 
 
 '''
+#TODO: change to '/usr/share'
+dir = os.path.dirname(os.path.realpath(__file__))
 
 # ROOT WINDOW
 r = Tk() 
@@ -107,7 +109,6 @@ def color_window():
     
 
 # COMPUTER INFORMATION
-dir = os.path.dirname(os.path.realpath(__file__))
 width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
 #colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
