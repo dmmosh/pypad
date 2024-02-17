@@ -1,5 +1,6 @@
 from tkinter import *  # tkinter
 from tkinter.font import Font # imports font
+from tkinter.ttk import Combobox
 from pynput.keyboard import Key, Controller # imports key and controller
 import pickle
 import mouse
@@ -139,11 +140,11 @@ class settings:
         # THEME BUTTONS
         self.all_colors = pickle.load(open(dir+'/data.obj', 'rb'))['name'] # imports the colors
         #print(self.all_colors)
-        self.clicked_bg = StringVar()
-        self.clicked_bg.set(var['color_bg'])
-        self.drop_bg = OptionMenu(self.options, self.clicked_bg, *self.all_colors)
+        self.drop_bg = Combobox(self.options, values=self.all_colors)
         self.drop_bg.pack()
 
+    def save(self):
+        pass
 
     def resolution(self):
         pass
@@ -151,8 +152,6 @@ class settings:
     def theme(self):
         pass
 
-    def save(self):
-        pass
 
 
     
