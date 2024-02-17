@@ -142,7 +142,9 @@ class settings:
         #print(self.all_colors)
         self.drop_bg = Combobox(self.options, 
                                 values=self.all_colors, 
-                                font=var['global_font'])
+                                font=var['global_font'],
+                                background=var['color_fg'],
+                                foreground=var['color_bg'])
         self.drop_bg.current(self.all_colors.index(var['color_bg']))
         self.drop_bg.pack()
 
