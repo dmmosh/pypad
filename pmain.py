@@ -101,13 +101,13 @@ class settings:
 
         # BOTTOM BUTTONS
         self.save_btn = make_btn(window=self.bottom_btn, 
-                             text='> save',
+                             text='save ✓',
                              command=lambda:quit(self.color))
         self.cancel_btn = make_btn(window=self.bottom_btn, 
-                               text='> cancel', 
+                               text='cancel X', 
                                command=lambda:quit(self.color))
         self.default_btn = make_btn(window=self.bottom_btn, 
-                                text='> default',
+                                text='default ↻',
                                 command=lambda:quit(self.color))
         
         # TOP BUTTONS
