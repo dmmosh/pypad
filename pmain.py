@@ -150,6 +150,7 @@ class settings:
 
     def save(self):
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
+        r.update()
 
     def resolution(self):
         pass
