@@ -3,6 +3,7 @@ import os
 from pynput.keyboard import Key, Listener, KeyCode
 
 from math import *
+from numpy import *
 
 
 # QUIT AND EXIT FUNCTION OVERRIDE
