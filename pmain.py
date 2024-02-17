@@ -119,11 +119,14 @@ class settings:
                              command=lambda:self.resolution())
         
         
-        # packs bottom buttons
+        # PACKS BOTTOM BUTTONS
         self.save_btn.pack(side=LEFT, padx=10, pady=10)
         self.default_btn.pack(side=RIGHT, padx=10, pady=10)
         self.cancel_btn.pack(padx=10, pady=10)
 
+        # PACKS TOP BUTTONS
+        self.theme_btn.pack(side=LEFT, padx=10, pady=10)
+        self.resolution_btn.pack(side=RIGHT, padx=10, pady=10)
 
         # ALL SETTINGS BUTTONS (will pack later)
         
