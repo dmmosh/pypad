@@ -166,6 +166,7 @@ class settings:
         self.sudo_pop.config(background=var['color_bg'])
         self.sudo_pop.attributes('-type', 'dialog') # makes it a floating window
 
+        Text(self.sudo_pop, font=var['global_font']).insert(END, 'Enter password:').pack()
         self.sudo_entry = Entry(self.sudo_pop, width = 150, font=var['global_font'], show='*')
         self.sudo_entry.pack()
 
