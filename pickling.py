@@ -4,4 +4,4 @@ import pandas as pd
 
 colors = pd.read_excel("data.xlsx").to_dict('list')
 
-print(colors)
+object = pickle.dump(colors)
