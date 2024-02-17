@@ -59,9 +59,9 @@ def new_window(title:str, geometry:str) -> Toplevel:
     out.attributes('-type', 'dialog')
     return out
 
-def error(message:str):
+def error(message:str, width:int = 300, height:int = 400):
     box = Toplevel(r)
-    box.geometry('200x150')
+    box.geometry(width+'x'+height)
     box.config(background=var['color_bg'])
     box.attributes('-type', 'dialog') # makes it a floating window
     box.bind('<Escape>', lambda event:quit(box))
