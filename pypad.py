@@ -1,16 +1,20 @@
 
 from tkinter import *  # tkinter
 from tkinter.font import Font # imports font
-from pynput.keyboard import Key, Controller
-import pandas as pd
-import os
+from pynput.keyboard import Key, Controller # imports key and controller
+import pandas as pd # imports pandas
+import os # imports os
 
 
 '''
 SOURCE CODE
 
-clear && /usr/bin/python -q
-X11
+
+REQUIREMENTS:
+
+xterm
+
+
 NOTE:
 the final build will be a compiled, polished executable
 will probably run faster too
