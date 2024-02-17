@@ -131,7 +131,7 @@ class settings:
         # ALL SETTINGS BUTTONS (will pack later)
         
         # RESOLUTION BUTTONS
-
+        print(pickle.load(open(dir+'/data.obj', 'rb')))
 
         # THEME BUTTONS
 
