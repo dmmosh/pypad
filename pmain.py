@@ -161,9 +161,12 @@ class settings:
         self.sudo_access = False
 
     def get_sudo(self, input:str):
-        if sys(f'echo $(echo \'{str}\' | sudo -S su)') == '': # if everything went smoothly 
-            self.sudo_access = True
-       
+        os.system(f'echo \'{input}\' | sudo -l -S')
+
+        if sys('echo -l | grep ALL'):
+            print("SUDO ACCESS GRANTED")
+        else:
+            print("NO SUDO ACCESS")
         
 
     def save(self):
@@ -181,11 +184,15 @@ class settings:
         self.sudo_options = Frame(self.sudo_pop, bg=var['color_bg'])
         self.sudo_options.pack(side=BOTTOM)
 
-        self.ok = make_btn(self.sudo_options, text='okie dokie ✓', command=lambda:print(self.sudo_entry.get()))
+        self.ok = make_btn(self.sudo_options, text='okie dokie ✓', command=lambda:self.get_sudo(self.sudo_entry.get()))
         self.cancel = make_btn(self.sudo_options, text='cancel X', command=lambda: quit(self.sudo_pop))
 
         self.cancel.pack(side= RIGHT, padx=7, pady=7)
-        self.ok.pack(side=LEFT, padx=7, pady=7)
+        self.ok.pack(side=LEFT, padx=7, pady=7) 
+
+
+
+
 
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
         pickle.dump(var, open(dir+'/var.obj', 'wb'))
