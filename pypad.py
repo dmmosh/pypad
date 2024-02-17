@@ -100,7 +100,7 @@ def color_window():
 # COMPUTER INFORMATION
 dir = os.path.dirname(os.path.realpath(__file__))
 width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
-colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
+#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
 
 print(os.system("pwd"))
@@ -151,7 +151,7 @@ r.bind('<Num_Lock>', lambda event: quit(r)) # assigns num lock as quit
 
 # if theres num lock in the system
 if 'Num Lock:    off' in sys("xset -q | grep Caps"):
-    Controller().press(Key.num_lock)
+    Controller().press(Key.num_lock) # script presses num lock
 
 # if hover quit is on
 if var['hover_quit']:
