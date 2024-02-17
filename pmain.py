@@ -104,7 +104,7 @@ class settings:
         # BOTTOM BUTTONS
         self.save_btn = make_btn(window=self.bottom_btn, 
                              text='save ✓',
-                             command=lambda:quit(self.color))
+                             command=lambda:self.save())
         self.cancel_btn = make_btn(window=self.bottom_btn, 
                                text='cancel X', 
                                command=lambda:quit(self.color))
@@ -151,7 +151,8 @@ class settings:
     def save(self):
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
         print(var['color_bg'])
-
+        quit(self.color)
+        
     def resolution(self):
         pass
 
