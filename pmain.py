@@ -232,10 +232,8 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
-
-            load_var()
-            r.update()
-            quit(self.settings)
+            os.execv(sys.argv[0], sys.argv)
+            
 
         
             
