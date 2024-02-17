@@ -1,19 +1,20 @@
 import sys
-import os
+from os import system
 from pynput.keyboard import Key, Listener, KeyCode
 
-from math import *
-from numpy import *
+from math import * #imports math library
+
+#from numpy import *
 
 
 # QUIT AND EXIT FUNCTION OVERRIDE
 #TODO: change what this closes
 def quit():
-    os.system("pkill -9 -f pypad.py") #kills the pypad script
+    system("pkill -9 -f pypad.py") #kills the pypad script
     sys.exit()
 
 def exit():
-    os.system("pkill -9 -f pypad.py") #kills the pypad script
+    system("pkill -9 -f pypad.py") #kills the pypad script
     sys.exit()
 
 def on_press(key):

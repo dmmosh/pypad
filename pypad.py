@@ -3,9 +3,8 @@ from tkinter import *
 from tkinter import colorchooser as cc
 from tkinter.font import Font
 from tkterm import Terminal
-from numpy import array as arr
+from pynput.keyboard import Key, Controller
 import pandas as pd
-import subprocess
 import os
 
 
@@ -14,7 +13,6 @@ SOURCE CODE
 
 clear && /usr/bin/python -q
 X11
-
 NOTE:
 the final build will be a compiled, polished executable
 will probably run faster too
@@ -24,6 +22,7 @@ make sure to repurpose the directories for a linux executable in /usr/bin rather
 
 # ROOT WINDOW
 r = Tk() 
+
 
 
 # FUNCTIONS
@@ -152,7 +151,7 @@ r.bind('<Num_Lock>', lambda event: quit(r)) # assigns num lock as quit
 
 # if theres num lock in the system
 if 'Num Lock:    off' in sys("xset -q | grep Caps"):
-    os.system("xdotool key Num_Lock")
+    Controller().press(Key.num_lock)
 
 # if hover quit is on
 if var['hover_quit']:
