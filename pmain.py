@@ -92,10 +92,10 @@ def color_window():
     buttons = Frame(color, bg=var['color_bg'])
     buttons.pack(side=BOTTOM)
 
-    save = make_btn(window=buttons, text='save', command=lambda:quit(color))
+    save = make_btn(window=buttons, text='SAVE', command=lambda:quit(color))
     save.pack(side=LEFT, padx=10, pady=10)
 
-    cancel = make_btn(window=buttons, text='cancel', command=lambda:quit(color))
+    cancel = make_btn(window=buttons, text='CANCEL', command=lambda:quit(color))
     cancel.pack(side=RIGHT, padx=10, pady=10)
 
     
