@@ -20,6 +20,13 @@ the final build will be a compiled, polished executable
 will probably run faster too
 make sure to repurpose the directories for a linux executable in /usr/bin rather than the project dir
 
+
+files:
+executable: /usr/bin
+folder (helper files, pickled files): /usr/share
+.desktop file: /usr/share/applications
+
+
 '''
 
 # ROOT WINDOW
