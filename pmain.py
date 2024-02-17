@@ -92,7 +92,7 @@ def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> 
     out = False # output 
 
     # ok and cancel buttons
-    ok = make_btn(options, text='okie dokie ✓', command=lambda:quit(box))
+    ok = make_btn(options, text='okie dokie ✓', command=lambda set:(out = True))
     cancel = make_btn(options, text='cancel X', command=lambda: quit(box))
 
     ok.pack(side=LEFT, padx=7, pady=7) 
@@ -201,14 +201,9 @@ class settings:
                                 foreground=var['color_bg'])
         self.drop_bg.current(self.all_colors.index(var['color_bg']))
         self.drop_bg.pack(anchor=W)
-        self.sudo_access = False
-
-    def get_sudo(self, input:str):
-        print(input)
-        
 
     def save(self):
-        error('test sauhc')
+        error('Cannot save due to lacking permissions. Try running \"sudo chown $USER /usr/share/pypad/\"')
 
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
 
@@ -216,7 +211,7 @@ class settings:
         try:
             pickle.dump(var, open(dir+'/var.obj', 'wb'))
         except:
-            error('error')
+            error('Cannot save due to lacking permissions. Try running \"sudo chown $USER /usr/share/pypad/\"')
         else:
             r.update()
             quit(self.settings)
