@@ -1,8 +1,6 @@
-
 from tkinter import *  # tkinter
 from tkinter.font import Font # imports font
 from pynput.keyboard import Key, Controller # imports key and controller
-import pandas as pd # imports pandas
 import os # imports os
 
 
@@ -21,10 +19,7 @@ will probably run faster too
 make sure to repurpose the directories for a linux executable in /usr/bin rather than the project dir
 
 
-files:
-executable: /usr/bin
-folder (helper files, pickled files): /usr/share
-.desktop file: /usr/share/applications
+
 
 
 '''
