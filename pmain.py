@@ -208,17 +208,22 @@ class settings:
         self.drop_bg.pack(anchor=W)
 
     def save(self):
-        msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
 
         var['color_bg'] = self.all_colors[self.drop_bg.current()]
 
         var['global_font'] = None # cant pickle tkinter objects
+
+        # if python throws an exception error
         try:
             pickle.dump(var, open(dir+'/var.obj', 'wb'))
         except:
-            msg_box('Cannot save due to lacking permissions.\n Try running \"sudo chown $USER /usr/share/pypad/\"', width=400)
+            msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
             r.update()
+
+            var = pickle.load(open(dir+'/var.obj', 'rb'))
+            var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
+                                      size=var['font_size'])
             quit(self.settings)
 
         
