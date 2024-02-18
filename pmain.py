@@ -34,6 +34,8 @@ global r
 r = Tk() 
 
 
+
+
 # FUNCTIONS
 
 # quits the program
@@ -291,6 +293,7 @@ width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and h
 #colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
 
+global var
 load_var()
 
 
