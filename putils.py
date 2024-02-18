@@ -8,6 +8,7 @@ from mouse import move
 import sys
 import os # imports os
 from pglobal import *
+from pglobal import var
 
 '''
 SOURCE CODE
