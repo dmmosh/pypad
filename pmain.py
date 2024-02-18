@@ -127,7 +127,7 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
     
     out = IntVar(value=-1)
 
-    window.wait_variable(box)
+    box.wait_variable(box)
 
 
     quit(box)
