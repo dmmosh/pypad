@@ -4,6 +4,8 @@ from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
 from pynput.keyboard import Key, Controller # imports key and controller
 import pidfile as pf # checks if program is running
+from os.path import exists
+from psutil import pid_exists, Process, pids
 import pickle
 from mouse import move
 import sys

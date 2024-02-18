@@ -1,27 +1,22 @@
-from os import getpid
-from os import system
-from os import environ
-from os.path import exists
-from psutil import pid_exists, Process
+import pglobal as gl
 
 # hidden tmp file, in home directory
-PATH_PIDFILE = environ['HOME'] + '/.pypad.tmp'
+PATH_PIDFILE = os.environ['HOME'] + '/.pypad.tmp'
 
-my_pid = getpid()
+my_pid = os.getpid()
 if exists(PATH_PIDFILE):
     with open(PATH_PIDFILE) as f:
         pid = f.read()
         pid = int(pid) if pid.isnumeric() else None
     if pid is not None and pid_exists(pid) and Process(pid).cmdline() == Process(my_pid).cmdline():
         print("PROCESS ALREADY RUNNING")
-        quit()
+        gl.r.deiconify()
 with open(PATH_PIDFILE, 'w') as f:
     f.write(str(my_pid))
 
 
 
 from putils import *
-import pglobal as gl
 
 '''
 SOURCE CODE
@@ -46,6 +41,9 @@ i dont recommend running the program through python because of these issues
     to fix this, type 'killall python', killing all python xterm clients
 
 '''
+
+print(pids())
+print(os.getpid())
 
 
 # terminal buttons frame
