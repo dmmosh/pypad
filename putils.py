@@ -213,6 +213,7 @@ class settings:
         self.drop_bg.current(self.all_colors.index(gl.var['color_bg']))
         self.drop_bg.pack(anchor=W, padx= 7, pady= 7)
 
+        text(self.theme, "Foreground color:").pack(anchor=W, padx= 7, pady= 3)
         self.drop_fg = Combobox(self.theme, 
                                 values=self.all_colors, 
                                 font=gl.var['global_font'],
