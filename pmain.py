@@ -130,7 +130,7 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
     
     out = -1 
     window.wait_variable(box)
-    
+
 
     quit(box)
     return out
@@ -249,7 +249,7 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
-            self.out = mb.askyesno(title='Settings', message='Settings saved. Restart now?')
+            self.out = yes_or_no(message='Settings saved.\nRestart now?')
 
 
             if self.out:
