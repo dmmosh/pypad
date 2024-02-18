@@ -54,7 +54,7 @@ if gl.var['hover_quit']:
     gl.r.bind('<Leave>', lambda event: quit(gl.r))
 
 
-# TERMINAL WIDGET 
+# TERMINAL WIDGET  
 term = Frame(gl.r, height=gl.var['win_h'], width=gl.var['win_w']-50)
 term.pack(side=LEFT, anchor=NW, expand=TRUE)
 term.bind('<Num_Lock>', lambda event: quit(gl.r))

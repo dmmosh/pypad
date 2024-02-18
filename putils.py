@@ -150,8 +150,6 @@ class settings:
         self.bottom_btn = Frame(self.settings, bg=gl.var['color_bg'])
         self.bottom_btn.pack(side=BOTTOM)
 
-        self.top_btn = Frame(self.settings, bg=gl.var['color_bg'])
-        self.top_btn.pack(side=TOP)
 
         self.options = Frame(self.settings, bg=gl.var['color_bg'])
         self.options.pack()
@@ -176,14 +174,9 @@ class settings:
 
 
         # ALL SETTINGS BUTTONS (will pack later)
-        
-        # RESOLUTION BUTTONS
-
-
-
-
         # THEME BUTTONS
 
+        text(self.options, "Background color:").pack()
         self.all_colors = list(pickle.load(open(gl.dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
         #print(self.all_colors)
         self.drop_bg = Combobox(self.options, 
@@ -193,6 +186,8 @@ class settings:
                                 foreground=gl.var['color_bg'])
         self.drop_bg.current(self.all_colors.index(gl.var['color_bg']))
         self.drop_bg.pack(anchor=W)
+
+        # RESOLUTION BUTTONS
 
 
     # SAVES ALL THE VALUES
