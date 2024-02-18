@@ -98,14 +98,14 @@ def msg_box(message:str = "Error", title:str = 'ERROR', width:int = 300, height:
 
 # yes or no prompt
 def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> bool:
-    box = Toplevel(r, background=var['color_bg'])
+    box = Toplevel(r)
     box.geometry(f'{width}x{height}')
     box.attributes('-type', 'dialog') # makes it a floating window
     box.bind('<Escape>', lambda event:quit(box))
     box.title('Yes or no?')
 
     text(box, message).pack(side=TOP)
-    
+
     # options frame
     options = Frame(box, bg=var['color_bg'])
     options.pack(side=BOTTOM)
