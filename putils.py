@@ -166,8 +166,12 @@ class settings:
         self.theme.pack(side=TOP, padx=15, pady=15, anchor=W)
 
         # resolution frame
-        self.res = Frame(self.settings, bg=gl.var['color_bg'])
-        self.res.pack(side=TOP, padx=7, pady=7, anchor=W)
+        self.res = Frame(self.settings,
+                            bg=gl.var['color_bg'],
+                            highlightbackground=var['color_fg'],
+                            highlightcolor=var['color_fg'],
+                            highlightthickness=2)
+        self.res.pack(side=TOP, padx=15, pady=15, anchor=W)
 
         # BOTTOM BUTTONS
         self.save_btn = make_btn(window=self.bottom_btn, 
@@ -204,7 +208,7 @@ class settings:
         self.drop_bg.pack(anchor=W, padx= 7, pady= 7)
 
         # RESOLUTION BUTTONS
-        text(self.theme, input="\nRESOLUTION OPTIONS:", font_size=23).pack(anchor=W)
+        text(self.res, input="\nRESOLUTION OPTIONS:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
 
 
     # SAVES ALL THE VALUES
@@ -217,7 +221,6 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
-
             if yes_or_no(message='Settings saved.\nRestart now?') == 1:
                 quit(gl.r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
