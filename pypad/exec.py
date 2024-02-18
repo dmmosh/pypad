@@ -17,7 +17,6 @@ def exit():
     os.system("kill -9 -f " + sys.argv[1]) #kills the pypad executable
     sys.exit()
 
-print(sys.argv[1])
 # MAKES SURE THAT PYNPUT IS INSTALLED 
 # if not, can't execute fast num lock exit
 try:
