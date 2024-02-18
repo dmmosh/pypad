@@ -163,7 +163,7 @@ class settings:
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
                             highlightthickness=2)
-        self.theme.pack(side=TOP, padx=7, pady=7, anchor=W)
+        self.theme.pack(side=TOP, padx=15, pady=15, anchor=W)
 
         # resolution frame
         self.res = Frame(self.settings, bg=gl.var['color_bg'])
