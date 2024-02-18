@@ -158,7 +158,11 @@ class settings:
         self.bottom_btn.pack(side=BOTTOM)
 
         # theme frame
-        self.theme = Frame(self.settings, bg=gl.var['color_bg'])
+        self.theme = Frame(self.settings,
+                            bg=gl.var['color_bg'],
+                            highlightbackground=var['color_fg'],
+                            highlightcolor=var['color_fg'],
+                            highlightthickness=2)
         self.theme.pack(side=TOP, padx=7, pady=7, anchor=W)
 
         # resolution frame
