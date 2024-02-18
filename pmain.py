@@ -240,7 +240,7 @@ class settings:
             restart = 1
             if restart:
                 quit(r)
-                os.execv(sys.argv[0], sys.argv)
+                os.execv(argv[0], argv)
 
            
 
