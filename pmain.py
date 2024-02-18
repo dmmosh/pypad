@@ -1,12 +1,10 @@
 import pidfile
+from os import environ
 
-
-import pidfile
-import time
 
 print('Starting process')
 try:
-    with pidfile.PIDFile('~/.pypad.pid'):
+    with pidfile.PIDFile(environ['HOMEPATH'] + '/.pypad.pid'):
         print('Process started')
 except pidfile.AlreadyRunningError:
     print('Already running.')
