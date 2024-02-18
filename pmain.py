@@ -97,7 +97,7 @@ def msg_box(message:str = "Error", title:str = 'ERROR', width:int = 300, height:
     ok.pack(side=BOTTOM, padx=7, pady=7) 
 
 # yes or no prompt
-def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> bool:
+def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> int:
     box = Toplevel(r, background=var['color_bg'])
     box.geometry(f'{width}x{height}')
     box.attributes('-type', 'dialog') # makes it a floating window
@@ -123,8 +123,8 @@ def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> 
 
 
     # ok and cancel buttons
-    ok = make_btn(options, text='okie dokie ✓', command=lambda: set(True))
-    cancel = make_btn(options, text='cancel X', command=lambda: set(False))
+    ok = make_btn(options, text='okie dokie ✓', command=lambda: set(0))
+    cancel = make_btn(options, text='cancel X', command=lambda: set(1))
 
     ok.pack(side=LEFT, padx=7, pady=7) 
     cancel.pack(side= RIGHT, padx=7, pady=7)
@@ -244,10 +244,11 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
-            out = yes_or_no(message='\nSettings saved.\nRestart now?')
+            out = -1
             r.wait_variable(out)
+            out = yes_or_no(message='\nSettings saved.\nRestart now?')
 
-            if out:
+            if out == 1:
                 quit(r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
             
