@@ -53,8 +53,6 @@ def load_var():
 def dump_var():
     pickle.dump(var, open(dir+'/var.obj', 'wb'))
 
-def yorno(list:list, input:bool):
-    list.append(bool)
 
 # gets output of a system command
 def sys_out(cmd:str):
@@ -116,12 +114,12 @@ def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> 
 
     # ok and cancel buttons
     ok = make_btn(options, text='okie dokie ✓', command=lambda: out.append(True))
-    cancel = make_btn(options, text='cancel X', command=lambda: quit(box))
+    cancel = make_btn(options, text='cancel X', command=lambda: out.append(False))
 
     ok.pack(side=LEFT, padx=7, pady=7) 
     cancel.pack(side= RIGHT, padx=7, pady=7)
-
-    return out[0]
+    
+    return out[-1]
 
 
 # makes a button
