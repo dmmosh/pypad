@@ -263,9 +263,15 @@ class settings:
 
     #DEFAULTS ALL THE VALUES
     def default(self):
-        pickle.dump(pickle.load(open(dir + '/default_var.obj', 'rb')), open(dir+'/var.obj', 'wb'))
-        quit(r)
-        os.execl(sys.executable, sys.executable, *sys.argv)
+        try:
+            pickle.dump(pickle.load(open(dir + '/default_var.obj', 'rb')), open(dir+'/var.obj', 'wb'))
+        except:
+            msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
+        else:
+
+            if yes_or_no(message='Settings saved.\nRestart now?') == 1:
+                quit(r)
+                os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
