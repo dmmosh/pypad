@@ -98,15 +98,14 @@ def msg_box(message:str = "Error", title:str = 'ERROR', width:int = 300, height:
 
 # yes or no prompt
 def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> bool:
-    box = Toplevel(r)
-    box.geometry('400x300')
-    box.config(background=var['color_bg'])
+    box = Toplevel(r, background=var['color_bg'])
+    box.geometry(f'{width}x{height}')
     box.attributes('-type', 'dialog') # makes it a floating window
     box.bind('<Escape>', lambda event:quit(box))
     box.title('Yes or no?')
 
     # options frame
-    options = Frame(box, bg=var['color_bg'])
+    options = Frame(box, bg=var['color_bg'], text=message)
     options.pack(side=BOTTOM)
 
     
@@ -239,7 +238,7 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
-            if yes_or_no('Settings saved.\nRestart now?'):
+            if yes_or_no(message='Settings saved.\nRestart now?'):
                 quit(r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
