@@ -9,7 +9,14 @@ import sys
 import os # imports os
 import pandas as pd
 
-df = pd.read_excel('pypad/data.xlsx')['name'].to_list()
+name = pd.read_excel('pypad/data.xlsx')['name'].to_list()
+rgb = pd.read_excel('pypad/data.xlsx')['rgb'].to_list()
+fonts = pd.read_excel('pypad/data.xlsx')['fonts'].to_list()
+
+df = {'name': name,
+      'rgb': rgb,
+      'fonts': fonts
+}
 print(df)
 
 pickle.dump(df, open('pypad/data.obj', 'wb')) # pickles
