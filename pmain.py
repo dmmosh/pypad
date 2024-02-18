@@ -4,7 +4,7 @@ from os import environ
 
 print('Starting process')
 try:
-    with pidfile.PIDFile(environ['HOMEPATH'] + '/.pypad.pid'):
+    with pidfile.PIDFile(environ['HOME'] + '/.pypad.pid'):
         print('Process started')
 except pidfile.AlreadyRunningError:
     print('Already running.')
