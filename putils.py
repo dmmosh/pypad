@@ -28,32 +28,6 @@ compiled file doesnt have the problem
 '''
 
 
-# ROOT WINDOW
-r = Tk() 
-# DIRECTORY OF HELPER FILES
-dir = '/usr/share/pypad'
-
-
-# COMPUTER INFORMATION
-width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
-#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
-#print(colors) # debug
-
-
-# VARIABLE FUNCTIONS
-# loads the variables
-def load_var():
-    # GLOBAL VARIABLES
-    var = pickle.load(open(dir + '/var.obj', 'rb'))
-    #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
-    #NOTE: pickle doesnt support tkinter,
-    var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
-                              size=var['font_size'])
-    
-# dumps the variables
-def dump_var():
-    var['global_font'] = None
-    pickle.dump(var, open(dir+'/var.obj', 'wb'))
 
 
 # OTHER FUNCTIONS / CLASSEES
