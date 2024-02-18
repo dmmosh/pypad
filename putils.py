@@ -203,10 +203,12 @@ class settings:
         text(self.theme, "THEME OPTIONS:", font_size= 23).pack(anchor=W, padx= 7, pady= 7)
 
         text(self.theme, "Background color:").pack(anchor=W, padx= 7, pady= 3)
-        self.all_colors = list(pickle.load(open(gl.dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
+
+
+        self.data = pickle.load(open(gl.dir_loc+'/data.obj', 'rb')) # imports the colors
         #print(self.all_colors)
         self.drop_bg = Combobox(self.theme, 
-                                values=self.all_colors, 
+                                values=list(self.data['name']), 
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
                                 foreground=gl.var['color_bg'])
@@ -215,13 +217,13 @@ class settings:
 
         text(self.theme, "Foreground color:").pack(anchor=W, padx= 7, pady= 3)
         self.drop_fg = Combobox(self.theme, 
-                                values=self.all_colors, 
+                                values=list(self.data['name']), 
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
                                 foreground=gl.var['color_bg'])
         self.drop_fg.current(self.all_colors.index(gl.var['color_fg']))
         self.drop_fg.pack(anchor=W, padx= 7, pady= 7)
-        
+
 
 
 
