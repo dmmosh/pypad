@@ -258,16 +258,10 @@ class settings:
     #DEFAULTS ALL THE VALUES
     def default(self):
         # try putting all values to default
-        try:
-            var = pickle.load(open(dir+'/default_var.obj', 'rb'))
-            dump_var()
-        # error cant serialize
-        except:
-            msg_box('Cannot default due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
-        else:
-            if yes_or_no(message='Settings defaulted.\nRestart now?') == 1:
-                quit(r)
-                os.execl(sys.executable, sys.executable, *sys.argv)
+        var = pickle.load(open(dir+'/default_var.obj', 'rb'))
+        dump_var()
+        quit(r)
+        os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
