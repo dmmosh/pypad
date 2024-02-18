@@ -6,7 +6,7 @@ import time
 
 print('Starting process')
 try:
-    with pidfile.PIDFile():
+    with pidfile.PIDFile('~/.pypad.pid'):
         print('Process started')
 except pidfile.AlreadyRunningError:
     print('Already running.')
