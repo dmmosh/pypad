@@ -8,8 +8,8 @@ try:
         time.sleep(30)
 except pidfile.AlreadyRunningError:
     print('Already running.')
+    quit()
 
-print('Exiting')
 
 
 
