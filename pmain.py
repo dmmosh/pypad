@@ -259,21 +259,7 @@ class settings:
     def default(self):
         # try putting all values to default
         try:
-            var = {
-            # resolution, general settings
-            'win_w': width//6, # window width
-            'win_h': height//10, #window height
-            'loc_x': width-(int(width/5.7)), # x coordinate for the terminal window
-            'loc_y': height -(int(height/6)), # y coordinate for the terminal window
-            'hover_quit': False, #whether to quit when mouse goes out of box
-            'auto_cursor': True,
-            # theme settings
-            'font': 'Source Code Pro,Source Code Pro Semibold', # terminal font
-            'font_size': 17, # the font size
-            'global_font': None, # will access element inside it, leave None rn
-            'color_bg': 'Black', #default color for background
-            'color_fg': 'White' # default color for text
-            }
+            var = pickle.load(open(dir+'/default_var.obj', 'rb'))
             dump_var()
         # error cant serialize
         except:
