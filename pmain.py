@@ -1,5 +1,6 @@
 from putils import *
 from pglobal import *
+from putils import make_btn
 
 # LOAD VARIABLES
 load_var()
@@ -12,7 +13,7 @@ term_btn.pack(side=RIGHT, anchor=NE)
 
 
 btn = {
-    'quit': make_btn(window=term_btn,
+    'quit': putils.make_btn(window=term_btn,
                      command=lambda: quit(r),
                      text='➥',
                      font=Font(size=20)), #quit button
