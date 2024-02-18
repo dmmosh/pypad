@@ -196,7 +196,7 @@ class settings:
                                command=lambda:quit(self.settings))
         self.default_btn = make_btn(window=self.bottom_btn, 
                                 text='default ⟳',
-                                command=lambda:quit(self.settings))
+                                command=lambda:self.default())
         
         # TOP BUTTONS
         self.theme_btn = make_btn(window=self.top_btn, 
@@ -235,10 +235,9 @@ class settings:
         self.drop_bg.current(self.all_colors.index(var['color_bg']))
         self.drop_bg.pack(anchor=W)
 
+
+    # SAVES ALL THE VALUES
     def save(self):
-
-
-
         # if python throws an exception error
         try:
             var['color_bg'] = self.all_colors[self.drop_bg.current()]
@@ -254,13 +253,34 @@ class settings:
             
 
 
-           
+    #DEFAULTS ALL THE VALUES
+    def default(self):
+        # try putting all values to default
+        try:
+            var = {
+            # resolution, general settings
+            'win_w': width//6, # window width
+            'win_h': height//10, #window height
+            'loc_x': width-(int(width/5.7)), # x coordinate for the terminal window
+            'loc_y': height -(int(height/6)), # y coordinate for the terminal window
+            'hover_quit': False, #whether to quit when mouse goes out of box
+            'auto_cursor': True,
+            # theme settings
+            'font': 'Source Code Pro,Source Code Pro Semibold', # terminal font
+            'font_size': 17, # the font size
+            'global_font': None, # will access element inside it, leave None rn
+            'color_bg': 'Black', #default color for background
+            'color_fg': 'White' # default color for text
+            }
+            dump_var()
+        # error cant serialize
+        except:
+            msg_box('Cannot default due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
+        else:
+            if yes_or_no(message='Settings defaulted.\nRestart now?') == 1:
+                quit(r)
+                os.execl(sys.executable, sys.executable, *sys.argv)
 
-    def resolution(self):
-        pass
-
-    def theme(self):
-        pass
 
 
 
