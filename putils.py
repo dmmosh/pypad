@@ -150,12 +150,19 @@ class settings:
         self.settings.title('Settings')
 
         # FRAMES
-        self.bottom_btn = Frame(self.settings, bg=gl.var['color_bg'])
+        self.bottom_btn = Frame(self.settings, 
+                                bg=gl.var['color_bg'], 
+                                highlightbackground=var['color_fg'],
+                                highlightcolor=var['color_fg'])
         self.bottom_btn.pack(side=BOTTOM)
 
+        # theme frame
+        self.theme = Frame(self.settings, bg=gl.var['color_bg'])
+        self.theme.pack(side=TOP, padx=7, pady=7, anchor=W)
 
-        self.options = Frame(self.settings, bg=gl.var['color_bg'])
-        self.options.pack(side=TOP, padx=7, pady=7, anchor=W)
+        # resolution frame
+        self.res = Frame(self.settings, bg=gl.var['color_bg'])
+        self.res.pack(side=TOP, padx=7, pady=7, anchor=W)
 
         # BOTTOM BUTTONS
         self.save_btn = make_btn(window=self.bottom_btn, 
@@ -178,12 +185,12 @@ class settings:
 
         # ALL SETTINGS BUTTONS (will pack later)
         # THEME BUTTONS
-        text(self.options, "THEME OPTIONS:", font_size= 23).pack(anchor=W)
+        text(self.theme, "THEME OPTIONS:", font_size= 23).pack(anchor=W)
 
-        text(self.options, "Background color:").pack(anchor=W)
+        text(self.theme, "Background color:").pack(anchor=W)
         self.all_colors = list(pickle.load(open(gl.dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
         #print(self.all_colors)
-        self.drop_bg = Combobox(self.options, 
+        self.drop_bg = Combobox(self.theme, 
                                 values=self.all_colors, 
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
@@ -192,7 +199,7 @@ class settings:
         self.drop_bg.pack(anchor=W)
 
         # RESOLUTION BUTTONS
-        text(self.options, input="\nRESOLUTION OPTIONS:", font_size=23).pack(anchor=W)
+        text(self.theme, input="\nRESOLUTION OPTIONS:", font_size=23).pack(anchor=W)
 
 
     # SAVES ALL THE VALUES
