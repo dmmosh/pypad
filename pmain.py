@@ -1,7 +1,7 @@
 import pglobal as gl
 
 # hidden tmp file, in home directory
-PATH_PIDFILE = environ['HOME'] + '/.pypad.tmp'
+PATH_PIDFILE = gl.environ['HOME'] + '/.pypad.tmp'
 
 my_pid = os.getpid()
 if exists(PATH_PIDFILE):
