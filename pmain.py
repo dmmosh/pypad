@@ -39,7 +39,7 @@ r = Tk()
 dir = '/usr/share/pypad'
 
 # GLOBAL VARIABLES
-var = pickle.load(open(dir + '/default_var.obj', 'rb'))
+var = pickle.load(open(dir + '/var.obj', 'rb'))
 #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
 #NOTE: pickle doesnt support tkinter,
 var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
