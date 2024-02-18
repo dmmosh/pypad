@@ -1,6 +1,5 @@
 from pglobal import *
 
-
 '''
 SOURCE CODE
 
@@ -19,7 +18,18 @@ compiled file doesnt have the problem
 '''
 
 
+# ROOT WINDOW
+r = Tk() 
+# DIRECTORY OF HELPER FILES
+dir = '/usr/share/pypad'
 
+
+# COMPUTER INFORMATION
+width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
+#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
+#print(colors) # debug
+
+var = load_var()
 
 # OTHER FUNCTIONS / CLASSEES
 # quits the program
