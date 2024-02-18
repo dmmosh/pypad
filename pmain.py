@@ -98,14 +98,20 @@ def msg_box(message:str = "Error", title:str = 'ERROR', width:int = 300, height:
 
 # yes or no prompt
 def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> bool:
-    box = Toplevel(r)
+    box = Toplevel(r, background=var['color_bg'])
     box.geometry(f'{width}x{height}')
     box.attributes('-type', 'dialog') # makes it a floating window
     box.bind('<Escape>', lambda event:quit(box))
     box.title('Yes or no?')
 
-    text(box, message).pack(side=TOP)
-
+    # have to manually make the text because it resets
+    Label(box, 
+          font=Font(family=var['font'],   # have to set the font manually, resets in the saving process
+                    size=var['font_size']), 
+          text=input,
+          background=var['color_bg'],
+          foreground=var['color_fg'])
+    
     # options frame
     options = Frame(box, bg=var['color_bg'])
     options.pack(side=BOTTOM)
@@ -230,12 +236,12 @@ class settings:
 
     def save(self):
 
-        var['color_bg'] = self.all_colors[self.drop_bg.current()]
 
-        var['global_font'] = None # cant pickle tkinter objects
 
         # if python throws an exception error
         try:
+            var['color_bg'] = self.all_colors[self.drop_bg.current()]
+            var['global_font'] = None # cant pickle tkinter objects
             dump_var()
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
