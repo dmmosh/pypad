@@ -245,7 +245,9 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
-            out = r.wait_variable(yes_or_no(message='\nSettings saved.\nRestart now?'))
+            out = -1
+            r.wait_variable(out)
+            out = yes_or_no(message='\nSettings saved.\nRestart now?')
 
             print(out)
             if out:
