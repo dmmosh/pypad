@@ -153,7 +153,8 @@ class settings:
         self.bottom_btn = Frame(self.settings, 
                                 bg=gl.var['color_bg'], 
                                 highlightbackground=var['color_fg'],
-                                highlightcolor=var['color_fg'])
+                                highlightcolor=var['color_fg'],
+                                borderwidth=2)
         self.bottom_btn.pack(side=BOTTOM)
 
         # theme frame
