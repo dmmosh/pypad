@@ -26,7 +26,7 @@ def quit(window):
 
 # hides the window
 def hide(window):
-    window.hide()
+    window.withdraw()
 
 # gets output of a system command
 def sys_out(cmd:str):
