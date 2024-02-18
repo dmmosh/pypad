@@ -108,10 +108,11 @@ def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> 
     Label(box, 
           font=Font(family=var['font'],   # have to set the font manually, resets in the saving process
                     size=var['font_size']), 
-          text=input,
+          text=message,
           background=var['color_bg'],
-          foreground=var['color_fg'])
+          foreground=var['color_fg']).pack()
     
+
     # options frame
     options = Frame(box, bg=var['color_bg'])
     options.pack(side=BOTTOM)
