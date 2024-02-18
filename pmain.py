@@ -43,8 +43,7 @@ i dont recommend running the program through python because of these issues
 
 '''
 
-print(pids())
-print(os.getpid())
+print(pids().index(os.getpid()))
 
 
 # terminal buttons frame
