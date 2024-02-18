@@ -94,7 +94,7 @@ wid = term.winfo_id()
 os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -geometry {gl.var['win_h']}x{gl.var['win_w']-50} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py {str(os.getpid())} && exit' &")
 
 while(1):
-    print(term.get())
+    print(term.get("1.0","end-1c"))
     time.sleep(2)
 
 
