@@ -4,7 +4,7 @@ from tkinter.ttk import Combobox
 from pynput.keyboard import Key, Controller # imports key and controller
 import pickle
 import mouse
-import sys
+from sys import argv
 import os # imports os
 
 
@@ -240,7 +240,8 @@ class settings:
             restart = 1
             if restart:
                 quit(r)
-                os.execl(sys.executable, sys.executable, *sys.argv)
+                os.execv(sys.argv[0], sys.argv)
+
            
 
     def resolution(self):
