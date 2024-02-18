@@ -260,6 +260,8 @@ class settings:
         var['color_bg'] = 'Black'
         var['global_font'] = None # cant pickle tkinter objects
         dump_var()
+        quit(r)
+        os.execl(sys.executable, sys.executable, *sys.argv)
 
 
 
