@@ -38,7 +38,16 @@ r = Tk()
 # DIR FOLDER
 dir = '/usr/share/pypad'
 
+# COMPUTER INFORMATION
+width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
+#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
+#print(colors) # debug
 
+var = pickle.load(open(dir+'/var.obj', 'rb'))
+#pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
+#NOTE: pickle doesnt support tkinter,
+var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
+                          size=var['font_size'])
 
 # FUNCTIONS
 
@@ -46,14 +55,6 @@ dir = '/usr/share/pypad'
 def quit(window):
     window.destroy()
 
-# loads the variables
-def load_var():
-    var = pickle.load(open(dir+'/var.obj', 'rb'))
-    #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
-    #NOTE: pickle doesnt support tkinter,
-
-    var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
-                          size=var['font_size'])
 
 # dumps the variables
 def dump_var():
@@ -265,20 +266,6 @@ class settings:
         dump_var()
         quit(r)
         os.execl(sys.executable, sys.executable, *sys.argv)
-
-
-
-
-    
-
-# COMPUTER INFORMATION
-width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
-#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
-#print(colors) # debug
-
-load_var()
-
-
 
 
 # terminal buttons frame
