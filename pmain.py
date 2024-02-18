@@ -263,8 +263,7 @@ class settings:
 
     #DEFAULTS ALL THE VALUES
     def default(self):
-        var = pickle.load(open(dir + '/default_var.obj', 'rb'))
-        dump_var()
+        pickle.dump(pickle.load(open(dir + '/default_var.obj', 'rb')), open(dir+'/var.obj', 'wb'))
         quit(r)
         os.execl(sys.executable, sys.executable, *sys.argv)
 
