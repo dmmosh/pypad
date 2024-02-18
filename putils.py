@@ -19,6 +19,19 @@ python script doesnt close automatically when typing quit()/exit() or pressing n
 compiled file doesnt have the problem
 '''
 
+def load_var():
+    # GLOBAL VARIABLES
+    var = pickle.load(dir_loc + '/var.obj', 'rb')
+    #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
+    #NOTE: pickle doesnt support tkinter,
+    var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
+                              size=var['font_size'])
+
+# dumps the variables
+def dump_var():
+    var['global_font'] = None
+    pickle.dump(var, open(dir_loc+'/var.obj', 'wb'))
+
 # OTHER FUNCTIONS / CLASSEES
 # quits the program
 def quit(window):

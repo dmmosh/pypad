@@ -18,19 +18,6 @@ global var
 global width
 global height
 
-def load_var():
-    # GLOBAL VARIABLES
-    var = pickle.load(dir_loc + '/var.obj', 'rb')
-    #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
-    #NOTE: pickle doesnt support tkinter,
-    var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
-                              size=var['font_size'])
-
-# dumps the variables
-def dump_var():
-    gl.var['global_font'] = None
-    pickle.dump(var, open(dir_loc+'/var.obj', 'wb'))
-
 # ROOT WINDOW
 r = Tk() 
 # dir_locECTORY OF HELPER FILES
@@ -42,4 +29,6 @@ width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and h
 #colors = pd.read_excel(dir_loc+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
 
-var = load_var()
+var = pickle.load(dir_loc + '/var.obj', 'rb')
+var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
+                        size=var['font_size'])
