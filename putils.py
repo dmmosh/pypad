@@ -240,8 +240,12 @@ class settings:
         self.drop_font.pack(anchor=W, padx= 7, pady= 7)
 
         text(self.theme, "Font size:").pack(anchor=W, padx= 7, pady= 3)
-        self.input = Int_entry(self, width=5)
-
+        self.input = Entry(self, 
+                           validate='all', 
+                           validatecommand=((self.input.register(self.callback)), '%P'),
+                           background=gl.var['color_fg'],
+                           foreground=gl.var['color_bg'])
+         
         self.input.insert(END, str(gl.var['font_size']))
         self.input.pack(anchor=W, padx= 7, pady= 7)
 
@@ -277,17 +281,12 @@ class settings:
                 quit(gl.r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
+    # checks if input is an integer
+    def callback(self, P):
+        if str.isdigit(P) or P == "":
+            return True
+        else:
+            return False
 
-# integer entry 
-class Int_entry(Entry):
-    '''A Entry widget that only accepts digits'''
-    def __init__(self, master=None, **kwargs):
-        self.var = StringVar(master)
-        self.var.trace_add('w', self.validate)
-        Entry.__init__(self, master, textvariable=self.var, **kwargs)
-        self.get, self.set = self.var.get, self.var.set
-    def validate(self, *args):
-        value = self.get()
-        if not value.isdigit():
-            self.set(''.join(x for x in value if x.isdigit()))
+
     
