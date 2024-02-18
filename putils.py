@@ -76,8 +76,6 @@ def yes_or_no(window = gl.r, message:str = "Yes or no?", width:int = 300, height
     box.attributes('-type', 'dialog') # makes it a floating window
     box.bind('<Escape>', lambda event:quit(box))
     box.title('Yes or no?')
-    box.bind('<Enter>',out.set(1))
-    box.bind('<Escape>',out.set(0))
 
     gl.var['global_font'] = Font(family=gl.var['font'],   # have to set the font manually, resets in the saving process
                             size=gl.var['font_size'])
@@ -101,6 +99,10 @@ def yes_or_no(window = gl.r, message:str = "Yes or no?", width:int = 300, height
     
     out = IntVar(value=-1)
 
+    box.bind('<Enter>', lambda: out.set(1))
+    box.bind('<Escape>', lambda: out.set(0))
+
+    
     window.wait_variable(out)
 
 
