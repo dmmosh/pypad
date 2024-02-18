@@ -29,7 +29,7 @@ def sys_out(cmd:str):
     return os.popen(cmd).read()
 
 # makes a new text object
-def text(window=gl.r, input:str = "", width=None, height=None) -> Text:
+def text(window=gl.r, input:str = None, font_size = None, width=None, height=None) -> Text:
     out = Label(window, 
                  font=gl.var['global_font'], 
                  text=input,
@@ -39,6 +39,9 @@ def text(window=gl.r, input:str = "", width=None, height=None) -> Text:
         out.config(width=width)
     if height:
         out.config(height=height)
+    if font_size:
+        out.config(font=  Font(family=var['font'],  # sets global font to the font size as a font object
+                                size=font_size) ) 
 
     return out
 
@@ -78,7 +81,7 @@ def yes_or_no(window = gl.r, message:str = "Yes or no?", width:int = 300, height
                             size=gl.var['font_size'])
 
     # have to manually make the text because it resets
-    text(box, message).pack(side=TOP)
+    text(box, message).pack(side=TOP, padx=20, pady=30)
     
 
     # options frame
@@ -175,6 +178,7 @@ class settings:
 
         # ALL SETTINGS BUTTONS (will pack later)
         # THEME BUTTONS
+        text(self.options, "THEME OPTIONS:", font_size= 23).pack()
 
         text(self.options, "Background color:").pack()
         self.all_colors = list(pickle.load(open(gl.dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
@@ -188,6 +192,7 @@ class settings:
         self.drop_bg.pack(anchor=W)
 
         # RESOLUTION BUTTONS
+        text(self.options, input="RESOLUTION OPTIONS:", font_size=23).pack()
 
 
     # SAVES ALL THE VALUES
@@ -201,7 +206,7 @@ class settings:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
 
-            if yes_or_no(message='\nSettings saved.\nRestart now?') == 1:
+            if yes_or_no(message='Settings saved.\nRestart now?') == 1:
                 quit(gl.r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
             
@@ -215,7 +220,7 @@ class settings:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
             
-            if yes_or_no(message='\nSettings defaulted.\nRestart now?') == 1:
+            if yes_or_no(message='Settings defaulted.\nRestart now?') == 1:
                 quit(gl.r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
