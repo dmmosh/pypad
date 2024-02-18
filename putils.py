@@ -3,20 +3,7 @@ import pglobal as gl
 
 
 '''
-SOURCE CODE
 
-REQUIREMENTS:
-xterm
-
-NOTE:
-the final build will be a compiled, polished executable
-will probably run faster too
-make sure to repurpose the dir_locectories for a linux executable in /usr/bin rather than the project dir_loc
-
-
-python file bug:
-python script doesnt close automatically when typing quit()/exit() or pressing num lock
-compiled file doesnt have the problem
 '''
 
 def load_var():

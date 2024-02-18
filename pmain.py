@@ -6,6 +6,7 @@ SOURCE CODE
 
 REQUIREMENTS:
 xterm
+pynput
 
 NOTE:
 the final build will be a compiled, polished executable
@@ -62,7 +63,7 @@ wid = term.winfo_id()
 
 # terminal widget
 # python runs libraries.py and automatically opens afterwards
-os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -geometry {gl.var['win_h']}x{gl.var['win_w']-50} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/libraries.py && exit' &")
+os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -geometry {gl.var['win_h']}x{gl.var['win_w']-50} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &")
 
 
 if gl.var['auto_cursor'] == True:
