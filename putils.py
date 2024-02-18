@@ -152,7 +152,7 @@ class settings:
 
 
         self.options = Canvas(self.settings, bg=gl.var['color_fg'], width=400)
-        self.options.pack(side=TOP, padx=7, pady=7)
+        self.options.pack(side=TOP, padx=20, pady=20)
 
         # BOTTOM BUTTONS
         self.save_btn = make_btn(window=self.bottom_btn, 
