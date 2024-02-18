@@ -1,7 +1,7 @@
 from tkinter import *  # tkinter
 from tkinter.font import Font # imports font
 from pynput.keyboard import Key, Controller # imports key and controller
-import dill
+import pickle
 import os # imports os
 
 
@@ -36,5 +36,5 @@ var = {
 
 }
 
-dill.dump(var, open('pypad/default_var.obj', 'wb')) # pickles
+pickle.dump(var, open('pypad/default_var.obj', 'wb')) # pickles
 os.system("sudo cp -r pypad/ /usr/share/")

@@ -221,7 +221,7 @@ class settings:
                                 foreground=gl.var['color_bg'])
         self.drop_fg.current(self.all_colors.index(gl.var['color_fg']))
         self.drop_fg.pack(anchor=W, padx= 7, pady= 7)
-
+        
 
 
 
