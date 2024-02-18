@@ -9,6 +9,13 @@ import sys
 import os # imports os
 
 
+# GLOBAL VARIABLES
+global dir 
+global r
+global var
+global width
+global height
+
 '''
 SOURCE CODE
 
@@ -255,14 +262,6 @@ class settings:
             if yes_or_no(message='Settings saved.\nRestart now?') == 1:
                 quit(r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
-
-
-# GLOBAL VARIABLES
-global dir 
-global r
-global var
-global width
-global height
 
 # ROOT WINDOW
 r = Tk() 
