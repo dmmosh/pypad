@@ -206,22 +206,24 @@ class settings:
 
 
         self.data = pickle.load(open(gl.dir_loc+'/data.obj', 'rb')) # imports the colors
+        self.color_name = list(self.data['name'])
+
         #print(self.all_colors)
         self.drop_bg = Combobox(self.theme, 
-                                values=list(self.data['name']), 
+                                values=self.color_name, 
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
                                 foreground=gl.var['color_bg'])
-        self.drop_bg.current(list(self.data['name']).index(gl.var['color_bg']))
+        self.drop_bg.current(self.color_name.index(gl.var['color_bg']))
         self.drop_bg.pack(anchor=W, padx= 7, pady= 7)
 
         text(self.theme, "Foreground color:").pack(anchor=W, padx= 7, pady= 3)
         self.drop_fg = Combobox(self.theme, 
-                                values=list(self.data['name']), 
+                                values=self.color_name, 
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
                                 foreground=gl.var['color_bg'])
-        self.drop_fg.current(list(self.data['name']).index(gl.var['color_fg']))
+        self.drop_fg.current(self.color_name.index(gl.var['color_fg']))
         self.drop_fg.pack(anchor=W, padx= 7, pady= 7)
 
 
