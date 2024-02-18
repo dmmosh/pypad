@@ -228,6 +228,8 @@ class settings:
         self.drop_fg.current(self.data['name'].index(gl.var['color_fg']))
         self.drop_fg.pack(anchor=W, padx= 7, pady= 7)
 
+
+        # FONT
         text(self.theme, "Font:").pack(anchor=W, padx= 7, pady= 3)
         self.drop_font = Combobox(self.theme, 
                                 values=self.data['fonts'], 
@@ -236,6 +238,13 @@ class settings:
                                 foreground=gl.var['color_bg'])
         self.drop_font.current(self.data['fonts'].index(gl.var['font'])) # fonts have a space in front of them 
         self.drop_font.pack(anchor=W, padx= 7, pady= 7)
+
+        text(self.theme, "Font size:").pack(anchor=W, padx= 7, pady= 3)
+        self.input = Int_entry(Entry(self.theme,
+                                background=gl.var['color_fg'],
+                                foreground=gl.var['color_bg']))
+        self.input.insert(END, str(gl.var['font_size']))
+        self.input.pack(anchor=W, padx= 7, pady= 7)
 
 
 
@@ -269,3 +278,17 @@ class settings:
                 quit(gl.r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
+
+# integer entry 
+class Int_entry(Entry):
+    '''A Entry widget that only accepts digits'''
+    def __init__(self, master=None, **kwargs):
+        self.var = StringVar(master)
+        self.var.trace_add('w', self.validate)
+        Entry.__init__(self, master, textvariable=self.var, **kwargs)
+        self.get, self.set = self.var.get, self.var.set
+    def validate(self, *args):
+        value = self.get()
+        if not value.isdigit():
+            self.set(''.join(x for x in value if x.isdigit()))
+    
