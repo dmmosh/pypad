@@ -242,10 +242,10 @@ class settings:
         text(self.theme, "Font size:").pack(anchor=W, padx= 7, pady= 3)
         self.input = Entry(self, 
                            validate='all', 
-                           validatecommand=((self.input.register(self.callback)), '%P'),
                            background=gl.var['color_fg'],
                            foreground=gl.var['color_bg'])
          
+        self.input.config(validatecommand=((self.input.register(self.callback)), '%P'))
         self.input.insert(END, str(gl.var['font_size']))
         self.input.pack(anchor=W, padx= 7, pady= 7)
 
