@@ -9,7 +9,7 @@ xterm
 NOTE:
 the final build will be a compiled, polished executable
 will probably run faster too
-make sure to repurpose the directories for a linux executable in /usr/bin rather than the project dir
+make sure to repurpose the dir_locectories for a linux executable in /usr/bin rather than the project dir_loc
 
 
 python file bug:
@@ -20,13 +20,13 @@ compiled file doesnt have the problem
 
 # ROOT WINDOW
 r = Tk() 
-# DIRECTORY OF HELPER FILES
-dir = '/usr/share/pypad'
+# dir_locECTORY OF HELPER FILES
+dir_loc = '/usr/share/pypad'
 
 
 # COMPUTER INFORMATION
 width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
-#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
+#colors = pd.read_excel(dir_loc+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
 
 var = load_var()
@@ -206,7 +206,7 @@ class settings:
 
         # THEME BUTTONS
 
-        self.all_colors = list(pickle.load(open(dir+'/data.obj', 'rb'))['name']) # imports the colors
+        self.all_colors = list(pickle.load(open(dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
         #print(self.all_colors)
         self.drop_bg = Combobox(self.options, 
                                 values=self.all_colors, 
@@ -237,7 +237,7 @@ class settings:
     #DEFAULTS ALL THE VALUES
     def default(self):
         try:
-            pickle.dump(pickle.load(open(dir + '/default_var.obj', 'rb')), open(dir+'/var.obj', 'wb'))
+            pickle.dump(pickle.load(open(dir_loc + '/default_var.obj', 'rb')), open(dir_loc+'/var.obj', 'wb'))
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
