@@ -105,7 +105,7 @@ def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> 
     box.title('Yes or no?')
 
     text(box, message).pack(side=TOP)
-
+    
     # options frame
     options = Frame(box, bg=var['color_bg'])
     options.pack(side=BOTTOM)
