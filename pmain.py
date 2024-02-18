@@ -25,14 +25,30 @@ python file bug:
 python script doesnt close automatically when typing quit()/exit() or pressing num lock
 compiled file doesnt have the problem
 '''
-#TODO: change to '/usr/share'
+
+# GLOBAL VARIABLES
 global dir 
-dir = '/usr/share/pypad'
+global r
+global var
+global width
+global height
 
 # ROOT WINDOW
-global r
 r = Tk() 
+# DIRECTORY OF HELPER FILES
+dir = '/usr/share/pypad'
 
+# GLOBAL VARIABLES
+var = pickle.load(open(dir+'/var.obj', 'rb'))
+#pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
+#NOTE: pickle doesnt support tkinter,
+var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
+                          size=var['font_size'])
+
+# COMPUTER INFORMATION
+width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
+#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
+#print(colors) # debug
 
 # FUNCTIONS
 
@@ -40,15 +56,6 @@ r = Tk()
 def quit(window):
     window.destroy()
 
-# loads the variables
-def load_var():
-    global var
-    var = pickle.load(open(dir+'/var.obj', 'rb'))
-    #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
-    #NOTE: pickle doesnt support tkinter,
-
-    var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
-                          size=var['font_size'])
 
 # dumps the variables
 def dump_var():
@@ -265,14 +272,6 @@ class settings:
 
 
     
-
-# COMPUTER INFORMATION
-width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
-#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
-#print(colors) # debug
-
-load_var()
-
 
 
 
