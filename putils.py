@@ -159,12 +159,14 @@ class settings:
 
 
         # resolution frame
+        '''
         self.res = Frame(self.settings,
                             bg=gl.var['color_bg'],
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
                             highlightthickness=2)
         self.res.pack(side=TOP, padx=15, pady=15, anchor=W)
+        '''
 
         # theme frame
         self.theme = Frame(self.settings,
@@ -196,7 +198,7 @@ class settings:
         # ALL SETTINGS BUTTONS (will pack later)
 
         # RESOLUTION BUTTONS
-        text(self.res, input="RESOLUTION OPTIONS:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
+        #text(self.res, input="RESOLUTION OPTIONS:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
 
 
         # THEME BUTTONS
