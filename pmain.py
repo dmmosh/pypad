@@ -263,7 +263,7 @@ class settings:
 
     #DEFAULTS ALL THE VALUES
     def default(self):
-        var = pickle.load(open(dir+'/default_var.obj', 'rb'))
+        var['color_bg'] = 'Black'
         dump_var()
         quit(r)
         os.execl(sys.executable, sys.executable, *sys.argv)
