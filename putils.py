@@ -234,7 +234,7 @@ class settings:
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
                                 foreground=gl.var['color_bg'])
-        self.drop_font.current(self.data['fonts'].index(' ' + gl.var['font']))
+        self.drop_font.current(self.data['fonts'].index(' ' + gl.var['font'])) # fonts have a space in front of them 
         self.drop_font.pack(anchor=W, padx= 7, pady= 7)
 
 
@@ -245,6 +245,7 @@ class settings:
         try:
             gl.var['color_fg'] = self.data['name'][self.drop_fg.current()]
             gl.var['color_bg'] = self.data['name'][self.drop_bg.current()]
+            gl.var['font'] = self.data['fonts'][self.drop_bg.current()]
             gl.var['global_font'] = None # cant pickle tkinter objects
             dump_var()
         except:
