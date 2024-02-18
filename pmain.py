@@ -4,19 +4,25 @@ import pglobal as gl
 '''
 SOURCE CODE
 
-REQUIREMENTS:
-xterm
-pynput
+DEPENDENCIES:
+xterm (no terminal without it)
+pynput (will raise a warning if you dont have it) (for num lock fast quit)
 
 NOTE:
-the final build will be a compiled, polished executable
-will probably run faster too
-make sure to repurpose the dir_locectories for a linux executable in /usr/bin rather than the project dir_loc
+the compiled executable will work as intended
 
 
-python file bug:
-python script doesnt close automatically when typing quit()/exit() or pressing num lock
-compiled file doesnt have the problem
+BUG with uncompiled files:
+
+ONLY UNCOMPILED VERSION EXPERIENCES THESE!!!
+COMPILED EXECUTABLE RUNS WITHOUT ISSUES!!
+i dont recommend running the program through python because of these issues
+
+1. num lock doesnt automatically close the program when running through python
+2. the program is closed, but the xterm client isnt. this eventually leads to a 
+    "maximum number of clients reached" error. 
+    to fix this, type 'killall python', killing all python xterm clients
+
 '''
 
 
