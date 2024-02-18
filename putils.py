@@ -154,7 +154,7 @@ class settings:
         self.bottom_btn.pack(side=BOTTOM)
 
 
-        self.options = Canvas(self.settings, bg=gl.var['color_fg'], width=400)
+        self.options = Frame(self.settings, bg=gl.var['color_bg'])
         self.options.pack(side=TOP, padx=20, pady=20)
 
         # BOTTOM BUTTONS
@@ -178,7 +178,7 @@ class settings:
 
         # ALL SETTINGS BUTTONS (will pack later)
         # THEME BUTTONS
-        text(self.options, "THEME OPTIONS:", font_size= 23).pack(anchor=W)
+        text(self.options, "\nTHEME OPTIONS:", font_size= 23).pack(anchor=W)
 
         text(self.options, "Background color:").pack(anchor=W)
         self.all_colors = list(pickle.load(open(gl.dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
@@ -192,7 +192,7 @@ class settings:
         self.drop_bg.pack(anchor=W)
 
         # RESOLUTION BUTTONS
-        text(self.options, input="RESOLUTION OPTIONS:", font_size=23).pack(anchor=W)
+        text(self.options, input="\nRESOLUTION OPTIONS:", font_size=23).pack(anchor=W)
 
 
     # SAVES ALL THE VALUES
