@@ -206,7 +206,7 @@ class settings:
 
 
         self.data = pickle.load(open(gl.dir_loc+'/data.obj', 'rb')) # imports the colors
-        self.color_name = list(self.data['name'])
+        self.color_name = self.data
         print(self.color_name)
 
         #print(self.all_colors)
