@@ -115,7 +115,6 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
     options = Frame(box, bg=var['color_bg'])
     options.pack(side=BOTTOM)
 
-    out = -1 
 
     def set(input: bool):
         out = input
@@ -128,6 +127,7 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
     ok.pack(side=LEFT, padx=7, pady=7) 
     cancel.pack(side= RIGHT, padx=7, pady=7)
     
+    out = -1 
     window.wait_variable(out)
 
     quit(box)
