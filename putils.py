@@ -178,9 +178,9 @@ class settings:
 
         # ALL SETTINGS BUTTONS (will pack later)
         # THEME BUTTONS
-        text(self.options, "THEME OPTIONS:", font_size= 23).pack()
+        text(self.options, "THEME OPTIONS:", font_size= 23).pack(anchor=W)
 
-        text(self.options, "Background color:").pack()
+        text(self.options, "Background color:").pack(anchor=W)
         self.all_colors = list(pickle.load(open(gl.dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
         #print(self.all_colors)
         self.drop_bg = Combobox(self.options, 
@@ -192,7 +192,7 @@ class settings:
         self.drop_bg.pack(anchor=W)
 
         # RESOLUTION BUTTONS
-        text(self.options, input="RESOLUTION OPTIONS:", font_size=23).pack()
+        text(self.options, input="RESOLUTION OPTIONS:", font_size=23).pack(anchor=W)
 
 
     # SAVES ALL THE VALUES
