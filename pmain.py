@@ -129,8 +129,7 @@ def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> 
     ok.pack(side=LEFT, padx=7, pady=7) 
     cancel.pack(side= RIGHT, padx=7, pady=7)
 
-    return False
-
+    
 
 # makes a button
 def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, width =None, height =None):
