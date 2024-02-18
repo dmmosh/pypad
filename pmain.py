@@ -82,7 +82,7 @@ if gl.var['hover_quit']:
 
 
 # TERMINAL WIDGET  
-term = Text(gl.r, height=gl.var['win_h'], width=gl.var['win_w']-50)
+term = Frame(gl.r, height=gl.var['win_h'], width=gl.var['win_w']-50)
 term.pack(side=LEFT, anchor=NW, expand=TRUE)
 term.bind('<Num_Lock>', lambda: quit(gl.r))
 term.focus_set()
@@ -93,9 +93,6 @@ wid = term.winfo_id()
 # puts process's pid as arg 1 (will be deleting later)
 os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -geometry {gl.var['win_h']}x{gl.var['win_w']-50} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py {str(os.getpid())} && exit' &")
 
-while(1):
-    print(term.get("1.0","end-1c"))
-    time.sleep(2)
 
 
 if gl.var['auto_cursor'] == True:
