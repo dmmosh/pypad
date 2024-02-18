@@ -178,7 +178,7 @@ class settings:
 
         # ALL SETTINGS BUTTONS (will pack later)
         # THEME BUTTONS
-        text(self.options, "\nTHEME OPTIONS:", font_size= 23).pack(anchor=W)
+        text(self.options, "THEME OPTIONS:", font_size= 23).pack(anchor=W)
 
         text(self.options, "Background color:").pack(anchor=W)
         self.all_colors = list(pickle.load(open(gl.dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
