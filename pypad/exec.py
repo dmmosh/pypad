@@ -9,12 +9,12 @@ libraries = []
 # QUIT AND EXIT FUNCTION OVERRIDE
 #TODO: change what this closes
 def quit():
-    os.system("pkill -9 -f " + str(os.getpid())) #kills the pypad executable
+    os.system("pkill -9 -f " + sys.argv[1]) #kills the pypad executable
     
     sys.exit()
 
 def exit():
-    os.system("pkill -9 -f " + str(os.getpid())) #kills the pypad executable
+    os.system("pkill -9 -f " + sys.argv[1]) #kills the pypad executable
     sys.exit()
 
 
