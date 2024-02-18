@@ -13,7 +13,6 @@ if exists(PATH_PIDFILE):
     if pid is not None and pid_exists(pid) and Process(pid).cmdline() == Process(my_pid).cmdline():
         print("PROCESS ALREADY RUNNING")
         gl.r.deiconify()
-        quit()
 with open(PATH_PIDFILE, 'w') as f:
     f.write(str(my_pid))
 
