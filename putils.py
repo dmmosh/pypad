@@ -240,9 +240,9 @@ class settings:
         self.drop_font.pack(anchor=W, padx= 7, pady= 7)
 
         text(self.theme, "Font size:").pack(anchor=W, padx= 7, pady= 3)
-        self.input = Int_entry(Entry(self.theme,
+        self.input = Int_entry( self.theme,
                                 background=gl.var['color_fg'],
-                                foreground=gl.var['color_bg']))
+                                foreground=gl.var['color_bg'])
         self.input.insert(END, str(gl.var['font_size']))
         self.input.pack(anchor=W, padx= 7, pady= 7)
 
