@@ -3,8 +3,8 @@ from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
 from pynput.keyboard import Key, Controller # imports key and controller
 import pickle
-import mouse
-from sys import argv
+from mouse import move
+import sys
 import os # imports os
 
 
@@ -57,7 +57,7 @@ def yorno(list:list, input:bool):
     list.append(bool)
 
 # gets output of a system command
-def sys(cmd:str):
+def sys_out(cmd:str):
     return os.popen(cmd).read()
 
 # makes a new text object
@@ -240,7 +240,8 @@ class settings:
             restart = 1
             if restart:
                 quit(r)
-                os.execv(argv[0], argv)
+                os.execl(sys.executable, sys.executable, *sys.argv)
+
 
            
 
@@ -290,7 +291,7 @@ r.bind('<Num_Lock>', lambda event: quit(r)) # assigns num lock as quit
 
 
 # if theres num lock in the system
-if 'Num Lock:    off' in sys("xset -q | grep Caps"):
+if 'Num Lock:    off' in sys_out("xset -q | grep Caps"):
     Controller().press(Key.num_lock) # script presses num lock
 
 # if hover quit is on
@@ -312,7 +313,7 @@ os.system(f"xterm -fa \'{var['font']}\' -fs {var['font_size']} -rightbar -into {
 
 if var['auto_cursor'] == True:
     r.update()
-    mouse.move(term.winfo_rootx()+30, term.winfo_rooty()+30) # moves the mouse
+    move(term.winfo_rootx()+30, term.winfo_rooty()+30) # moves the mouse
 
 term_btn = Frame(r, height=var['win_h'], width=50)
 term_btn.pack(side=RIGHT)
