@@ -44,6 +44,7 @@ def quit(window):
 
 # loads the variables
 def load_var():
+    global var
     var = pickle.load(open(dir+'/var.obj', 'rb'))
     #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
     #NOTE: pickle doesnt support tkinter,
@@ -292,7 +293,6 @@ width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and h
 #colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
 
-global var
 load_var()
 
 
