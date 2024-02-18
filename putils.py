@@ -207,6 +207,7 @@ class settings:
 
         self.data = pickle.load(open(gl.dir_loc+'/data.obj', 'rb')) # imports the colors
         self.color_name = list(self.data['name'])
+        print(self.color_name)
 
         #print(self.all_colors)
         self.drop_bg = Combobox(self.theme, 
