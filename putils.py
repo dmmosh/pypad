@@ -240,15 +240,15 @@ class settings:
         self.drop_font.pack(anchor=W, padx= 7, pady= 7)
 
         text(self.theme, "Font size:").pack(anchor=W, padx= 7, pady= 3)
-        self.input = Entry(self.theme, 
+        self.font_size_input = Entry(self.theme, 
                            validate='all', 
                            font=gl.var['global_font'],
                            background=gl.var['color_fg'],
                            foreground=gl.var['color_bg'])
          
-        self.input.config(validatecommand=((self.input.register(self.callback)), '%P'))
-        self.input.insert(END, str(gl.var['font_size']))
-        self.input.pack(anchor=W, padx= 7, pady= 7)
+        self.font_size_input.config(validatecommand=((self.font_size_input.register(self.callback)), '%P'))
+        self.font_size_input.insert(END, str(gl.var['font_size']))
+        self.font_size_input.pack(anchor=W, padx= 7, pady= 7)
 
 
 
@@ -259,6 +259,7 @@ class settings:
             gl.var['color_fg'] = self.data['name'][self.drop_fg.current()]
             gl.var['color_bg'] = self.data['name'][self.drop_bg.current()]
             gl.var['font'] = self.data['fonts'][self.drop_bg.current()]
+            gl.var['font_size'] = int(self.font_size_input.get())
             gl.var['global_font'] = None # cant pickle tkinter objects
             dump_var()
         except:
