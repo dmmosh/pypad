@@ -9,7 +9,7 @@ import sys
 import os # imports os
 import pandas as pd
 
-df = pd.read_excel('pypad/data.xlsx')['name'].to_dict()
+df = pd.read_excel('pypad/data.xlsx')['name'].to_list()
 print(df)
 
 pickle.dump(df, open('pypad/data.obj', 'wb')) # pickles
