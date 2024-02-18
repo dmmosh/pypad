@@ -262,7 +262,7 @@ class settings:
 
     #DEFAULTS ALL THE VALUES
     def default(self):
-        var['global_font'] = None # cant pickle tkinter objects
+        var = None # cant pickle tkinter objects
         var = pickle.load(open(dir+'/default_var.obj', 'rb'))
         print(var)
         dump_var()
