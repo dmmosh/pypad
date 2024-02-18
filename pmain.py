@@ -110,20 +110,20 @@ def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> 
     options.pack(side=BOTTOM)
 
     
-    out = False
 
-    def set(input:bool):
-        out = input
+    def set():
+        quit(box)
+        return True
+
 
     # ok and cancel buttons
-    ok = make_btn(options, text='okie dokie ✓', command=lambda: set(True))
+    ok = make_btn(options, text='okie dokie ✓', command=lambda: set())
     cancel = make_btn(options, text='cancel X', command=lambda: quit(box))
 
     ok.pack(side=LEFT, padx=7, pady=7) 
     cancel.pack(side= RIGHT, padx=7, pady=7)
 
-    quit(box)
-    return out
+    return False
 
 
 # makes a button
