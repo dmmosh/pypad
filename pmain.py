@@ -25,14 +25,18 @@ python file bug:
 python script doesnt close automatically when typing quit()/exit() or pressing num lock
 compiled file doesnt have the problem
 '''
-#TODO: change to '/usr/share'
+
+# global variables
+global r
+global var
 global dir 
-dir = '/usr/share/pypad'
+
 
 # ROOT WINDOW
-global r
 r = Tk() 
 
+# DIR FOLDER
+dir = '/usr/share/pypad'
 
 
 
@@ -44,7 +48,6 @@ def quit(window):
 
 # loads the variables
 def load_var():
-    global var
     var = pickle.load(open(dir+'/var.obj', 'rb'))
     #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
     #NOTE: pickle doesnt support tkinter,
@@ -259,7 +262,6 @@ class settings:
     def default(self):
         # try putting all values to default
         var = pickle.load(open(dir+'/default_var.obj', 'rb'))
-        var['global_font'] = None # cant pickle tkinter objects
         dump_var()
         quit(r)
         os.execl(sys.executable, sys.executable, *sys.argv)
