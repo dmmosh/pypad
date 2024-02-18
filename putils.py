@@ -274,7 +274,7 @@ class settings:
         try:
             gl.var['color_fg'] = self.data['name'][self.drop_fg.current()]
             gl.var['color_bg'] = self.data['name'][self.drop_bg.current()]
-            gl.var['font'] = self.data['fonts'][self.drop_bg.current()]
+            gl.var['font'] = self.data['fonts'][self.drop_font.current()]
             gl.var['font_size'] = int(self.font_size_input.get())
             gl.var['global_font'] = None # cant pickle tkinter objects
             dump_var()
