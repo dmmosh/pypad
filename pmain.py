@@ -16,6 +16,17 @@ global var
 global width
 global height
 
+# ROOT WINDOW
+r = Tk() 
+# DIRECTORY OF HELPER FILES
+dir = '/usr/share/pypad'
+
+
+# COMPUTER INFORMATION
+width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
+#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
+#print(colors) # debug
+
 '''
 SOURCE CODE
 
@@ -263,17 +274,8 @@ class settings:
                 quit(r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
-# ROOT WINDOW
-r = Tk() 
-# DIRECTORY OF HELPER FILES
-dir = '/usr/share/pypad'
 
-
-# COMPUTER INFORMATION
-width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
-#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
-#print(colors) # debug
-
+# LOAD VARIABLES
 load_var()
 
 
