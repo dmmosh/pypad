@@ -157,13 +157,6 @@ class settings:
                                 highlightthickness=2)
         self.bottom_btn.pack(side=BOTTOM)
 
-        # theme frame
-        self.theme = Frame(self.settings,
-                            bg=gl.var['color_bg'],
-                            highlightbackground=var['color_fg'],
-                            highlightcolor=var['color_fg'],
-                            highlightthickness=2)
-        self.theme.pack(side=TOP, padx=15, pady=15, anchor=W)
 
         # resolution frame
         self.res = Frame(self.settings,
@@ -172,6 +165,14 @@ class settings:
                             highlightcolor=var['color_fg'],
                             highlightthickness=2)
         self.res.pack(side=TOP, padx=15, pady=15, anchor=W)
+        
+        # theme frame
+        self.theme = Frame(self.settings,
+                            bg=gl.var['color_bg'],
+                            highlightbackground=var['color_fg'],
+                            highlightcolor=var['color_fg'],
+                            highlightthickness=2)
+        self.theme.pack(side=TOP, padx=15, pady=15, anchor=W)
 
         # BOTTOM BUTTONS
         self.save_btn = make_btn(window=self.bottom_btn, 
