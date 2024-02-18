@@ -255,8 +255,8 @@ class settings:
 
     #DEFAULTS ALL THE VALUES
     def default(self):
-        var = None
-        var = pickle.load(open(dir+'/default_var.obj', 'rb'))
+        test = pickle.load(open(dir+'/default_var.obj', 'rb'))
+        print(test)
         dump_var()
 
 
