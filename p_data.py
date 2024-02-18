@@ -6,7 +6,8 @@ from pynput.keyboard import Key, Controller # imports key and controller
 import pickle
 from mouse import move
 import sys
-import os # imports os
+from os import environ
+import os
 import pandas as pd
 
 name = pd.read_excel('pypad/data.xlsx')['name'].to_list()
