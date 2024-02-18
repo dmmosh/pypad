@@ -6,7 +6,7 @@ import time
 
 print('Starting process')
 try:
-    with pidfile.PIDFile("/var/run/example.pid"):
+    with pidfile.PIDFile():
         print('Process started')
 except pidfile.AlreadyRunningError:
     print('Already running.')
