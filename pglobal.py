@@ -10,6 +10,7 @@ import pickle
 from mouse import move
 import sys
 import os # imports os
+from os import environ
 
 # GLOBAL VARIABLES
 '''
