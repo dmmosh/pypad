@@ -1,10 +1,12 @@
 import pidfile
 
+
+
 print('Starting process')
 try:
     with pidfile.PIDFile():
         print('Process started')
-except pidfile.AlreadyRunningError:
+except:
     print('Already running.')
 
 print('Exiting')
