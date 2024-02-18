@@ -1,10 +1,5 @@
 from putils import *
 from pglobal import *
-from putils import make_btn
-
-# LOAD VARIABLES
-load_var()
-
 
 
 # terminal buttons frame
