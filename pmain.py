@@ -1,14 +1,22 @@
-import pidfile
-import time
+from os import getpid
+from os import system
+from os import environ
+from os.path import exists
+from psutil import pid_exists, Process
 
-print('Starting process')
-try:
-    with pidfile.PIDFile():
-        print('Process started')
-except pidfile.AlreadyRunningError:
-    print('Already running.')
-    quit()
+# hidden tmp file, in home directory
+PATH_PIDFILE = environ['HOME'] + '/.pypad.tmp'
 
+my_pid = getpid()
+if exists(PATH_PIDFILE):
+    with open(PATH_PIDFILE) as f:
+        pid = f.read()
+        pid = int(pid) if pid.isnumeric() else None
+    if pid is not None and pid_exists(pid) and Process(pid).cmdline() == Process(my_pid).cmdline():
+        print("PROCESS ALREADY RUNNING")
+        quit()
+with open(PATH_PIDFILE, 'w') as f:
+    f.write(str(my_pid))
 
 
 
