@@ -131,7 +131,7 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
 
 
     quit(box)
-    return out
+    return out.get()
 
 
 # makes a button
