@@ -1,4 +1,5 @@
 from tkinter import *  # tkinter
+from tkinter import messagebox as mb
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
 from pynput.keyboard import Key, Controller # imports key and controller
@@ -248,8 +249,8 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
-            self.out = yes_or_no(r, message='\nSettings saved.\nRestart now?')
-                
+            self.out = mb.askyesno('Yes or no?', 'Settings saved. Restart now?')
+
 
             if self.out:
                 quit(r)
