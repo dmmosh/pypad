@@ -13,7 +13,7 @@ FUNCTIONS IN PICKLE !!
 
 
 # any variables that need pickling
-from pmain import var
+from pmain import gl.var
 
 def quit(window):
     window.destroy()
@@ -37,14 +37,14 @@ def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, wi
     out = Button(window, 
                   text=text, 
                   command=command, 
-                  highlightcolor=var['color_fg'],
+                  highlightcolor=gl.var['color_fg'],
                   highlightthickness=2,
-                  highlightbackground=var['color_fg'],
-                  activebackground=var['color_fg'],
-                  activeforeground=var['color_bg'],
+                  highlightbackground=gl.var['color_fg'],
+                  activebackground=gl.var['color_fg'],
+                  activeforeground=gl.var['color_bg'],
                   
-                  bg=var['color_bg'], 
-                  fg=var['color_fg'])
+                  bg=gl.var['color_bg'], 
+                  fg=gl.var['color_fg'])
     # if width and height are given
     if width and height :
         out.config(width=width)
@@ -59,7 +59,7 @@ def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, wi
         out.config(font=font)
     # if font isnt given (cant pass as default parameter)
     else:
-        out.config(font=var['global_font'])
+        out.config(font=gl.var['global_font'])
     
     return out
 
@@ -67,13 +67,13 @@ def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, wi
 # opens the color window
 def settings_window():
     color = new_window('colors', '300x400')
-    color.config(background=var['color_bg'])
+    color.config(background=gl.var['color_bg'])
     #color.bind('<Num_Lock>', lambda: quit(color))
     color.bind('<Escape>', lambda event:quit(color))
 
 
 
-    buttons = Frame(color, bg=var['color_bg'])
+    buttons = Frame(color, bg=gl.var['color_bg'])
     buttons.pack(side=BOTTOM)
 
     save = make_btn(window=buttons, text='save', command=lambda:quit(color))

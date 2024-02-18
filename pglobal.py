@@ -9,6 +9,9 @@ import sys
 import os # imports os
 
 # GLOBAL VARIABLES
+'''
+NOTE: to change these, call pglobal.[variable]
+'''
 global dir_loc 
 global r
 global var
@@ -17,7 +20,7 @@ global height
 
 def load_var():
     # GLOBAL VARIABLES
-    var = pickle.load(open(dir_loc + '/var.obj', 'rb'))
+    var = pickle.load(dir_loc + '/var.obj', 'rb')
     #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
     #NOTE: pickle doesnt support tkinter,
     var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
@@ -25,7 +28,7 @@ def load_var():
 
 # dumps the variables
 def dump_var():
-    var['global_font'] = None
+    gl.var['global_font'] = None
     pickle.dump(var, open(dir_loc+'/var.obj', 'wb'))
 
 # ROOT WINDOW

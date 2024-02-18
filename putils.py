@@ -1,4 +1,6 @@
 from pglobal import *
+import pglobal as gl
+
 
 '''
 SOURCE CODE
@@ -27,12 +29,12 @@ def sys_out(cmd:str):
     return os.popen(cmd).read()
 
 # makes a new text object
-def text(window=r, input:str = "", width=None, height=None) -> Text:
+def text(window=gl.r, input:str = "", width=None, height=None) -> Text:
     out = Label(window, 
-                 font=var['global_font'], 
+                 font=gl.var['global_font'], 
                  text=input,
-                 background=var['color_bg'],
-                 foreground=var['color_fg'])
+                 background=gl.var['color_bg'],
+                 foreground=gl.var['color_fg'])
     if width:
         out.config(width=width)
     if height:
@@ -42,7 +44,7 @@ def text(window=r, input:str = "", width=None, height=None) -> Text:
 
 # opens new window
 def new_window(title:str, geometry:str) -> Toplevel:
-    out = Toplevel(r)
+    out = Toplevel(gl.r)
     out.title(title)
     out.geometry(geometry)
     out.attributes('-type', 'dialog')
@@ -51,9 +53,9 @@ def new_window(title:str, geometry:str) -> Toplevel:
 
 # error message
 def msg_box(message:str = "Error", title:str = 'ERROR', width:int = 300, height:int = 200):
-    box = Toplevel(r)
+    box = Toplevel(gl.r)
     box.geometry(f'{width}x{height}')
-    box.config(background=var['color_bg'])
+    box.config(background=gl.var['color_bg'])
     box.attributes('-type', 'dialog') # makes it a floating window
     box.bind('<Escape>', lambda event:quit(box))
     box.title(title)
@@ -65,22 +67,22 @@ def msg_box(message:str = "Error", title:str = 'ERROR', width:int = 300, height:
     ok.pack(side=BOTTOM, padx=7, pady=7) 
 
 # yes or no prompt
-def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:int = 200) -> int:
-    box = Toplevel(window, background=var['color_bg'])
-    box.geometry(f'{width}x{height}')
+def yes_or_no(window = gl.r, message:str = "Yes or no?", width:int = 300, height:int = 200) -> int:
+    box = Toplevel(window, background=gl.var['color_bg'])
+    box.geometry(f'{gl.width}x{gl.height}')
     box.attributes('-type', 'dialog') # makes it a floating window
     box.bind('<Escape>', lambda event:quit(box))
     box.title('Yes or no?')
 
-    var['global_font'] = Font(family=var['font'],   # have to set the font manually, resets in the saving process
-                            size=var['font_size'])
+    gl.var['global_font'] = Font(family=gl.var['font'],   # have to set the font manually, resets in the saving process
+                            size=gl.var['font_size'])
 
     # have to manually make the text because it resets
     text(box, message).pack(side=TOP)
     
 
     # options frame
-    options = Frame(box, bg=var['color_bg'])
+    options = Frame(box, bg=gl.var['color_bg'])
     options.pack(side=BOTTOM)
 
 
@@ -102,22 +104,22 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
 
 
 # makes a button
-def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, width =None, height =None):
+def make_btn(window=gl.r, text="", command=lambda:quit(), font=None, image=None, width =None, height =None):
     out = Button(window, 
                   text=text, 
                   command=command, 
-                  highlightcolor=var['color_fg'],
+                  highlightcolor=gl.var['color_fg'],
                   highlightthickness=2,
-                  highlightbackground=var['color_fg'],
-                  activebackground=var['color_fg'],
-                  activeforeground=var['color_bg'],
+                  highlightbackground=gl.var['color_fg'],
+                  activebackground=gl.var['color_fg'],
+                  activeforeground=gl.var['color_bg'],
                   
-                  bg=var['color_bg'], 
-                  fg=var['color_fg'])
+                  bg=gl.var['color_bg'], 
+                  fg=gl.var['color_fg'])
     # if width and height are given
-    if width and height :
+    if width and gl.height :
         out.config(width=width)
-        out.config(height=height)
+        out.config(height=gl.height)
     
     # if image is given
     if image:
@@ -128,7 +130,7 @@ def make_btn(window=r, text="", command=lambda:quit(), font=None, image=None, wi
         out.config(font=font)
     # if font isnt given (cant pass as default parameter)
     else:
-        out.config(font=var['global_font'])
+        out.config(font=gl.var['global_font'])
     
     return out
 
@@ -139,19 +141,19 @@ class settings:
     def __init__(self):
         # SETTINGS WINDOW ITSELF
         self.settings = new_window('colors', '500x800')
-        self.settings.config(background=var['color_bg'])
+        self.settings.config(background=gl.var['color_bg'])
         #color.bind('<Num_Lock>', lambda: quit(color))
         self.settings.bind('<Escape>', lambda event:quit(self.settings))
         self.settings.title('Settings')
 
         # FRAMES
-        self.bottom_btn = Frame(self.settings, bg=var['color_bg'])
+        self.bottom_btn = Frame(self.settings, bg=gl.var['color_bg'])
         self.bottom_btn.pack(side=BOTTOM)
 
-        self.top_btn = Frame(self.settings, bg=var['color_bg'])
+        self.top_btn = Frame(self.settings, bg=gl.var['color_bg'])
         self.top_btn.pack(side=TOP)
 
-        self.options = Frame(self.settings, bg=var['color_bg'])
+        self.options = Frame(self.settings, bg=gl.var['color_bg'])
         self.options.pack()
 
         # BOTTOM BUTTONS
@@ -192,14 +194,14 @@ class settings:
 
         # THEME BUTTONS
 
-        self.all_colors = list(pickle.load(open(dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
+        self.all_colors = list(pickle.load(open(gl.dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
         #print(self.all_colors)
         self.drop_bg = Combobox(self.options, 
                                 values=self.all_colors, 
-                                font=var['global_font'],
-                                background=var['color_fg'],
-                                foreground=var['color_bg'])
-        self.drop_bg.current(self.all_colors.index(var['color_bg']))
+                                font=gl.var['global_font'],
+                                background=gl.var['color_fg'],
+                                foreground=gl.var['color_bg'])
+        self.drop_bg.current(self.all_colors.index(gl.var['color_bg']))
         self.drop_bg.pack(anchor=W)
 
 
@@ -207,15 +209,15 @@ class settings:
     def save(self):
         # if python throws an exception error
         try:
-            var['color_bg'] = self.all_colors[self.drop_bg.current()]
-            var['global_font'] = None # cant pickle tkinter objects
+            gl.var['color_bg'] = self.all_colors[self.drop_bg.current()]
+            gl.var['global_font'] = None # cant pickle tkinter objects
             dump_var()
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
 
             if yes_or_no(message='Settings saved.\nRestart now?') == 1:
-                quit(r)
+                quit(gl.r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
             
 
@@ -223,12 +225,12 @@ class settings:
     #DEFAULTS ALL THE VALUES
     def default(self):
         try:
-            pickle.dump(pickle.load(open(dir_loc + '/default_var.obj', 'rb')), open(dir_loc+'/var.obj', 'wb'))
+            pickle.dump(pickle.load(open(gl.dir_loc + '/default_var.obj', 'rb')), open(gl.dir_loc+'/var.obj', 'wb'))
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
             
             if yes_or_no(message='Settings saved.\nRestart now?') == 1:
-                quit(r)
+                quit(gl.r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
