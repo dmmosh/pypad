@@ -2,6 +2,7 @@ import sys
 import os
 #from numpy import *
 
+from math import *
 
 libraries = []
 
@@ -15,10 +16,6 @@ def quit():
 def exit():
     os.system("pkill -9 -f pypad") #kills the pypad executable
     sys.exit()
-
-def libraries():
-    for i in 
-
 
 
 # MAKES SURE THAT PYNPUT IS INSTALLED 

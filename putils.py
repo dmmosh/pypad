@@ -166,14 +166,7 @@ class settings:
         self.default_btn = make_btn(window=self.bottom_btn, 
                                 text='default ⟳',
                                 command=lambda:self.default())
-        
-        # TOP BUTTONS
-        self.theme_btn = make_btn(window=self.top_btn, 
-                             text='theme ↓',
-                             command=lambda:self.theme())
-        self.resolution_btn = make_btn(window=self.top_btn, 
-                             text='resolution ↓',
-                             command=lambda:self.resolution())
+
         
         
         # PACKS BOTTOM BUTTONS
@@ -181,9 +174,6 @@ class settings:
         self.default_btn.pack(side=RIGHT, padx=7, pady=7)
         self.cancel_btn.pack(padx=7, pady=7)
 
-        # PACKS TOP BUTTONS
-        self.theme_btn.pack(side=LEFT, padx=7, pady=7)
-        self.resolution_btn.pack(side=RIGHT, padx=7, pady=7)
 
         # ALL SETTINGS BUTTONS (will pack later)
         
