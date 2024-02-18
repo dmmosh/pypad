@@ -104,13 +104,11 @@ def yes_or_no(message:str = "Yes or no?", width:int = 300, height:int = 200) -> 
     box.bind('<Escape>', lambda event:quit(box))
     box.title('Yes or no?')
 
+    var['global_font'] = Font(family=var['font'],   # have to set the font manually, resets in the saving process
+                            size=var['font_size'])
+
     # have to manually make the text because it resets
-    Label(box, 
-          font=Font(family=var['font'],   # have to set the font manually, resets in the saving process
-                    size=var['font_size']), 
-          text=message,
-          background=var['color_bg'],
-          foreground=var['color_fg']).pack()
+    text(box, message).pack(side=TOP)
     
 
     # options frame
