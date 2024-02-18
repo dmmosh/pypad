@@ -8,6 +8,7 @@ try:
         print('Process started')
 except:
     print('Already running.')
+    quit()
 
 print('Exiting')
 
