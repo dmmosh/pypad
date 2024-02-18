@@ -10,7 +10,7 @@ libraries = []
 #TODO: change what this closes
 def quit():
     os.system("pkill -9 -f pypad") #kills the pypad executable
-
+    
     sys.exit()
 
 def exit():
