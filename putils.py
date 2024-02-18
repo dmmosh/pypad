@@ -208,7 +208,7 @@ class settings:
         self.drop_bg.pack(anchor=W, padx= 7, pady= 7)
 
         # RESOLUTION BUTTONS
-        text(self.res, input="\nRESOLUTION OPTIONS:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
+        text(self.res, input="RESOLUTION OPTIONS:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
 
 
     # SAVES ALL THE VALUES
