@@ -201,7 +201,7 @@ class settings:
                                 background=gl.var['color_fg'],
                                 foreground=gl.var['color_bg'])
         self.drop_bg.current(self.all_colors.index(gl.var['color_bg']))
-        self.drop_bg.pack(anchor=W)
+        self.drop_bg.pack(anchor=W, padx= 7, pady= 7)
 
         # RESOLUTION BUTTONS
         text(self.theme, input="\nRESOLUTION OPTIONS:", font_size=23).pack(anchor=W)
