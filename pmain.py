@@ -59,6 +59,7 @@ def quit(window):
 
 # dumps the variables
 def dump_var():
+    var['global_font'] = None
     pickle.dump(var, open(dir+'/var.obj', 'wb'))
 
 
