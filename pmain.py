@@ -245,10 +245,8 @@ class settings:
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
-            out = yes_or_no(message='\nSettings saved.\nRestart now?')
 
-            print(out)
-            if out:
+            if yes_or_no(message='\nSettings saved.\nRestart now?'):
                 quit(r)
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
