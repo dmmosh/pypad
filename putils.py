@@ -151,7 +151,7 @@ class settings:
         self.bottom_btn.pack(side=BOTTOM)
 
 
-        self.options = Frame(self.settings, bg=gl.var['color_bg'], width=self.settings.winfo_width()-14)
+        self.options = Frame(self.settings, bg=gl.var['color_fg'], width=self.settings.winfo_width()-14)
         self.options.pack(padx=7)
 
         # BOTTOM BUTTONS
