@@ -25,29 +25,14 @@ python file bug:
 python script doesnt close automatically when typing quit()/exit() or pressing num lock
 compiled file doesnt have the problem
 '''
-
-# global variables
-global r
-global var
+#TODO: change to '/usr/share'
 global dir 
-
-
-# ROOT WINDOW
-r = Tk() 
-
-# DIR FOLDER
 dir = '/usr/share/pypad'
 
-# COMPUTER INFORMATION
-width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
-#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
-#print(colors) # debug
+# ROOT WINDOW
+global r
+r = Tk() 
 
-var = pickle.load(open(dir+'/var.obj', 'rb'))
-#pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
-#NOTE: pickle doesnt support tkinter,
-var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
-                          size=var['font_size'])
 
 # FUNCTIONS
 
@@ -55,6 +40,15 @@ var['global_font'] = Font(family=var['font'],  # sets global font to the font si
 def quit(window):
     window.destroy()
 
+# loads the variables
+def load_var():
+    global var
+    var = pickle.load(open(dir+'/var.obj', 'rb'))
+    #pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
+    #NOTE: pickle doesnt support tkinter,
+
+    var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
+                          size=var['font_size'])
 
 # dumps the variables
 def dump_var():
@@ -262,10 +256,30 @@ class settings:
     #DEFAULTS ALL THE VALUES
     def default(self):
         # try putting all values to default
-        var = pickle.load(open(dir+'/default_var.obj', 'rb'))
-        dump_var()
-        quit(r)
-        os.execl(sys.executable, sys.executable, *sys.argv)
+        try:
+            dump_var()
+
+        # error cant serialize
+        except:
+            msg_box('Cannot default due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
+        else:
+            if yes_or_no(message='Settings saved.\nRestart now?') == 1:
+                quit(r)
+                os.execl(sys.executable, sys.executable, *sys.argv)
+
+
+
+
+    
+
+# COMPUTER INFORMATION
+width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
+#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
+#print(colors) # debug
+
+load_var()
+
+
 
 
 # terminal buttons frame
