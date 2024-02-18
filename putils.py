@@ -165,7 +165,7 @@ class settings:
                             highlightcolor=var['color_fg'],
                             highlightthickness=2)
         self.res.pack(side=TOP, padx=15, pady=15, anchor=W)
-        
+
         # theme frame
         self.theme = Frame(self.settings,
                             bg=gl.var['color_bg'],
@@ -194,6 +194,11 @@ class settings:
 
 
         # ALL SETTINGS BUTTONS (will pack later)
+
+        # RESOLUTION BUTTONS
+        text(self.res, input="RESOLUTION OPTIONS:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
+        
+
         # THEME BUTTONS
         text(self.theme, "THEME OPTIONS:", font_size= 23).pack(anchor=W, padx= 7, pady= 7)
 
@@ -208,8 +213,6 @@ class settings:
         self.drop_bg.current(self.all_colors.index(gl.var['color_bg']))
         self.drop_bg.pack(anchor=W, padx= 7, pady= 7)
 
-        # RESOLUTION BUTTONS
-        text(self.res, input="RESOLUTION OPTIONS:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
 
 
     # SAVES ALL THE VALUES
