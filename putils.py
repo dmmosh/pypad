@@ -232,8 +232,8 @@ class settings:
     def save(self):
         # if python throws an exception error
         try:
-            gl.var['color_fg'] = self.drop_fg.current()
-            gl.var['color_bg'] = self.drop_bg.current()
+            gl.var['color_fg'] = self.data['name'][self.drop_fg.current()]
+            gl.var['color_bg'] = self.data['name'][self.drop_bg.current()]
             gl.var['global_font'] = None # cant pickle tkinter objects
             dump_var()
         except:
