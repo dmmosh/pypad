@@ -212,7 +212,7 @@ class settings:
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
                                 foreground=gl.var['color_bg'])
-        self.drop_bg.current(self.all_colors.index(gl.var['color_bg']))
+        self.drop_bg.current(self.data.index(gl.var['color_bg']))
         self.drop_bg.pack(anchor=W, padx= 7, pady= 7)
 
         text(self.theme, "Foreground color:").pack(anchor=W, padx= 7, pady= 3)
@@ -221,7 +221,7 @@ class settings:
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
                                 foreground=gl.var['color_bg'])
-        self.drop_fg.current(self.all_colors.index(gl.var['color_fg']))
+        self.drop_fg.current(self.data.index(gl.var['color_fg']))
         self.drop_fg.pack(anchor=W, padx= 7, pady= 7)
 
 
