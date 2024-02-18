@@ -240,7 +240,7 @@ class settings:
             restart = 1
             if restart:
                 quit(r)
-                os.system('/usr/bin/python ' + os.path.dirname(os.path.abspath(__file__)) + '/pmain.py')
+                os.execl(sys.executable, sys.executable, *sys.argv)
            
 
     def resolution(self):
