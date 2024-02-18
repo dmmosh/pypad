@@ -116,7 +116,6 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
     options.pack(side=BOTTOM)
 
     out = -1 
-    window.wait_variable(out)
 
     def set(input: bool):
         out = input
@@ -131,6 +130,7 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
     ok.pack(side=LEFT, padx=7, pady=7) 
     cancel.pack(side= RIGHT, padx=7, pady=7)
     
+    window.wait_variable(out)
 
 
 # makes a button
