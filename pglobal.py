@@ -28,3 +28,15 @@ def dump_var():
     var['global_font'] = None
     pickle.dump(var, open(dir_loc+'/var.obj', 'wb'))
 
+# ROOT WINDOW
+r = Tk() 
+# dir_locECTORY OF HELPER FILES
+dir_loc = '/usr/share/pypad'
+
+
+# COMPUTER INFORMATION
+width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
+#colors = pd.read_excel(dir_loc+"/data.xlsx") #reads the excel sheet of colors
+#print(colors) # debug
+
+var = load_var()

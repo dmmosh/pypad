@@ -17,20 +17,6 @@ python script doesnt close automatically when typing quit()/exit() or pressing n
 compiled file doesnt have the problem
 '''
 
-
-# ROOT WINDOW
-r = Tk() 
-# dir_locECTORY OF HELPER FILES
-dir_loc = '/usr/share/pypad'
-
-
-# COMPUTER INFORMATION
-width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
-#colors = pd.read_excel(dir_loc+"/data.xlsx") #reads the excel sheet of colors
-#print(colors) # debug
-
-var = load_var()
-
 # OTHER FUNCTIONS / CLASSEES
 # quits the program
 def quit(window):
