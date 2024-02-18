@@ -129,8 +129,8 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
     cancel.pack(side= RIGHT, padx=7, pady=7)
     
     out = -1 
-    window.wait_variable(out)
-    print(out)
+    window.wait_variable(box)
+    
 
     quit(box)
     return out
