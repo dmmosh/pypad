@@ -99,8 +99,8 @@ def yes_or_no(window = gl.r, message:str = "Yes or no?", width:int = 300, height
     
     out = IntVar(value=-1)
 
-    box.bind('<Return>', lambda: out.set(1))
-    box.bind('<Escape>', lambda: out.set(0))
+    box.bind('<Return>', lambda event: out.set(1))
+    box.bind('<Escape>', lambda event: out.set(0))
     
     window.wait_variable(out)
 
