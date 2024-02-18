@@ -12,7 +12,7 @@ if exists(PATH_PIDFILE):
         pid = int(pid) if pid.isnumeric() else None
     if pid is not None and pid_exists(pid) and Process(pid).cmdline() == Process(my_pid).cmdline():
         print("PROCESS ALREADY RUNNING")
-        gl.r.deiconify()
+        quit()
 with open(PATH_PIDFILE, 'w') as f:
     f.write(str(my_pid))
 
@@ -54,7 +54,7 @@ term_btn.pack(side=RIGHT, anchor=NE)
 
 btn = {
     'quit': make_btn(window=term_btn,
-                     command=lambda: hide(gl.r),
+                     command=lambda: gl.r.quit(),
                      text='➥',
                      font=Font(size=20)), #quit button
 
@@ -69,7 +69,7 @@ gl.r.attributes('-type', 'dialog') # makes it a floating window
 gl.r.geometry(f"{ gl.var['win_w'] }x{ gl.var['win_h'] }+{ gl.var['loc_x'] }+{ gl.var['loc_y'] }") # locks it in bottom right
 gl.r.title('pypad') # gives the title
 gl.r.config(background=gl.var['color_bg']) # sets background color
-gl.r.bind('<Num_Lock>', lambda event: quit(gl.r)) # assigns num lock as quit
+gl.r.bind('<Num_Lock>', lambda event: gl.r.quit()) # assigns num lock as quit
 
 
 # if theres num lock in the system
@@ -78,13 +78,13 @@ if 'Num Lock:    off' in sys_out("xset -q | grep Caps"):
 
 # if hover quit is on
 if gl.var['hover_quit']:
-    gl.r.bind('<Leave>', lambda: quit(gl.r))
+    gl.r.bind('<Leave>', lambda: gl.r.quit())
 
 
 # TERMINAL WIDGET  
 term = Frame(gl.r, height=gl.var['win_h'], width=gl.var['win_w']-50)
 term.pack(side=LEFT, anchor=NW, expand=TRUE)
-term.bind('<Num_Lock>', lambda: quit(gl.r))
+term.bind('<Num_Lock>', lambda: gl.r.quit())
 term.focus_set()
 wid = term.winfo_id()
 
