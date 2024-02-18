@@ -29,6 +29,6 @@ width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and h
 #colors = pd.read_excel(dir_loc+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
 
-var = pickle.load(open(dir_loc+'/usr/share/pypad/var.obj', 'rb'))
+var = pickle.load(open(dir_loc+'/var.obj', 'rb'))
 var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
                         size=var['font_size'])
