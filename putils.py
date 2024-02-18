@@ -192,7 +192,7 @@ class settings:
         # THEME BUTTONS
         text(self.theme, "THEME OPTIONS:", font_size= 23).pack(anchor=W, padx= 7, pady= 7)
 
-        text(self.theme, "Background color:").pack(anchor=W)
+        text(self.theme, "Background color:").pack(anchor=W, padx= 7, pady= 7)
         self.all_colors = list(pickle.load(open(gl.dir_loc+'/data.obj', 'rb'))['name']) # imports the colors
         #print(self.all_colors)
         self.drop_bg = Combobox(self.theme, 
