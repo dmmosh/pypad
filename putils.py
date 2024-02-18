@@ -63,6 +63,11 @@ def msg_box(message:str = "Error", title:str = 'ERROR', width:int = 300, height:
     box.bind('<Escape>', lambda event:quit(box))
     box.title(title)
 
+    box.bind('<Return>', lambda event: lambda:quit(box))
+    box.bind('<Escape>', lambda event: lambda:quit(box))
+    box.bind('<BackSpace>', lambda event: lambda:quit(box))
+    box.bind('<Delete>', lambda event: lambda:quit(box))
+
     text(window=box, input=message, width=width).pack()
 
     ok = make_btn(box, text='okie dokie ✓', command=lambda:quit(box))
@@ -151,8 +156,12 @@ class settings:
         self.settings = new_window('colors', '500x800')
         self.settings.config(background=gl.var['color_bg'])
         #color.bind('<Num_Lock>', lambda: quit(color))
-        self.settings.bind('<Escape>', lambda event:quit(self.settings))
         self.settings.title('Settings')
+        self.settings.bind('<Return>', lambda event:self.save())
+        self.settings.bind('<Escape>', lambda event:quit(self.settings))
+        self.settings.bind('<BackSpace>', lambda event:quit(self.settings))
+        self.settings.bind('<Delete>', lambda event:quit(self.settings))
+
 
         # FRAMES
         self.bottom_btn = Frame(self.settings, 
