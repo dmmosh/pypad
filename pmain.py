@@ -255,10 +255,9 @@ class settings:
 
     #DEFAULTS ALL THE VALUES
     def default(self):
-        temp = pickle.load(open(dir+'/default_var.obj', 'rb'))
-        print(temp)
-        var['color_bg'] = 'Black'
         var['global_font'] = None # cant pickle tkinter objects
+        var = pickle.load(open(dir+'/default_var.obj', 'rb'))
+        print(var)
         dump_var()
         quit(r)
         os.execl(sys.executable, sys.executable, *sys.argv)
