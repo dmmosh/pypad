@@ -257,6 +257,7 @@ class settings:
     def default(self):
         temp = pickle.load(open(dir+'/default_var.obj', 'rb'))
         print(temp)
+        var['color_bg'] = 'Black'
         var['global_font'] = None # cant pickle tkinter objects
         dump_var()
 
