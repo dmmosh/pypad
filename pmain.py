@@ -57,13 +57,13 @@ if 'Num Lock:    off' in sys_out("xset -q | grep Caps"):
 
 # if hover quit is on
 if gl.var['hover_quit']:
-    gl.r.bind('<Leave>', lambda event: quit(gl.r))
+    gl.r.bind('<Leave>', lambda: quit(gl.r))
 
 
 # TERMINAL WIDGET  
 term = Frame(gl.r, height=gl.var['win_h'], width=gl.var['win_w']-50)
 term.pack(side=LEFT, anchor=NW, expand=TRUE)
-term.bind('<Num_Lock>', lambda event: quit(gl.r))
+term.bind('<Num_Lock>', lambda: quit(gl.r))
 term.focus_set()
 wid = term.winfo_id()
 
