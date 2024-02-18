@@ -27,7 +27,7 @@ var = {
     'auto_cursor': True,
 
     # theme settings
-    'font': 'Source Code Pro,Source Code Pro Semibold', # terminal font
+    'font': ' Source Code Pro,Source Code Pro Semibold', # terminal font
     'font_size': 17, # the font size
     'global_font': None, # will access element inside it, leave None rn
     'color_bg': 'Black', #default color for background
