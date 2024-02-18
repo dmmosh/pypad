@@ -257,6 +257,7 @@ class settings:
     def default(self):
         test = pickle.load(open(dir+'/default_var.obj', 'rb'))
         print(test)
+        var['global_font'] = None # cant pickle tkinter objects
         dump_var()
 
 
