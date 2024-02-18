@@ -1,5 +1,5 @@
 from putils import *
-
+from pglobal import *
 
 # LOAD VARIABLES
 load_var()

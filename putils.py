@@ -7,6 +7,7 @@ import pickle
 from mouse import move
 import sys
 import os # imports os
+from pglobal import *
 
 '''
 SOURCE CODE
@@ -25,12 +26,6 @@ python script doesnt close automatically when typing quit()/exit() or pressing n
 compiled file doesnt have the problem
 '''
 
-# GLOBAL VARIABLES
-global dir 
-global r
-global var
-global width
-global height
 
 # ROOT WINDOW
 r = Tk() 
