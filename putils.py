@@ -155,7 +155,7 @@ class settings:
 
 
         self.options = Frame(self.settings, bg=gl.var['color_bg'])
-        self.options.pack(side=TOP, padx=20, pady=20)
+        self.options.pack(side=TOP, padx=7, pady=7, anchor=W)
 
         # BOTTOM BUTTONS
         self.save_btn = make_btn(window=self.bottom_btn, 
