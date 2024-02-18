@@ -119,8 +119,6 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
 
     def set(input: bool):
         out = input
-        quit(box)
-        return out
 
 
     # ok and cancel buttons
@@ -131,6 +129,9 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
     cancel.pack(side= RIGHT, padx=7, pady=7)
     
     window.wait_variable(out)
+
+    quit(box)
+    return out
 
 
 # makes a button
@@ -247,6 +248,7 @@ class settings:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
             self.out = yes_or_no(self.settings, message='\nSettings saved.\nRestart now?')
+            print(self.out)
 
             if self.out:
                 quit(r)
