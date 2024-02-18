@@ -129,6 +129,7 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
     
     out = -1 
     window.wait_variable(out)
+    print(out)
 
     quit(box)
     return out
