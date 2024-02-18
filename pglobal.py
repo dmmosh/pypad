@@ -15,17 +15,6 @@ global var
 global width
 global height
 
-# ROOT WINDOW
-r = Tk() 
-# DIRECTORY OF HELPER FILES
-dir = '/usr/share/pypad'
-
-
-# COMPUTER INFORMATION
-width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
-#colors = pd.read_excel(dir+"/data.xlsx") #reads the excel sheet of colors
-#print(colors) # debug
-
 def load_var():
     # GLOBAL VARIABLES
     var = pickle.load(open(dir + '/var.obj', 'rb'))
@@ -39,4 +28,3 @@ def dump_var():
     var['global_font'] = None
     pickle.dump(var, open(dir+'/var.obj', 'wb'))
 
-var = load_var()
