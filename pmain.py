@@ -25,7 +25,7 @@ i dont recommend running the program through python because of these issues
 
 '''
 
-from putils import make_btn, exit # imports make button function
+from putils import make_btn  # imports make button function
 
 def settings_window(): # only imports the settings class if it's called
     from putils import settings
@@ -65,20 +65,20 @@ if 'Num Lock:    off' in os.popen("xset -q | grep Caps").read():
 
 # if hover quit is on
 if gl.var['hover_quit']:
-    gl.r.bind('<Leave>', lambda: r.quit())
+    gl.r.bind('<Leave>', lambda event: r.quit())
 
 
 # TERMINAL WIDGET  
 term = Frame(gl.r, height=gl.var['win_h'], width=gl.var['win_w']-50)
 term.pack(side=LEFT, anchor=NW, expand=TRUE)
-term.bind('<Num_Lock>', lambda: r.quit())
+term.bind('<Num_Lock>', lambda event: r.quit())
 term.focus_set()
 wid = term.winfo_id()
 
 # terminal widget
 # python runs libraries.py and automatically opens afterwards
 # puts process's pid as arg 1 (will be deleting later)
-os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -geometry {gl.var['win_h']}x{gl.var['win_w']-50} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py {str(os.getpid())} && exit' &")
+os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py {str(os.getpid())} && exit' &")
 
 
 
