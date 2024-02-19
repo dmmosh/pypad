@@ -4,6 +4,7 @@ import os
 from math import * 
 #from numpy import *
 
+# TRIES TO IMPORT SOME LIBRARIES
 
 # QUIT AND EXIT FUNCTION OVERRIDE
 #TODO: change what this closes
