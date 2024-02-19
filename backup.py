@@ -55,3 +55,21 @@ def yes_or_no(window = r, message:str = "Yes or no?", width:int = 300, height:in
     quit(box)
     return out
 
+
+# CHECKING IF THE PROCESS IS ALREADY RUNNING
+
+# hidden tmp file, in home directory
+PATH_PIDFILE = environ['HOME'] + '/.pypad.tmp'
+my_pid = os.getpid()
+if exists(PATH_PIDFILE):
+    with open(PATH_PIDFILE) as f:
+        pid = f.read()
+        pid = int(pid) if pid.isnumeric() else None
+    if pid is not None and pid_exists(pid) and Process(pid).cmdline() == Process(my_pid).cmdline():
+        print("ERROR: PYPAD ALREADY RUNNING")
+        r.quit()
+with open(PATH_PIDFILE, 'w') as f:
+    f.write(str(my_pid))
+
+# confirm theres a pid
+#print(pids().index(os.getpid()))

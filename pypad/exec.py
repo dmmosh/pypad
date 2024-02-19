@@ -8,11 +8,13 @@ from math import *
 # QUIT AND EXIT FUNCTION OVERRIDE
 #TODO: change what this closes
 def quit():
-    os.system("kill -9 -f " + sys.argv[1]) #kills the pypad executable
+    os.system("kill -9 -f " + sys.argv[1]) #kills the script (if running)
+    os.system("pkill -9 -f pypad") #kills the pypad executable
     sys.exit()
 
 def exit():
-    os.system("kill -9 -f " + sys.argv[1]) #kills the pypad executable
+    os.system("kill -9 -f " + sys.argv[1])
+    os.system("pkill -9 -f pypad") #kills the pypad executable
     sys.exit()
 
 # MAKES SURE THAT PYNPUT IS INSTALLED 

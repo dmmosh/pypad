@@ -1,26 +1,5 @@
 import pglobal as gl
 from pglobal import *
-import time
-
-
-# CHECKING IF THE PROCESS IS ALREADY RUNNING
-
-# hidden tmp file, in home directory
-PATH_PIDFILE = environ['HOME'] + '/.pypad.tmp'
-my_pid = os.getpid()
-if exists(PATH_PIDFILE):
-    with open(PATH_PIDFILE) as f:
-        pid = f.read()
-        pid = int(pid) if pid.isnumeric() else None
-    if pid is not None and pid_exists(pid) and Process(pid).cmdline() == Process(my_pid).cmdline():
-        print("ERROR: PYPAD ALREADY RUNNING")
-        r.quit()
-with open(PATH_PIDFILE, 'w') as f:
-    f.write(str(my_pid))
-
-# confirm theres a pid
-#print(pids().index(os.getpid()))
-
 
 '''
 SOURCE CODE
@@ -46,7 +25,7 @@ i dont recommend running the program through python because of these issues
 
 '''
 
-from putils import make_btn # imports make button function
+from putils import make_btn, exit # imports make button function
 
 def settings_window(): # only imports the settings class if it's called
     from putils import settings
@@ -62,7 +41,7 @@ term_btn.pack(side=RIGHT, anchor=NE)
 
 btn = {
     'quit': make_btn(window=term_btn,
-                     command=lambda: gl.r.quit(),
+                     command=lambda: exit(),
                      text='➥',
                      font=Font(size=20)), #quit button
 
@@ -77,7 +56,7 @@ gl.r.attributes('-type', 'dialog') # makes it a floating window
 gl.r.geometry(f"{ gl.var['win_w'] }x{ gl.var['win_h'] }+{ gl.var['loc_x'] }+{ gl.var['loc_y'] }") # locks it in bottom right
 gl.r.title('pypad') # gives the title
 gl.r.config(background=gl.var['color_bg']) # sets background color
-gl.r.bind('<Num_Lock>', lambda event: gl.r.quit()) # assigns num lock as quit
+gl.r.bind('<Num_Lock>', lambda event: exit()) # assigns num lock as quit
 
 
 # if theres num lock in the system
@@ -86,20 +65,20 @@ if 'Num Lock:    off' in os.popen("xset -q | grep Caps").read():
 
 # if hover quit is on
 if gl.var['hover_quit']:
-    gl.r.bind('<Leave>', lambda: gl.r.quit())
+    gl.r.bind('<Leave>', lambda: exit())
 
 
 # TERMINAL WIDGET  
 term = Frame(gl.r, height=gl.var['win_h'], width=gl.var['win_w']-50)
 term.pack(side=LEFT, anchor=NW, expand=TRUE)
-term.bind('<Num_Lock>', lambda: gl.r.quit())
+term.bind('<Num_Lock>', lambda: exit())
 term.focus_set()
 wid = term.winfo_id()
 
 # terminal widget
 # python runs libraries.py and automatically opens afterwards
 # puts process's pid as arg 1 (will be deleting later)
-os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -geometry {gl.var['win_h']}x{gl.var['win_w']-50} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py {str(os.getpid())} && exit' &")
+os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -geometry {gl.var['win_h']}x{gl.var['win_w']-50} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && pkill -9 -f pypad' &")
 
 
 
