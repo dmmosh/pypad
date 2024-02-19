@@ -12,7 +12,7 @@ if exists(PATH_PIDFILE):
     with open(PATH_PIDFILE) as f:
         pid = f.read()
         pid = int(pid) if pid.isnumeric() else None
-    if pid is not None and pid_exists(pid) and Process(pid).cmdline() == Process(my_pid).cmdline():
+    if pid is not None and pid_exists(pid) and Process(pid).cmdline() == Process(my_pid).cmdline() and sys.argv[1] != 'restart':
         print("ERROR: PYPAD ALREADY RUNNING")
         quit()
 with open(PATH_PIDFILE, 'w') as f:
