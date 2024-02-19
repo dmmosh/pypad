@@ -26,6 +26,9 @@ r = Tk()
 # dir_locECTORY OF HELPER FILES
 dir_loc = '/usr/share/pypad'
 
+def quit_all():
+    r.quit()
+    r.destroy()
 
 # COMPUTER INFORMATION
 width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and height of the computer
@@ -35,3 +38,10 @@ width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and h
 var = pickle.load(open(dir_loc+'/var.obj', 'rb'))
 var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
                         size=var['font_size'])
+
+
+r.attributes('-type', 'dialog') # makes it a floating window
+r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }") # locks it in bottom right
+r.title('pypad') # gives the title
+r.config(background=var['color_bg'], cursor='arrow') # sets background color
+r.bind('<Num_Lock>', lambda event: quit_all()) # assigns num lock as quit

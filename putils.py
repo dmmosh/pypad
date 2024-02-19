@@ -24,10 +24,6 @@ def dump_var():
 def quit(window):
     window.destroy()
 
-def quit_all():
-    r.quit()
-    r.destroy()
-
 # makes a new text object
 def text(window=gl.r, input:str = None, font_size = None, width=None, height=None) -> Text:
     out = Label(window, 
@@ -240,6 +236,7 @@ class settings:
         self.drop_fg = Combobox(self.theme, 
                                 values=self.data['name'], 
                                 font=gl.var['global_font'],
+                                cursor='arrow',
                                 background=gl.var['color_fg'],
                                 foreground=gl.var['color_bg'])
         self.drop_fg.current(self.data['name'].index(gl.var['color_fg']))
