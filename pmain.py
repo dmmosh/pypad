@@ -2,9 +2,11 @@ import pglobal as gl
 from pglobal import *
 import time
 
+
+# CHECKING IF THE PROCESS IS ALREADY RUNNING
+
 # hidden tmp file, in home directory
 PATH_PIDFILE = environ['HOME'] + '/.pypad.tmp'
-
 my_pid = os.getpid()
 if exists(PATH_PIDFILE):
     with open(PATH_PIDFILE) as f:
@@ -19,7 +21,6 @@ with open(PATH_PIDFILE, 'w') as f:
 # confirm theres a pid
 #print(pids().index(os.getpid()))
 
-from putils import *
 
 '''
 SOURCE CODE
@@ -45,6 +46,13 @@ i dont recommend running the program through python because of these issues
 
 '''
 
+from putils import make_btn # imports make button function
+
+def settings_window(): # only imports the settings class if it's called
+    from putils import settings
+    settings()
+
+
 
 
 # terminal buttons frame
@@ -59,7 +67,7 @@ btn = {
                      font=Font(size=20)), #quit button
 
     'settings': make_btn(window=term_btn,
-                         command=lambda:settings(), 
+                         command=lambda:settings_window(), 
                          text='⚙',
                          font=Font(size=20)) #settings button
 }
@@ -73,7 +81,7 @@ gl.r.bind('<Num_Lock>', lambda event: gl.r.quit()) # assigns num lock as quit
 
 
 # if theres num lock in the system
-if 'Num Lock:    off' in sys_out("xset -q | grep Caps"):
+if 'Num Lock:    off' in os.popen("xset -q | grep Caps").read():
     Controller().press(Key.num_lock) # script presses num lock
 
 # if hover quit is on

@@ -24,14 +24,6 @@ def dump_var():
 def quit(window):
     window.destroy()
 
-# hides the window
-def hide(window):
-    window.withdraw()
-
-# gets output of a system command
-def sys_out(cmd:str):
-    return os.popen(cmd).read()
-
 # makes a new text object
 def text(window=gl.r, input:str = None, font_size = None, width=None, height=None) -> Text:
     out = Label(window, 
