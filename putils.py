@@ -24,8 +24,9 @@ def dump_var():
 def quit(window):
     window.destroy()
 
-def exit():
-    os.system("pkill -9 -f pypad")
+def quit_all():
+    r.quit()
+    r.destroy()
 
 # makes a new text object
 def text(window=gl.r, input:str = None, font_size = None, width=None, height=None) -> Text:
