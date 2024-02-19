@@ -1,5 +1,4 @@
 from tkinter import *  # tkinter
-from tkinter import messagebox as mb
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
 from pynput.keyboard import Key, Controller # imports key and controller
@@ -9,8 +8,8 @@ from psutil import pid_exists, Process, pids
 import pickle
 from mouse import move
 import sys
-import os # imports os
 from os import environ
+import os # imports os
 
 # GLOBAL VARIABLES
 '''
