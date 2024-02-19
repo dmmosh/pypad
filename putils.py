@@ -228,6 +228,7 @@ class settings:
         # BACKGROUND COLOR
         self.drop_bg = Combobox(self.theme, 
                                 values=self.data['name'], 
+                                cursor='arrow',
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
                                 foreground=gl.var['color_bg'])
