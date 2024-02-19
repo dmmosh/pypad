@@ -278,7 +278,6 @@ class settings:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
         else:
             if yes_or_no(message='Settings saved.\nRestart now?', width= 300) == 1:
-                os.system("kill -9 -f " + str(os.getpid()))
                 os.execl(sys.executable, sys.executable, *sys.argv)
             
 
@@ -292,7 +291,6 @@ class settings:
         else:
             
             if yes_or_no(message='Settings defaulted.\nRestart now?', width= 400) == 1:
-                os.system("kill -9 -f " + str(os.getpid()))
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
     # checks if input is an integer
