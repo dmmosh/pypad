@@ -279,6 +279,8 @@ class settings:
         else:
             if yes_or_no(message='Settings saved.\nRestart now?', width= 300) == 1:
                 #os.execv(sys.executable, [sys.executable, sys.argv[0], 'RESTART'])
+                with open(environ['HOME'] + '/.pypad.tmp', 'w') as f:
+                    f.write('000000')
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
 
