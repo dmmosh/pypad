@@ -101,7 +101,7 @@ os.system(f"""xterm  \\
           -into {wid} \\
           -bg {gl.var['color_bg']} \\
           -fg {gl.var['color_fg']} \\
-          -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py >> {os.environ['HOME']}/.pypad 2>&1 && exit' &
+          -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &
           """)
 
 # if theres num lock in the system
