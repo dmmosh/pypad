@@ -69,7 +69,7 @@ btn = {
     'settings': Button(r, 
                     text='⚙', 
                     command=lambda: settings_window(),
-                    font=Font(size=20)
+                    font=Font(size=20),
                     highlightcolor=gl.var['color_fg'],
                     highlightthickness=2,
                     highlightbackground=gl.var['color_fg'],
