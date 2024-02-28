@@ -48,7 +48,7 @@ wid = term.winfo_id()
 # terminal buttons frame
 term_btn = Frame(gl.r, 
                  background=gl.var['color_bg'])
-#term_btn.pack(side=RIGHT, anchor=NE)
+term_btn.pack(side=RIGHT, anchor=NE)
 
 
 # convert screen units to pixels
