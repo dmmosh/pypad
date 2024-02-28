@@ -34,10 +34,6 @@ def settings_window(): # only imports the settings class if it's called
 print(gl.var['loc_x'], gl.var['loc_y'])
 
 
-# terminal buttons frame
-term_btn = Frame(gl.r, width=50)
-term_btn.pack(side=LEFT, anchor=NE)
-
 
 btn = {
     'quit': make_btn(window=term_btn,
@@ -67,6 +63,12 @@ term.pack(side=LEFT, expand=TRUE, fill=BOTH)
 term.bind('<Num_Lock>', lambda event: quit_all())
 term.focus_set()
 wid = term.winfo_id()
+
+# terminal buttons frame
+term_btn = Frame(gl.r, width=50)
+term_btn.pack(side=LEFT, anchor=NE)
+
+
 
 # terminal widget
 # python runs libraries.py and automatically opens afterwards
