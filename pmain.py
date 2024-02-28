@@ -75,8 +75,8 @@ if gl.var['auto_cursor'] == True:
     gl.r.update()
     move(term.winfo_rootx()+30, term.winfo_rooty()+30) # moves the mouse
 
-btn['settings'].pack(side=TOP)
-btn['quit'].pack(side=TOP)
+btn['settings'].pack(side=TOP, anchor=NW)
+btn['quit'].pack(side=TOP, anchor=NW)
 
 gl.r.mainloop()  
 
