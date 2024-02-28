@@ -38,16 +38,14 @@ print(gl.var['loc_x'], gl.var['loc_y'])
 
 # TERMINAL WIDGET  
 term = Frame(gl.r, height=gl.r.winfo_height(), width=gl.r.winfo_width()-50)
-term.pack(anchor=SW, expand=TRUE, fill=BOTH)
+term.pack(side=LEFT, expand=TRUE, fill=BOTH)
 term.bind('<Num_Lock>', lambda event: quit_all())
 term.focus_set()
-term.grid_columnconfigure(1,weight=1)
-term.grid_rowconfigure(1,weight=1)
 wid = term.winfo_id()
 
 # terminal buttons frame
 term_btn = Frame(gl.r, width=50)
-term_btn.pack(anchor=NW)
+term_btn.pack(size=LEFT)
 
 
 btn = {
