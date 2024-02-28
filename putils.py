@@ -210,6 +210,15 @@ class settings:
         # RESOLUTION BUTTONS
         text(self.res, input="RESOLUTION:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
 
+        self.hover = gl.var['hover_quit']
+        Checkbutton(self.res, variable=self.hover, onvalue=True, offvalue=False).pack(anchor=W, padx=7, pady=7)
+
+
+        self.cursor = gl.var['auto_cursor']
+        Checkbutton(self.res, variable=self.cursor, onvalue=True, offvalue=False).pack(anchor=W, padx=7, pady=7)
+
+
+        # ----------------------------
 
         # THEME BUTTONS
         text(self.theme, "THEME:", font_size= 23).pack(anchor=W, padx= 7, pady= 7)
@@ -219,7 +228,6 @@ class settings:
 
         self.data = pickle.load(open(gl.dir_loc+'/data.obj', 'rb')) # imports the colors
 
-        #print(self.all_colors)
 
         # BACKGROUND COLOR
         self.drop_bg = Combobox(self.theme, 
