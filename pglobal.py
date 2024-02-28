@@ -6,7 +6,6 @@ import pidfile as pf # checks if program is running
 from os.path import exists
 from psutil import pid_exists, Process, pids
 import pickle
-import time
 from mouse import move
 import sys
 from os import environ
@@ -46,3 +45,4 @@ r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }
 r.title('pypad') # gives the title
 r.config(background=var['color_bg'], cursor='arrow') # sets background color
 r.bind('<Num_Lock>', lambda event: quit_all()) # assigns num lock as quit
+r.minsize(width=100, height=100)

@@ -11,7 +11,6 @@ screen_width, screen_height = r.winfo_screenwidth(), r.winfo_screenheight()
 win_width, win_height = r.winfo_width(), r.winfo_height()
 
 
-screen_width, screen_height = 500,300
 
 '''
 VARIABLE OBJECT
