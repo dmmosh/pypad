@@ -28,30 +28,34 @@ i dont recommend running the program through python because of these issues
 from putils import quit_all  # imports make button function
 
 def settings_window(): # only imports the settings class if it's called
-    from putils import settings
-    settings()
+    import putils
+    putils.settings()
 
 
 
 
 
 # TERMINAL WIDGET  
-term = Frame(gl.r,background=gl.var['color_bg'])
+term = Frame(gl.r,
+             background=gl.var['color_fg'],
+             width=var['win_w']-100,
+             height=var['win_h'])
 term.pack(side=LEFT, expand=TRUE, fill=BOTH)
 term.bind('<Num_Lock>', lambda event: quit_all())
 term.focus_set()
 wid = term.winfo_id()
 
 # terminal buttons frame
-term_btn = Frame(gl.r, background=gl.var['color_bg'])
-term_btn.pack(side=LEFT, anchor=NW)
+term_btn = Frame(gl.r, 
+                 background=gl.var['color_bg'])
+#term_btn.pack(side=RIGHT, anchor=NE)
 
 
 # convert screen units to pixels
 pixel = PhotoImage(width=20, height=20)
 
 btn = {
-    'quit': Button(r, 
+    'quit': Button(term_btn, 
                     text='➥', 
                     command=lambda: quit_all(),
                     font=Font(size=20),
@@ -67,7 +71,7 @@ btn = {
                     bg=gl.var['color_bg'], 
                     fg=gl.var['color_fg']),
     
-    'settings': Button(r, 
+    'settings': Button(term_btn, 
                     text='⚙', 
                     command=lambda: settings_window(),
                     font=Font(size=20),
@@ -106,6 +110,14 @@ btn['quit'].pack(side=TOP, anchor=NW)
 # updates width anf height if needed, recursively
 def window_size():
     print(gl.r.winfo_width(), gl.r.winfo_height())
+    print(gl.width, gl.height)
+    print('TERMINAL INFO: ', term.winfo_width(), term.winfo_height())
+    if (gl.r.winfo_width() != var['win_w']):
+        var['win_w'] = gl.r.winfo_width()
+        os.system('pkill xterm')
+        os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &")
+    
+
     gl.r.after(1000,window_size)
 
 gl.r.after(1000,window_size) # calls the infinite check

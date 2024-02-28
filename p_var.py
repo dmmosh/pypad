@@ -7,8 +7,6 @@ import os # imports os
 # main window
 r = Tk()
 #screen and window variables
-screen_width, screen_height = r.winfo_screenwidth(), r.winfo_screenheight()
-win_width, win_height = r.winfo_width(), r.winfo_height()
 
 
 
@@ -24,8 +22,8 @@ var = {
     # resolution, general settings
     'win_w': 800, # window width
     'win_h': 120, #window height
-    'loc_x': screen_width-500, # x coordinate for the terminal window
-    'loc_y': screen_height-300, # y coordinate for the terminal window
+    'loc_x': 0, # x coordinate for the terminal window
+    'loc_y': 0, # y coordinate for the terminal window
     'hover_quit': False, #whether to quit when mouse goes out of box
     'auto_cursor': True,
 
