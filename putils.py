@@ -208,7 +208,7 @@ class settings:
         # ALL SETTINGS BUTTONS (will pack later)
 
         # RESOLUTION BUTTONS
-        #text(self.res, input="RESOLUTION OPTIONS:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
+        text(self.res, input="RESOLUTION OPTIONS:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
 
 
         # THEME BUTTONS
