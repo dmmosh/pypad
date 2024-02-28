@@ -55,7 +55,7 @@ btn = {
     'quit': Button(r, 
                     text='➥', 
                     command=lambda: quit_all(),
-                    font=Font(size=20)
+                    font=Font(size=20),
                     highlightcolor=gl.var['color_fg'],
                     highlightthickness=2,
                     highlightbackground=gl.var['color_fg'],
