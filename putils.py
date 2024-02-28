@@ -212,11 +212,9 @@ class settings:
 
         self.hover = gl.var['hover_quit']
         self.hover_box = Checkbutton(self.res, variable=self.hover, onvalue=True, offvalue=False).pack(anchor=W, padx=7, pady=7)
-        self.hover_box.select()
 
         self.cursor = gl.var['auto_cursor']
         self.cursor_box = Checkbutton(self.res, variable=self.cursor, onvalue=True, offvalue=False).pack(anchor=W, padx=7, pady=7)
-        self.cursor_box.select()
 
         # ----------------------------
 
