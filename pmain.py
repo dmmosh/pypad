@@ -36,7 +36,7 @@ print(gl.var['loc_x'], gl.var['loc_y'])
 
 # terminal buttons frame
 term_btn = Frame(gl.r, width=50)
-term_btn.pack(side=RIGHT, anchor=NE)
+term_btn.pack(side=LEFT, anchor=NE)
 
 
 btn = {
