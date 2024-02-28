@@ -55,12 +55,14 @@ btn = {
     'quit': make_btn(window=term_btn,
                      image=pixel,
                      command=lambda: quit_all(),
+                     compound='c',
                      text='➥',
                      font=Font(size=20)), #quit button
 
     'settings': make_btn(window=term_btn,
                          image=pixel,
                          command=lambda:settings_window(), 
+                         compound='c',
                          text='⚙',
                          font=Font(size=20)) #settings button
 }
