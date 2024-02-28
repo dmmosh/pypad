@@ -54,7 +54,6 @@ pixel = PhotoImage(width=1, height=1)
 btn = {
     'quit': make_btn(window=term_btn,
                      image=pixel,
-                     width=50, 
                      height=50,
                      command=lambda: quit_all(),
                      text='➥',
@@ -62,7 +61,6 @@ btn = {
 
     'settings': make_btn(window=term_btn,
                          image=pixel,
-                         width=50, 
                          height=50,
                          command=lambda:settings_window(), 
                          text='⚙',
