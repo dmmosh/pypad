@@ -92,7 +92,7 @@ btn = {
 # terminal widget
 # python runs libraries.py and automatically opens afterwards
 # puts process's pid as arg 1 (will be deleting later)
-os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &")
+os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py > ~/.pypad.txt && exit' &")
 
 # if theres num lock in the system
 if 'Num Lock:    off' in os.popen("xset -q | grep Caps").read():
@@ -114,7 +114,7 @@ def window_size():
     print('TERMINAL INFO: ', term.winfo_width(), term.winfo_height())
     if (gl.r.winfo_width() != var['win_w']):
         var['win_w'] = gl.r.winfo_width()
-        print(term.get())
+
         os.system('pkill xterm')
         os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &")
 
