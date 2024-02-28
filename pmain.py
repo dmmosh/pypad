@@ -52,19 +52,33 @@ term_btn.pack(side=LEFT, anchor=NW)
 pixel = PhotoImage(width=50, height=50)
 
 btn = {
-    'quit': make_btn(window=term_btn,
-                     command=lambda: quit_all(),
-                     text='➥',
-                     font=Font(size=20)).config(
-                         image=pixel, 
-                         compound='c'), #quit button
-
-    'settings': make_btn(window=term_btn,
-                         command=lambda:settings_window(), 
-                         text='⚙',
-                         font=Font(size=20)).config(
-                            image=pixel, 
-                            compound='c') #settings button
+    'quit': Button(r, 
+                    text='➥', 
+                    command=lambda: quit_all(),
+                    font=Font(size=20)
+                    highlightcolor=gl.var['color_fg'],
+                    highlightthickness=2,
+                    highlightbackground=gl.var['color_fg'],
+                    activebackground=gl.var['color_fg'],
+                    activeforeground=gl.var['color_bg'],
+                    image=pixel,
+                    compound='c',
+                    bg=gl.var['color_bg'], 
+                    fg=gl.var['color_fg']),
+    
+    'settings': Button(r, 
+                    text='⚙', 
+                    command=lambda: settings_window(),
+                    font=Font(size=20)
+                    highlightcolor=gl.var['color_fg'],
+                    highlightthickness=2,
+                    highlightbackground=gl.var['color_fg'],
+                    activebackground=gl.var['color_fg'],
+                    activeforeground=gl.var['color_bg'],
+                    image=pixel,
+                    compound='c',
+                    bg=gl.var['color_bg'], 
+                    fg=gl.var['color_fg']),
 }
 
 
@@ -82,6 +96,8 @@ if gl.var['auto_cursor'] == True:
     gl.r.update()
     move(term.winfo_rootx()+30, term.winfo_rooty()+30) # moves the mouse
 
+
+btn['settings'].config(image=pixel, )
 btn['settings'].pack(side=TOP, anchor=NW)
 btn['quit'].pack(side=TOP, anchor=NW)
 
