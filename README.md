@@ -9,6 +9,7 @@ working on an install script
 
 ```
 # to make the program work
+touch $HOME/.pypad
 sudo cp -r ./pypad/ /usr/share/pypad
 sudo chown -R $USER /usr/share/pypad
 ```
