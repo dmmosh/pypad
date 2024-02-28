@@ -80,3 +80,5 @@ btn['quit'].pack(side=TOP, anchor=NW)
 
 gl.r.mainloop()  
 
+print("fdkjdls")
+
