@@ -210,16 +210,6 @@ class settings:
         # RESOLUTION BUTTONS
         text(self.res, input="RESOLUTION:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
 
-        # hover quit checkbox
-        text(self.res, "Hover quit:").pack(anchor=W, padx= 7, pady= 3)
-        self.hover = BooleanVar(value = gl.var['hover_quit'])
-        self.hover_box = Checkbutton(self.res, 
-                                      variable=self.hover,
-                                      onvalue=True,
-                                      offvalue=False,
-                                      background=gl.var['color_fg'],
-                                      foreground=gl.var['color_bg']).pack(anchor=W, padx=7, pady=3)
-
 
         text(self.res, "Auto cursor:").pack(anchor=W, padx= 7, pady= 3)
         self.cursor = BooleanVar(value = gl.var['auto_cursor'])
