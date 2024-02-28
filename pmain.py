@@ -65,8 +65,8 @@ btn = {
                          compound='c',
                          text='⚙',
                          font=Font(size=20)).config(
-                         image=pixel, 
-                         compound='c') #settings button
+                            image=pixel, 
+                            compound='c') #settings button
 }
 
 
