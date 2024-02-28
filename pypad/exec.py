@@ -22,7 +22,7 @@ def on_press(key):
         exit()
     
 for line in open(os.environ['HOME']+'/.pypad'):
-    eval(line)
+    exec(line)
 
 try:
     from pynput.keyboard import Key, Listener, KeyCode
