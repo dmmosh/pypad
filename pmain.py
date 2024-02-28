@@ -41,6 +41,8 @@ term = Frame(gl.r, height=gl.r.winfo_height(), width=gl.r.winfo_width()-50)
 term.pack(side=LEFT, expand=TRUE, fill=BOTH)
 term.bind('<Num_Lock>', lambda event: quit_all())
 term.focus_set()
+term.grid_columnconfigure(1,weight=1)
+term.grid_rowconfigure(1,weight=1)
 wid = term.winfo_id()
 
 # terminal buttons frame
@@ -79,3 +81,4 @@ btn['settings'].pack(anchor=N)
 btn['quit'].pack(anchor=N)
 
 gl.r.mainloop()  
+
