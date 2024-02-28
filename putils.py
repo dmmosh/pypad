@@ -307,8 +307,6 @@ class settings:
         else:
             
             if yes_or_no(message='Settings defaulted.\nRestart now?', width= 400) == 1:
-                with open(environ['HOME'] + '/.pypad.tmp', 'w') as f:
-                    f.write('000000')
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
     # checks if input is an integer

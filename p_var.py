@@ -4,10 +4,14 @@ from pynput.keyboard import Key, Controller # imports key and controller
 import pickle
 import os # imports os
 
-
+# main window
 r = Tk()
-width, height = r.winfo_screenwidth(), r.winfo_screenheight()
+#screen and window variables
+screen_width, screen_height = r.winfo_screenwidth(), r.winfo_screenheight()
+win_width, win_height = r.winfo_width(), r.winfo_height()
 
+
+screen_width, screen_height = 500,300
 
 '''
 VARIABLE OBJECT
@@ -19,10 +23,10 @@ here for backup
 
 var = {
     # resolution, general settings
-    'win_w': width//6, # window width
-    'win_h': height//10, #window height
-    'loc_x': width-(width//5.7), # x coordinate for the terminal window
-    'loc_y': height -(height//6), # y coordinate for the terminal window
+    'win_w': 500, # window width
+    'win_h': 300, #window height
+    'loc_x': screen_width-500, # x coordinate for the terminal window
+    'loc_y': screen_height-300, # y coordinate for the terminal window
     'hover_quit': False, #whether to quit when mouse goes out of box
     'auto_cursor': True,
 
