@@ -6,7 +6,6 @@ import pidfile as pf # checks if program is running
 from os.path import exists
 from psutil import pid_exists, Process, pids
 import pickle
-import time
 from mouse import move
 import sys
 from os import environ

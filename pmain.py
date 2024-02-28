@@ -25,7 +25,7 @@ i dont recommend running the program through python because of these issues
 
 '''
 
-from putils import make_btn, quit_all  # imports make button function
+from putils import quit_all  # imports make button function
 
 def settings_window(): # only imports the settings class if it's called
     from putils import settings
@@ -51,12 +51,21 @@ term_btn.pack(side=LEFT, anchor=NW)
 pixel = PhotoImage(width=20, height=20)
 
 btn = {
-    'quit': make_btn(text='➥',
-                     command=lambda: quit_all(),
-                     font=Font(size=20),
-                     width=20,
-                     height=20
-                    ),
+    'quit': Button(r, 
+                    text='➥', 
+                    command=lambda: quit_all(),
+                    font=Font(size=20),
+                    highlightcolor=gl.var['color_fg'],
+                    highlightthickness=2,
+                    highlightbackground=gl.var['color_fg'],
+                    activebackground=gl.var['color_fg'],
+                    activeforeground=gl.var['color_bg'],
+                    image=pixel,
+                    width=20,
+                    height=20,
+                    compound='c',
+                    bg=gl.var['color_bg'], 
+                    fg=gl.var['color_fg']),
     
     'settings': Button(r, 
                     text='⚙', 
@@ -91,12 +100,15 @@ if gl.var['auto_cursor'] == True:
     move(term.winfo_rootx()+30, term.winfo_rooty()+30) # moves the mouse
 
 
-btn['settings'].config(image=pixel, )
 btn['settings'].pack(side=TOP, anchor=NW)
 btn['quit'].pack(side=TOP, anchor=NW)
 
+# updates width anf height if needed, recursively
+def window_size():
+    print(gl.r.winfo_width(), gl.r.winfo_height())
+    gl.r.after(1000,window_size)
 
-
+gl.r.after(1000,window_size) # calls the infinite check
 gl.r.mainloop()  
 
 
