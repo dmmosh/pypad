@@ -45,7 +45,7 @@ wid = term.winfo_id()
 
 # terminal buttons frame
 term_btn = Frame(gl.r, width=50)
-term_btn.pack(side=LEFT, anchor=NW)
+term_btn.pack(side=LEFT, anchor=NW, expand=TRUE, fill=BOTH)
 
 
 btn = {
