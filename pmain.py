@@ -79,8 +79,6 @@ btn['settings'].pack(side=TOP, anchor=NW)
 btn['quit'].pack(side=TOP, anchor=NW)
 
 
-while(1):
-    
 
 gl.r.mainloop()  
 
