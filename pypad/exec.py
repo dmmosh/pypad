@@ -1,5 +1,4 @@
 import sys
-from pynput.keyboard import Key, Listener, KeyCode
 import os
 from math import * 
 #from numpy import *
@@ -21,9 +20,13 @@ def on_press(key):
     if key == Key.num_lock:
         exit()
     
+try:
+    from pynput.keyboard import Key, Listener, KeyCode
 
-# keeps the listener on
-listener = Listener( on_press=on_press)
+    # keeps the listener on
+    listener = Listener( on_press=on_press)
 
-# starts the listener
-listener.start()
+    # starts the listener
+    listener.start()
+except:
+    print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")

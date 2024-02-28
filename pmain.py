@@ -51,13 +51,6 @@ btn = {
                          font=Font(size=20)) #settings button
 }
 
-# assigns attributes to root window 
-gl.r.attributes('-type', 'dialog') # makes it a floating window
-gl.r.geometry(f"{ gl.var['win_w'] }x{ gl.var['win_h'] }+{ gl.var['loc_x'] }+{ gl.var['loc_y'] }") # locks it in bottom right
-gl.r.title('pypad') # gives the title
-gl.r.config(background=gl.var['color_bg']) # sets background color
-gl.r.bind('<Num_Lock>', lambda event: quit_all()) # assigns num lock as quit
-
 
 # if theres num lock in the system
 if 'Num Lock:    off' in os.popen("xset -q | grep Caps").read():
