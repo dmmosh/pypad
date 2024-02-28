@@ -24,7 +24,7 @@ here for backup
 var = {
     # resolution, general settings
     'win_w': 800, # window width
-    'win_h': 200, #window height
+    'win_h': 120, #window height
     'loc_x': screen_width-500, # x coordinate for the terminal window
     'loc_y': screen_height-300, # y coordinate for the terminal window
     'hover_quit': False, #whether to quit when mouse goes out of box
