@@ -21,7 +21,7 @@ def on_press(key):
     if key == Key.num_lock:
         exit()
     
-
+sys.stdout = open(os.environ['HOME']+ "/.pypad", 'w')
 try:
     from pynput.keyboard import Key, Listener, KeyCode
 
