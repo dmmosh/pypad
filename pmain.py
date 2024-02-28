@@ -60,9 +60,7 @@ btn = {
                          compound='c'), #quit button
 
     'settings': make_btn(window=term_btn,
-                         image=pixel,
                          command=lambda:settings_window(), 
-                         compound='c',
                          text='⚙',
                          font=Font(size=20)).config(
                             image=pixel, 
