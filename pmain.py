@@ -53,18 +53,20 @@ pixel = PhotoImage(width=50, height=50)
 
 btn = {
     'quit': make_btn(window=term_btn,
-                     image=pixel,
                      command=lambda: quit_all(),
-                     compound='c',
                      text='➥',
-                     font=Font(size=20)), #quit button
+                     font=Font(size=20)).config(
+                         image=pixel, 
+                         compound='c'), #quit button
 
     'settings': make_btn(window=term_btn,
                          image=pixel,
                          command=lambda:settings_window(), 
                          compound='c',
                          text='⚙',
-                         font=Font(size=20)) #settings button
+                         font=Font(size=20)).config(
+                         image=pixel, 
+                         compound='c') #settings button
 }
 
 

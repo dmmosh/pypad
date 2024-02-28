@@ -141,6 +141,7 @@ def make_btn(window=gl.r, text="", command=lambda:quit(), font=None, image=None,
     else:
         out.config(font=gl.var['global_font'])
     
+
     return out
 
 
