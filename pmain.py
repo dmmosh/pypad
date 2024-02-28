@@ -89,7 +89,7 @@ btn = {
 }
 
 # clears the history hidden file
-open(os.environ['HOME']+ '/.pypad', "a").truncate(20)
+open(os.environ['HOME']+ '/.pypad', "a").truncate(0)
 
 # terminal widget
 # python runs libraries.py and automatically opens afterwards
