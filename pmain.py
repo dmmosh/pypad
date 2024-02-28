@@ -44,7 +44,7 @@ term.focus_set()
 wid = term.winfo_id()
 
 # terminal buttons frame
-term_btn = Frame(gl.r, width=50)
+term_btn = Frame(gl.r)
 term_btn.pack(side=LEFT, anchor=NW)
 
 
@@ -53,14 +53,12 @@ btn = {
                      command=lambda: quit_all(),
                      text='➥',
                      height=50,
-                     width=50,
                      font=Font(size=20)), #quit button
 
     'settings': make_btn(window=term_btn,
                          command=lambda:settings_window(), 
                          text='⚙',
                          height=50,
-                         width=50,
                          font=Font(size=20)) #settings button
 }
 
