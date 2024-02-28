@@ -51,21 +51,12 @@ term_btn.pack(side=LEFT, anchor=NW)
 pixel = PhotoImage(width=20, height=20)
 
 btn = {
-    'quit': Button(r, 
-                    text='➥', 
-                    command=lambda: quit_all(),
-                    font=Font(size=20),
-                    highlightcolor=gl.var['color_fg'],
-                    highlightthickness=2,
-                    highlightbackground=gl.var['color_fg'],
-                    activebackground=gl.var['color_fg'],
-                    activeforeground=gl.var['color_bg'],
-                    image=pixel,
-                    width=20,
-                    height=20,
-                    compound='c',
-                    bg=gl.var['color_bg'], 
-                    fg=gl.var['color_fg']),
+    'quit': make_btn(text='➥',
+                     command=lambda: quit_all(),
+                     font=Font(size=20),
+                     width=20,
+                     height=20
+                    ),
     
     'settings': Button(r, 
                     text='⚙', 
