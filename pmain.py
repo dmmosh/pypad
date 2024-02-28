@@ -34,20 +34,6 @@ def settings_window(): # only imports the settings class if it's called
 print(gl.var['loc_x'], gl.var['loc_y'])
 
 
-
-btn = {
-    'quit': make_btn(window=term_btn,
-                     command=lambda: quit_all(),
-                     text='➥',
-                     font=Font(size=20)), #quit button
-
-    'settings': make_btn(window=term_btn,
-                         command=lambda:settings_window(), 
-                         text='⚙',
-                         font=Font(size=20)) #settings button
-}
-
-
 # if theres num lock in the system
 if 'Num Lock:    off' in os.popen("xset -q | grep Caps").read():
     Controller().press(Key.num_lock) # script presses num lock
@@ -68,6 +54,18 @@ wid = term.winfo_id()
 term_btn = Frame(gl.r, width=50)
 term_btn.pack(side=LEFT, anchor=NE)
 
+
+btn = {
+    'quit': make_btn(window=term_btn,
+                     command=lambda: quit_all(),
+                     text='➥',
+                     font=Font(size=20)), #quit button
+
+    'settings': make_btn(window=term_btn,
+                         command=lambda:settings_window(), 
+                         text='⚙',
+                         font=Font(size=20)) #settings button
+}
 
 
 # terminal widget
