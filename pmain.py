@@ -48,13 +48,22 @@ term_btn = Frame(gl.r, background=gl.var['color_bg'])
 term_btn.pack(side=LEFT, anchor=NW)
 
 
+# convert screen units to pixels
+pixel = PhotoImage(width=1, height=1)
+
 btn = {
     'quit': make_btn(window=term_btn,
+                     image=pixel,
+                     width=50, 
+                     height=50,
                      command=lambda: quit_all(),
                      text='➥',
                      font=Font(size=20)), #quit button
 
     'settings': make_btn(window=term_btn,
+                         image=pixel,
+                         width=50, 
+                         height=50,
                          command=lambda:settings_window(), 
                          text='⚙',
                          font=Font(size=20)) #settings button
