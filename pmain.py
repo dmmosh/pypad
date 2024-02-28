@@ -49,7 +49,7 @@ term_btn.pack(side=LEFT, anchor=NW)
 
 
 # convert screen units to pixels
-pixel = PhotoImage(width=50, height=50)
+pixel = PhotoImage(width=20, height=20)
 
 btn = {
     'quit': Button(r, 
