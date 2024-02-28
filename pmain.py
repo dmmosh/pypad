@@ -59,7 +59,7 @@ btn = {
                          command=lambda:settings_window(), 
                          text='⚙',
                          height=50,
-                         font=Font(size=20)) #settings button
+                         font=Font(size=18)) #settings button
 }
 
 
