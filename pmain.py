@@ -38,7 +38,7 @@ print(gl.var['loc_x'], gl.var['loc_y'])
 
 # TERMINAL WIDGET  
 term = Frame(gl.r, height=gl.r.winfo_height(), width=gl.r.winfo_width()-50)
-term.pack(side=LEFT, expand=TRUE, fill=BOTH)
+term.pack(anchor=SW, expand=TRUE, fill=BOTH)
 term.bind('<Num_Lock>', lambda event: quit_all())
 term.focus_set()
 term.grid_columnconfigure(1,weight=1)
