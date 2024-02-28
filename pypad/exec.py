@@ -21,6 +21,9 @@ def on_press(key):
     if key == Key.num_lock:
         exit()
     
+for line in open(os.environ['HOME']+'/.pypad'):
+    eval(line)
+
 try:
     from pynput.keyboard import Key, Listener, KeyCode
 
@@ -31,3 +34,4 @@ try:
     listener.start()
 except:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
+
