@@ -52,12 +52,11 @@ btn = {
     'quit': make_btn(window=term_btn,
                      command=lambda: quit_all(),
                      text='➥',
-                     font=Font(size=20)).place(width=50,height=50), #quit button
+                     font=Font(size=20)), #quit button
 
     'settings': make_btn(window=term_btn,
                          command=lambda:settings_window(), 
                          text='⚙',
-                         height=50,
                          font=Font(size=20)) #settings button
 }
 
@@ -76,7 +75,7 @@ if gl.var['auto_cursor'] == True:
     gl.r.update()
     move(term.winfo_rootx()+30, term.winfo_rooty()+30) # moves the mouse
 
-btn['settings'].pack(side=TOP, anchor=NW)
+btn['settings'].pack(side=TOP, anchor=NW, width=50, height=50)
 btn['quit'].pack(side=TOP, anchor=NW)
 
 
