@@ -89,7 +89,7 @@ btn = {
 }
 
 # clears the history hidden file
-open(os.environ['HOME']+ '/.pypad', "a").truncate(50)
+open(os.environ['HOME']+ '/.pypad', "a").truncate(0)
 
 # terminal widget
 # python runs libraries.py and automatically opens afterwards
@@ -101,7 +101,7 @@ os.system(f"""xterm  \\
           -into {wid} \\
           -bg {gl.var['color_bg']} \\
           -fg {gl.var['color_fg']} \\
-          -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py 2>&1 >> {os.environ['HOME']}/.pypad && exit' &
+          -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py 2>&1 | tee -a {os.environ['HOME']}/.pypad && exit' &
           """)
 
 # if theres num lock in the system
