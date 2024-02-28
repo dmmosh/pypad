@@ -31,7 +31,7 @@ def settings_window(): # only imports the settings class if it's called
     from putils import settings
     settings()
 
-print(gl.width, gl.height)
+print(gl.var['loc_x'], gl.var['loc_y'])
 
 
 # terminal buttons frame
