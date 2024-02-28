@@ -44,7 +44,7 @@ term.focus_set()
 wid = term.winfo_id()
 
 # terminal buttons frame
-term_btn = Frame(gl.r)
+term_btn = Frame(gl.r, background=gl.var['color_bg'])
 term_btn.pack(side=LEFT, anchor=NW)
 
 
