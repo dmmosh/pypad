@@ -34,13 +34,6 @@ def settings_window(): # only imports the settings class if it's called
 print(gl.var['loc_x'], gl.var['loc_y'])
 
 
-# if theres num lock in the system
-if 'Num Lock:    off' in os.popen("xset -q | grep Caps").read():
-    Controller().press(Key.num_lock) # script presses num lock
-
-# if hover quit is on
-if gl.var['hover_quit']:
-    gl.r.bind('<Leave>', lambda event: quit_all())
 
 
 # TERMINAL WIDGET  
@@ -73,14 +66,14 @@ btn = {
 # puts process's pid as arg 1 (will be deleting later)
 os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &")
 
+# if theres num lock in the system
+if 'Num Lock:    off' in os.popen("xset -q | grep Caps").read():
+    Controller().press(Key.num_lock) # script presses num lock
 
 
 if gl.var['auto_cursor'] == True:
     gl.r.update()
     move(term.winfo_rootx()+30, term.winfo_rooty()+30) # moves the mouse
-
-term_btn = Frame(gl.r, height=gl.var['win_h'], width=50)
-term_btn.pack(side=RIGHT)
 
 btn['settings'].pack(anchor=N)
 btn['quit'].pack(anchor=N)
