@@ -31,13 +31,12 @@ def settings_window(): # only imports the settings class if it's called
     from putils import settings
     settings()
 
-print(gl.var['loc_x'], gl.var['loc_y'])
 
 
 
 
 # TERMINAL WIDGET  
-term = Frame(gl.r)
+term = Frame(gl.r,background=gl.var['color_bg'])
 term.pack(side=LEFT, expand=TRUE, fill=BOTH)
 term.bind('<Num_Lock>', lambda event: quit_all())
 term.focus_set()
