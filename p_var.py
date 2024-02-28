@@ -21,8 +21,8 @@ var = {
     # resolution, general settings
     'win_w': width//6, # window width
     'win_h': height//10, #window height
-    'loc_x': width-(int(width/5.7)), # x coordinate for the terminal window
-    'loc_y': height -(int(height/6)), # y coordinate for the terminal window
+    'loc_x': width-(width//5.7), # x coordinate for the terminal window
+    'loc_y': height -(height//6), # y coordinate for the terminal window
     'hover_quit': False, #whether to quit when mouse goes out of box
     'auto_cursor': True,
 
