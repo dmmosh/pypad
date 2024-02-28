@@ -211,12 +211,12 @@ class settings:
         text(self.res, input="RESOLUTION:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
 
         self.hover = gl.var['hover_quit']
-        Checkbutton(self.res, variable=self.hover, onvalue=True, offvalue=False).pack(anchor=W, padx=7, pady=7)
-
+        self.hover_box = Checkbutton(self.res, variable=self.hover, onvalue=True, offvalue=False).pack(anchor=W, padx=7, pady=7)
+        self.hover_box.select()
 
         self.cursor = gl.var['auto_cursor']
-        Checkbutton(self.res, variable=self.cursor, onvalue=True, offvalue=False).pack(anchor=W, padx=7, pady=7)
-
+        self.cursor_box = Checkbutton(self.res, variable=self.cursor, onvalue=True, offvalue=False).pack(anchor=W, padx=7, pady=7)
+        self.cursor_box.select()
 
         # ----------------------------
 
