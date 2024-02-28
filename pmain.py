@@ -51,15 +51,11 @@ term_btn.pack(side=LEFT, anchor=NW)
 btn = {
     'quit': make_btn(window=term_btn,
                      command=lambda: quit_all(),
-                     width=50,
-                     height=50,
                      text='➥',
                      font=Font(size=20)), #quit button
 
     'settings': make_btn(window=term_btn,
                          command=lambda:settings_window(), 
-                         width=50,
-                         height=50,
                          text='⚙',
                          font=Font(size=20)) #settings button
 }
