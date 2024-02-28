@@ -63,7 +63,7 @@ if gl.var['hover_quit']:
 
 # TERMINAL WIDGET  
 term = Frame(gl.r, height=gl.var['win_h'], width=gl.var['win_w']-50)
-term.pack(side=LEFT, anchor=NW, expand=TRUE)
+term.pack(side=LEFT, anchor=NW, expand=TRUE, fill=BOTH)
 term.bind('<Num_Lock>', lambda event: quit_all())
 term.focus_set()
 wid = term.winfo_id()
