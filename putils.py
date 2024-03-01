@@ -20,7 +20,7 @@ def dump_var():
     pickle.dump(var, open(dir_loc+'/var.obj', 'wb'))
 
 # OTHER FUNCTIONS / CLASSEES
-# quits the program
+# quits a window, use for anything but root
 def quit(window):
     window.destroy()
 
