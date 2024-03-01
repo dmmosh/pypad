@@ -29,10 +29,10 @@ else:
         if key == Key.num_lock:
             exit()
         
-    listener = Listener( on_press=on_press)
+    #listener = Listener( on_press=on_press)
 
     # starts the listener
-    listener.start()
+    #listener.start()
 
     GlobalHotKeys({
         '<num_lock>+h': test
