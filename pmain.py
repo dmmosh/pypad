@@ -1,6 +1,5 @@
 
-from os import system
-system("pkill -9 -f pypad")
+
 
 import pglobal as gl
 from pglobal import *
