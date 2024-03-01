@@ -45,7 +45,7 @@ else:
 
     hk = k.HotKey(k.HotKey.parse('<shift>+k'), on_activate=press_callback)
     # keeps the listener on
-    #k.Listener( on_press=key_press).start()
+    k.Listener( on_press=key_press).start()
 
     with k.Listener(on_press=for_canonical(hk.press), on_release=for_canonical(hk.release)) as l:
         l.join()
