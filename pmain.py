@@ -27,7 +27,6 @@ i dont recommend running the program through python because of these issues
 
 '''
 
-print(gl.mouse_c.position)
 
 def settings_window(): # only imports the settings class if it's called
     import putils
@@ -88,8 +87,6 @@ btn = {
                     fg=gl.var['color_fg']),
 }
 
-# clears the history hidden file
-open(os.environ['HOME']+ '/.pypad', "a").truncate(50)
 
 # terminal widget
 # python runs libraries.py and automatically opens afterwards
@@ -99,7 +96,7 @@ os.system(f"""xterm  \\
           -fs {gl.var['font_size']} \\
           -rightbar \\
           -into {wid} \\
-          -xrm 'xterm*VT100.Translations: #override \\
+          -xrm 'xterm*VT100.Translations: #OVERRIDE \\
                  Shift <Key>Insert:    insert-selection(SELECT) \\n\\
                  Ctrl Shift <Key>V:    insert-selection(SELECT) \\n\\
                  Ctrl Shift <Key>C:    copy-selection(SELECT)' \\

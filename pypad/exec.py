@@ -1,5 +1,4 @@
 import sys
-import readline
 import os
 from math import * 
 #from numpy import *
