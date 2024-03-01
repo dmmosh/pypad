@@ -1,5 +1,3 @@
-import sys
-import os
 from math import * 
 #from numpy import *
 
@@ -8,14 +6,14 @@ from math import *
 # QUIT AND EXIT FUNCTION OVERRIDE
 #TODO: change what this closes
 def quit():
+    import sys
+    import os
     os.system("pkill -9 -f pypad") #kills the pypad executable
     sys.exit()
 
 def exit():
     quit()
 
-def test():
-    print("test")
 
 try:
     from pynput.keyboard import Key, Listener
