@@ -132,14 +132,18 @@ def window_size():
         var['win_w'] = gl.r.winfo_width()
         os.system('pkill xterm')
         os.system(f"""xterm  \\
-                  -fa \'{gl.var['font']}\' \\
-                  -fs {gl.var['font_size']} \\
-                  -rightbar \\
-                  -into {wid} \\
-                  -bg {gl.var['color_bg']} \\
-                  -fg {gl.var['color_fg']} \\
-                  -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &
-                  """)
+          -fa \'{gl.var['font']}\' \\
+          -fs {gl.var['font_size']} \\
+          -rightbar \\
+          -into {wid} \\
+          -xrm 'xterm*VT100.Translations: #override \\
+                 Shift <Key>Insert:    insert-selection(SELECT) \\n\\
+                 Ctrl Shift <Key>V:    insert-selection(SELECT) \\n\\
+                 Ctrl Shift <Key>C:    copy-selection(SELECT)' \\
+          -bg {gl.var['color_bg']} \\
+          -fg {gl.var['color_fg']} \\
+          -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &
+          """)
 
     gl.r.after(1000,window_size)
 
