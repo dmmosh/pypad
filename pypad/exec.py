@@ -34,6 +34,5 @@ else:
     # starts the listener
     #listener.start()
 
-    GlobalHotKeys({
-        '<ctrl>+h': test
-    }).start()
+    with GlobalHotKeys({'<ctrl>+<alt>+i': test}) as h:
+        h.join()
