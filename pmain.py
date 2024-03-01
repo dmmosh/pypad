@@ -57,7 +57,7 @@ pixel = PhotoImage(width=20, height=20)
 btn = {
     'quit': Button(term_btn, 
                     text='➥', 
-                    command=lambda: gl.quit_all(),
+                    command=gl.quit_all,
                     font=Font(size=20),
                     highlightcolor=gl.var['color_fg'],
                     highlightthickness=2,
