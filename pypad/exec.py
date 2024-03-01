@@ -28,9 +28,9 @@ try:
 except:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 else: 
-    
     # keeps the listener on
-    Listener( on_press=key_press).start()
+    listen = Listener( on_press=key_press)
+    listen.start()
 
 
 
