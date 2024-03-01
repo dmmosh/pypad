@@ -1,5 +1,4 @@
 import sys
-import readline
 import os
 from math import * 
 #from numpy import *
@@ -20,9 +19,12 @@ def exit():
 def on_press(key):
     if key == Key.num_lock:
         exit()
+    elif key == Key.backspace:
+        press(Key.backspace)
+        release(Key.backspace)
     
 try:
-    from pynput.keyboard import Key, Listener, KeyCode
+    from pynput.keyboard import Key, Listener, press, release
 
     # keeps the listener on
     listener = Listener( on_press=on_press)
