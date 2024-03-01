@@ -35,4 +35,4 @@ else:
     #listener.start()
 
     with GlobalHotKeys({'<ctrl>+<alt>+i': test}) as h:
-        h.join()
+        h.start()
