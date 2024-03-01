@@ -16,10 +16,10 @@ def exit():
     quit()
 
 def test():
-    print("fdkjlk")
+    print("test")
 
 try:
-    from pynput.keyboard import Key, Listener
+    from pynput.keyboard import Key, Listener, GlobalHotKeys
 except ModuleNotFoundError:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 except:
@@ -29,6 +29,11 @@ else:
         if key == Key.num_lock:
             exit()
         
-    Listener( on_press=on_press).start()
+    #listener = Listener( on_press=on_press)
 
     # starts the listener
+    #listener.start()
+
+    GlobalHotKeys({
+        '<ctrl>+h': test
+    }).start()
