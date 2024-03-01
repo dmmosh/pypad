@@ -27,7 +27,7 @@ i dont recommend running the program through python because of these issues
 
 '''
 
-
+print(gl.mouse_c.position)
 
 def settings_window(): # only imports the settings class if it's called
     import putils
