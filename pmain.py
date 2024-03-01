@@ -106,11 +106,6 @@ os.system(f"""xterm  \\
           -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &
           """)
 
-# if theres num lock in the system
-if 'Num Lock:    off' in str(os.popen("xset -q | grep Caps").read()):
-    print("jfhdsfkljh")
-    key_c.press(key.Key.num_lock)
-
 
 if gl.var['auto_cursor'] == True:
     gl.r.update()
