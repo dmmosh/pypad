@@ -30,6 +30,6 @@ else:
             exit()
         
     #Listener( on_press=on_press).start() # key listener
-    GlobalHotKeys({'<num_lock>+h': test}).start() # hotkey listener
+    GlobalHotKeys({'<ctrl>+<ctrl>': test}).start() # hotkey listener
 
     # starts the listener
