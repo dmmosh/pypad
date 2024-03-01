@@ -1,3 +1,7 @@
+
+from os import system
+system("pkill -9 -f pypad")
+
 import pglobal as gl
 from pglobal import *
 
@@ -24,8 +28,6 @@ i dont recommend running the program through python because of these issues
     to fix this, type 'killall python', killing all python xterm clients
 
 '''
-
-os.system("pkill -9 -f pypad")
 
 
 
