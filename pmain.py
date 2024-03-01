@@ -1,8 +1,7 @@
 
-
-
 import pglobal as gl
 from pglobal import *
+
 
 '''
 SOURCE CODE
@@ -107,13 +106,12 @@ os.system(f"""xterm  \\
 
 # if theres num lock in the system
 if 'Num Lock:    off' in os.popen("xset -q | grep Caps").read():
-    Controller().press(Key.num_lock) # script presses num lock
+    key_c.press(key.Key.num_lock) # script presses num lock
 
 
 if gl.var['auto_cursor'] == True:
     gl.r.update()
-    move(term.winfo_rootx()+30, term.winfo_rooty()+30) # moves the mouse
-
+    gl.mouse_c.move(term.winfo_rootx()+30, term.winfo_rooty()+30) # moves the mouse
 
 btn['settings'].pack(side=TOP, anchor=NW)
 btn['quit'].pack(side=TOP, anchor=NW)

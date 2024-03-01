@@ -1,12 +1,9 @@
 from tkinter import *  # tkinter
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
-from pynput.keyboard import Key, Controller # imports key and controller
-import pidfile as pf # checks if program is running
-from os.path import exists
+from pynput import keyboard as key, mouse
 import pickle
 from mouse import move
-import sys
 from os import environ
 import os # imports os
 
@@ -14,16 +11,21 @@ import os # imports os
 '''
 NOTE: to change these, call pglobal.[variable]
 '''
-global dir_loc 
-global r
-global var
-global width
-global height
+global dir_loc  # absolute helper files directory
+global r # root window
+global var # variable dict 
+global width # window width
+global height # window height
+global mouse_c # mouse controller
+global key_c # key controller
 
 # ROOT WINDOW
 r = Tk() 
 # dir_locECTORY OF HELPER FILES
 dir_loc = '/usr/share/pypad'
+mouse_c = mouse.Controller()
+key_c = key.Controller()
+
 
 def quit_all():
     os.system("pkill -9 -f pypad")
