@@ -106,6 +106,7 @@ os.system(f"""xterm  \\
 
 # if theres num lock in the system
 if 'Num Lock:    off' in os.popen("xset -q | grep Caps").read():
+    print("fdjsdl")
     key_c.press(key.Key.num_lock) # script presses num lock
 
 
