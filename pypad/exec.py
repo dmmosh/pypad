@@ -16,14 +16,21 @@ def quit():
 def exit():
     quit()
 
-from pynput.keyboard import Key, Listener
 
 
 readline.write_history_file(os.environ['HOME']+ '/.pypad')
-def on_press(key):
-    if key == Key.num_lock:
-        exit()
-    
-listener = Listener( on_press=on_press)
-# starts the listener
-listener.start()
+try:
+    from pynput.keyboard import Key, Listener
+except ModuleNotFoundError:
+    print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
+except:
+    print("SOMETHING ELSE WENT WRONG.")
+else:
+    def on_press(key):
+        if key == Key.num_lock:
+            exit()
+        
+    listener = Listener( on_press=on_press)
+
+    # starts the listener
+    listener.start()
