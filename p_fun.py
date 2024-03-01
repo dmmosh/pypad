@@ -8,8 +8,7 @@ def quit():
     sys.exit()
 
 def exit():
-    os.system("pkill -9 -f pypad") #kills the pypad executable
-    sys.exit()
+    quit()
 
 
 pickle.dump(quit, open('pypad/fun.obj', 'wb'))

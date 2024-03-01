@@ -32,7 +32,6 @@ real_height = r.winfo_screenheight()
 
 def quit_all(event=None):
     os.system("pkill -9 -f pypad")
-    os.system("pkill -9 -f pmain.py")
     r.destroy()
 
 # COMPUTER INFORMATION
