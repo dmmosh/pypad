@@ -15,6 +15,8 @@ global r # root window
 global var # variable dict 
 global width # window width
 global height # window height
+global real_width # absolute width, for multi-monitor
+global real_height # absolute height, for multi-monitor
 global mouse_c # mouse controller
 global key_c # key controller
 
@@ -24,6 +26,8 @@ r = Tk()
 dir_loc = '/usr/share/pypad'
 mouse_c = mouse.Controller()
 key_c = key.Controller()
+real_width = r.winfo_screenwidth()
+real_height = r.winfo_screenheight()
 
 
 def quit_all():
