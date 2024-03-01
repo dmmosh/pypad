@@ -42,7 +42,6 @@ else:
     hotkey = HotKey(
         HotKey.parse('<ctrl>+<alt>+h'),
         on_activate)
-    with Listener(
+    Listener(
             on_press=for_canonical(hotkey.press),
-            on_release=for_canonical(hotkey.release)) as l:
-        l.start()
+            on_release=for_canonical(hotkey.release)).start()
