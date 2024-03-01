@@ -8,8 +8,8 @@ from math import *
 # QUIT AND EXIT FUNCTION OVERRIDE
 #TODO: change what this closes
 def quit():
-    os.system("pkill -9 -f pmain.py") #kills the pypad script (comment out after debugging)
     os.system("pkill -9 -f pypad") #kills the pypad executable
+    os.system("pkill -9 -f pmain.py") #kills the pypad script (comment out after debugging)
     
     sys.exit()
 
