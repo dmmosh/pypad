@@ -120,7 +120,7 @@ btn['quit'].pack(side=TOP, anchor=NW)
 # updates width anf height if needed, recursively
 def window_size():
     print(gl.r.winfo_width(), gl.r.winfo_height())
-    print(os.popen(str(os.system("xrandr  | grep \* | cut -d' ' -f4").read()).split('x'))
+    print(os.popen(str(os.system("xrandr  | grep \* | cut -d' ' -f4").read())).split('x'))
     print('TERMINAL INFO: ', term.winfo_width(), term.winfo_height())
     if (gl.r.winfo_width() != var['win_w']):
         var['win_w'] = gl.r.winfo_width()
