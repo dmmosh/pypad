@@ -133,7 +133,7 @@ def window_size():
           -fs {gl.var['font_size']} \\
           -rightbar \\
           -into {wid} \\
-          -xrm 'xterm*VT100.Translations: #override \\
+          -xrm 'xterm*VT100.Translations: \\
                  Shift <Key>Insert:    insert-selection(SELECT) \\n\\
                  Ctrl Shift <Key>V:    insert-selection(SELECT) \\n\\
                  Ctrl Shift <Key>C:    copy-selection(SELECT)' \\
