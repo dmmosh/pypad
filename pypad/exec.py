@@ -45,4 +45,4 @@ else:
     with Listener(
             on_press=for_canonical(hotkey.press),
             on_release=for_canonical(hotkey.release)) as l:
-        l.join()
+        l.start()
