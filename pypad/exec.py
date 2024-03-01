@@ -9,6 +9,7 @@ def quit():
     import os
     import sys
     os.system("pkill -9 -f pypad") #kills the pypad executable
+    os.system("pkill -9 -f pmain.py") #kills the pypad executable
     sys.exit()
 
 def exit():
@@ -27,5 +28,5 @@ else:
             exit()
         
     Listener( on_press=on_press).start() # key listener
-    
+
     # starts the listener
