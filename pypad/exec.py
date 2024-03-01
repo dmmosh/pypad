@@ -8,7 +8,7 @@ import os
 # QUIT AND EXIT FUNCTION OVERRIDE
 #TODO: change what this closes
 def quit():
-
+    
     os.system("pkill -9 -f pypad") #kills the pypad executable
     sys.exit()
 

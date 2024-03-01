@@ -30,7 +30,7 @@ real_width = r.winfo_screenwidth()
 real_height = r.winfo_screenheight()
 
 
-def quit_all(event=None):
+def quit_all():
     os.system("pkill -9 -f pypad")
     r.destroy()
 
