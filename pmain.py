@@ -108,7 +108,7 @@ os.system(f"""xterm  \\
 if 'Num Lock:    off' in str(os.popen("xset -q | grep Caps").read()):
     print("jfhdsfkljh")
 
-key_c.press(key.Key.num_lock)
+key_c.press('a')
 
 
 if gl.var['auto_cursor'] == True:
