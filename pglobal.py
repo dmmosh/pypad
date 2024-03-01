@@ -3,8 +3,7 @@ from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
 from pynput import keyboard as key, mouse
 import pickle
-from mouse import move
-from os import environ
+import sys
 import os # imports os
 
 # GLOBAL VARIABLES
