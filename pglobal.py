@@ -49,5 +49,5 @@ r.attributes('-type', 'dialog') # makes it a floating window
 r.geometry(f"{ var['win_w'] }x{ var['win_h'] }+{ var['loc_x'] }+{ var['loc_y'] }") # locks it in bottom right
 r.title('pypad') # gives the title
 r.config(background=var['color_bg'], cursor='arrow') # sets background color
-r.bind('<Num_Lock>', lambda event: quit_all()) # assigns num lock as quit
+r.bind('<Num_Lock>', quit_all) # assigns num lock as quit
 r.minsize(width=200, height=100)
