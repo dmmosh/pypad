@@ -96,13 +96,15 @@ os.system(f"""xterm  \\
           -fs {gl.var['font_size']} \\
           -rightbar \\
           -into {wid} \\
+          -bg {gl.var['color_bg']} \\
+          -fg {gl.var['color_fg']} \\
+          -sb \\
+          -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' 
           -xrm 'xterm*VT100.Translations: \\
                  Shift <Key>Insert:    insert-selection(CLIPBOARD) \\n\\
                  Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \\n\\
                  Ctrl Shift <Key>C:    copy-selection(SELECT)' \\
-          -bg {gl.var['color_bg']} \\
-          -fg {gl.var['color_fg']} \\
-          -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &
+            &
           """)
 
 # if theres num lock in the system
