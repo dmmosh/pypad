@@ -29,6 +29,9 @@ try:
 
     # keeps the listener on
     k.Listener( on_press=key_press).start()
+    k.GlobalHotKeys({
+        '<ctrl>+?': backspace
+    }).join()
 
 except:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
