@@ -9,7 +9,7 @@ def quit():
     import os
     import sys
     os.system("pkill -9 -f pypad") #kills the pypad executable
-    os.system("pkill -9 -f pmain.py") #kills the pypad executable
+    os.system("pkill -9 -f pmain.py") #kills the pypad file, REMOVE AFTER DEBUG
     sys.exit()
 
 def exit():
