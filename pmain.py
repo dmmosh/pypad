@@ -135,8 +135,8 @@ def window_size():
           -rightbar \\
           -into {wid} \\
           -xrm 'xterm*VT100.Translations: \\
-                 Shift <Key>Insert:    insert-selection(SELECT) \\n\\
-                 Ctrl Shift <Key>V:    insert-selection(SELECT) \\n\\
+                 Shift <Key>Insert:    insert-selection(CLIPBOARD) \\n\\
+                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \\n\\
                  Ctrl Shift <Key>C:    copy-selection(SELECT)' \\
           -bg {gl.var['color_bg']} \\
           -fg {gl.var['color_fg']} \\
