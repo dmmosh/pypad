@@ -14,8 +14,7 @@ def quit():
     sys.exit()
 
 def exit():
-    os.system("pkill -9 -f pypad") #kills the pypad executable
-    sys.exit()
+    quit()
 
 def on_press(key):
     if key == Key.num_lock:
@@ -26,10 +25,10 @@ readline.write_history_file(os.environ['HOME']+ '/.pypad')
 try:
     from pynput.keyboard import Key, Listener
 
-    # keeps the listener on
+except:
+    print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
+else:
     listener = Listener( on_press=on_press)
 
     # starts the listener
     listener.start()
-except:
-    print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
