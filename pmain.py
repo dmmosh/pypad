@@ -129,7 +129,7 @@ def window_size():
     if (gl.r.winfo_width() != var['win_w']):
         var['win_w'] = gl.r.winfo_width()
         os.system('pkill xterm')
-        os.system(f"""xterm  \\
+        os.system(f"""xterm \\
           -fa \'{gl.var['font']}\' \\
           -fs {gl.var['font_size']} \\
           -rightbar \\
