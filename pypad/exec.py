@@ -1,4 +1,5 @@
 import sys
+import readline
 import os
 from math import * 
 #from numpy import *
@@ -18,7 +19,7 @@ def test():
     print("fdkjlk")
 
 try:
-    from pynput.keyboard import Key, Listener, HotKey
+    from pynput.keyboard import Key, Listener
 except ModuleNotFoundError:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 except:
@@ -27,22 +28,7 @@ else:
     def on_press(key):
         if key == Key.num_lock:
             exit()
-
-    #listener = Listener( on_press=on_press)
+        
+    Listener( on_press=on_press).start()
 
     # starts the listener
-    #listener.start()
-
-    def on_activate():
-        print('Global hotkey activated!')
-
-    def for_canonical(f):
-        return lambda k: f(key.canonical(k))
-
-    hotkey = HotKey(
-        HotKey.parse('<ctrl>+<alt>+h'),
-        on_activate)
-    key = Listener( on_press=for_canonical(hotkey.press))
-
-    key.start()
-    
