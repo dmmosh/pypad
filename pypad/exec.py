@@ -18,7 +18,7 @@ def test():
     print("fdkjlk")
 
 try:
-    from pynput.keyboard import Key, Listener, GlobalHotKeys
+    from pynput.keyboard import Key, Listener, HotKey
 except ModuleNotFoundError:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 except:
@@ -33,13 +33,18 @@ else:
     # starts the listener
     #listener.start()
 
-    def on_activate_h():
-        print('<ctrl>+<alt>+h pressed')
+    def on_activate():
+        print('Global hotkey activated!')
 
-    def on_activate_i():
-        print('<ctrl>+<alt>+i pressed')
+    def for_canonical(f):
+        return lambda k: f(key.canonical(k))
 
-    keys = GlobalHotKeys({
-            '<ctrl>+<alt>+h': on_activate_h,
-            '<ctrl>+<alt>+i': on_activate_i})
-    keys.start()
+    hotkey = HotKey(
+        HotKey.parse('<ctrl>+<alt>+h'),
+        on_activate)
+    key = Listener(
+            on_press=for_canonical(hotkey.press),
+            on_release=for_canonical(hotkey.release))
+
+    key.start()
+    
