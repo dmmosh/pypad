@@ -93,7 +93,7 @@ btn = {
 # puts process's pid as arg 1 (will be deleting later)
 os.system(f"""xterm  \\
           -ls \\
-          -xrm 'XTerm*selectToClipboard: true' \\
+          -xrm 'XTerm*VT100.Translations: Shift Ctrl<Key>V: insert-selection(CLIPBOARD) \\n\\ Shift Ctrl<Key>V: insert-selection(PRIMARY) \\n\\ Shift<Btn1Down>: select-start() \\n\\ Shift<Btn1Motion>: select-extend() \\n\\ Shift<Btn1Up>: select-end(CLIPBOARD) \\n\\'
           -fa \'{gl.var['font']}\' \\
           -fs {gl.var['font_size']} \\
           -rightbar \\
