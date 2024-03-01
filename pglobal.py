@@ -31,8 +31,7 @@ def quit_all():
     r.destroy()
 
 # COMPUTER INFORMATION
-res = str(os.popen("(xrandr  | grep \* | cut -d' ' -f4) | head -n 1").read()) # gets the resolution of current screen (in string form)
-res.replace('\n', '').split('x')
+res = str(os.popen("(xrandr  | grep \* | cut -d' ' -f4) | head -n 1").read()).replace('\n', '').split('x') # gets the resolution of current screen (in string form)
 width, height = int(res[0]), int(res[1]) # gets width and height of the computer
 #colors = pd.read_excel(dir_loc+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
