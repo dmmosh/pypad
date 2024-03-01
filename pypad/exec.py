@@ -21,33 +21,34 @@ def key_press(key):
     if key == k.Key.num_lock:
         exit()
 
-def on_activate():
-    '''Defines what happens on press of the hotkey'''
-    print("fdjfdljfdio")
-
-def for_canonical(hotkey):
-    '''Removes any modifier state from the key events 
-    and normalises modifiers with more than one physical button'''
-    return lambda k: hotkey(k.Listener.canonical(k))
-
-'''Creating the hotkey'''
-hotkey = k.HotKey(
-k.HotKey.parse('<shift>+k'), 
-on_activate)
-
     
 try:
     from pynput import keyboard as k
 
+except:
+    print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
+else: 
+    c = k.Controller()
+    
+    def press_callback():
+        try:
+            k.c.release(k.Key.shift)  # update - undo the shift, otherwise all type will be Uppercase
+            k.c.press(k.Key.backspace)  # update - Undo the K of the shift-k
+            k.c.type("Kind regards ")
+        except AttributeError:
+            pass
+        
+        
+    def for_canonical(f):
+        return lambda k: f(l.canonical(k))
+    
+    
+    hk = k.HotKey(k.HotKey.parse('<shift>+k'), on_activate=press_callback)
     # keeps the listener on
     k.Listener( on_press=key_press).start()
     
-    with k.Listener(
-            on_press=for_canonical(hotkey.press),
-            on_release=for_canonical(hotkey.release)) as listener:
-        listener.join()
-
-
-except:
-    print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
-
+    with k.Listener(on_press=for_canonical(hk.press), on_release=for_canonical(hk.release)) as l:
+        l.join()
+    
+    
+    
