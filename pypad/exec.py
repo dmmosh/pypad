@@ -19,7 +19,7 @@ def test():
     print("test")
 
 try:
-    from pynput.keyboard import Key, Listener, GlobalHotKeys
+    from pynput.keyboard import Key, Listener
 except ModuleNotFoundError:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 except:
