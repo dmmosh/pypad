@@ -16,21 +16,20 @@ def exit():
     os.system("pkill -9 -f pypad") #kills the pypad executable
     sys.exit()
 
-def on_press(key):
-    if key == Key.num_lock:
+# key press 
+def key_press(key):
+    if key == k.Key.num_lock:
         exit()
-    elif key == Key.backspace:
-        press(Key.backspace)
-        release(Key.backspace)
-    
+
+def backspace():
+    print("BACKSPACE ON")
+
 try:
-    from pynput.keyboard import Key, Listener, press, release
+    from pynput import keyboard as k
 
     # keeps the listener on
-    listener = Listener( on_press=on_press)
+    k.Listener( on_press=key_press).start()
 
-    # starts the listener
-    listener.start()
 except:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 
