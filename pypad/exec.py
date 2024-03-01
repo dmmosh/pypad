@@ -49,7 +49,7 @@ def press_callback():
     with Listener(on_press=for_canonical(hk.press), on_release=for_canonical(hk.release)) as l:
         l.join()
     # keeps the listener on
-    Listener( on_press=key_press).start()
+    #Listener( on_press=key_press).start()
 
     
 
