@@ -18,7 +18,6 @@ def exit():
 def test():
     print("fdkjlk")
 
-print("fdkdjsfl")
 try:
     from pynput.keyboard import Key, Listener, HotKey
 except ModuleNotFoundError:
