@@ -16,7 +16,8 @@ def quit():
 def exit():
     quit()
 
-    
+from pynput.keyboard import Key, Listener
+
 
 readline.write_history_file(os.environ['HOME']+ '/.pypad')
 try:
