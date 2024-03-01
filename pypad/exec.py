@@ -23,7 +23,7 @@ def key_press(key):
 
 def on_activate():
     '''Defines what happens on press of the hotkey'''
-    k.type('Kind regards, John Smith, Sales Manager.')
+    print("fdjfdljfdio")
 
 def for_canonical(hotkey):
     '''Removes any modifier state from the key events 
