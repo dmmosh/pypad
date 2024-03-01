@@ -99,6 +99,7 @@ os.system(f"""xterm  \\
           -fs {gl.var['font_size']} \\
           -rightbar \\
           -into {wid} \\
+          -xrm 'XTerm*selectToClipboard: true' \\
           -bg {gl.var['color_bg']} \\
           -fg {gl.var['color_fg']} \\
           -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &
