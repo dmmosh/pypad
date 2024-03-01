@@ -30,7 +30,7 @@ try:
     # keeps the listener on
     k.Listener( on_press=key_press).start()
     k.GlobalHotKeys({
-        '<ctrl>+?': backspace
+        '<ctrl>+h': backspace
     }).join()
 
 except:
