@@ -22,7 +22,3 @@ hk = HotKey(HotKey.parse('<shift>+k'), on_activate=press_callback)
 
 with Listener(on_press=for_canonical(hk.press), on_release=for_canonical(hk.release)) as l:
     l.join()
-
-
-while(1):
-    input()
