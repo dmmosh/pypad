@@ -27,7 +27,6 @@ dir_loc = '/usr/share/pypad'
 
 def quit_all():
     os.system("pkill -9 -f pypad")
-    r.quit()
     r.destroy()
 
 # COMPUTER INFORMATION

@@ -25,12 +25,13 @@ i dont recommend running the program through python because of these issues
 
 '''
 
+os.system("pkill -9 -f pypad")
+
+
 
 def settings_window(): # only imports the settings class if it's called
     import putils
     putils.settings()
-
-
 
 
 
