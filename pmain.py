@@ -99,7 +99,10 @@ os.system(f"""xterm  \\
           -fs {gl.var['font_size']} \\
           -rightbar \\
           -into {wid} \\
-          -xrm 'XTerm*selectToClipboard: true' \\
+          -xrm 'xterm*VT100.Translations: #override \\
+                 Shift <Key>Insert:    insert-selection(SELECT) \\n\\
+                 Ctrl Shift <Key>V:    insert-selection(SELECT) \\n\\
+                 Ctrl Shift <Key>C:    copy-selection(SELECT)' \\
           -bg {gl.var['color_bg']} \\
           -fg {gl.var['color_fg']} \\
           -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &
