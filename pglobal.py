@@ -1,7 +1,7 @@
 from tkinter import *  # tkinter
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
-from pynput import keyboard as key, mouse, Button
+from pynput import keyboard as key, mouse
 import pickle
 import sys
 import os # imports os
