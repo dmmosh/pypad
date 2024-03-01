@@ -40,7 +40,7 @@ term = Frame(gl.r,
              width=var['win_w']-100,
              height=var['win_h'])
 term.pack(side=LEFT, expand=TRUE, fill=BOTH)
-term.bind('<Num_Lock>', lambda event: gl.quit_all())
+term.bind('<Num_Lock>', gl.quit_all)
 term.focus_set()
 wid = term.winfo_id()
 
@@ -56,7 +56,7 @@ pixel = PhotoImage(width=20, height=20)
 btn = {
     'quit': Button(term_btn, 
                     text='➥', 
-                    command=lambda: gl.quit_all(),
+                    command=gl.quit_all,
                     font=Font(size=20),
                     highlightcolor=gl.var['color_fg'],
                     highlightthickness=2,
