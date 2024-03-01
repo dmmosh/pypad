@@ -112,7 +112,7 @@ if 'Num Lock:    off' in str(os.popen("xset -q | grep Caps").read()):
 
 if gl.var['auto_cursor'] == True:
     gl.r.update()
-    gl.mouse_c.move(-gl.width,-gl.height) # moves the mouse to the TOP LEFT of the screen
+    gl.mouse_c.move(-gl.r.winfo_screenwidth,-gl.r.winfo_screenheight) # moves the mouse to the TOP LEFT of the screen
     gl.mouse_c.move(term.winfo_rootx(), term.winfo_rooty()) # moves the mouse
     gl.mouse_c.click(mouse.Button.left)
 
