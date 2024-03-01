@@ -41,7 +41,7 @@ term = Frame(gl.r,
              width=var['win_w']-100,
              height=var['win_h'])
 term.pack(side=LEFT, expand=TRUE, fill=BOTH)
-term.bind('<Num_Lock>', lambda event: gl.quit_all())
+term.bind('<Num_Lock>', gl.quit_all)
 term.focus_set()
 wid = term.winfo_id()
 
