@@ -1,6 +1,4 @@
 from math import * 
-import sys
-import os
 #from numpy import *
 
 # TRIES TO IMPORT SOME LIBRARIES
@@ -8,7 +6,8 @@ import os
 # QUIT AND EXIT FUNCTION OVERRIDE
 #TODO: change what this closes
 def quit():
-    
+    import os
+    import sys
     os.system("pkill -9 -f pypad") #kills the pypad executable
     sys.exit()
 
