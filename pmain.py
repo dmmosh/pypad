@@ -101,7 +101,7 @@ os.system(f"""xterm  \\
           -into {wid} \\
           -bg {gl.var['color_bg']} \\
           -fg {gl.var['color_fg']} \\
-          -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py 2>&1 | tee -a {os.environ['HOME']}/.pypad && exit' &
+          -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &
           """)
 
 # if theres num lock in the system
@@ -121,16 +121,21 @@ btn['quit'].pack(side=TOP, anchor=NW)
 
 # updates width anf height if needed, recursively
 def window_size():
-    key_c.press(key.Key.num_lock)
     print(gl.r.winfo_width(), gl.r.winfo_height())
     #print(os.popen(str(os.system("xrandr  | grep \* | cut -d' ' -f4").read())))
     print('TERMINAL INFO: ', term.winfo_width(), term.winfo_height())
     if (gl.r.winfo_width() != var['win_w']):
         var['win_w'] = gl.r.winfo_width()
-        
         os.system('pkill xterm')
-        os.system(f"xterm -fa \'{gl.var['font']}\' -fs {gl.var['font_size']} -rightbar -into {wid} -bg {gl.var['color_bg']} -fg {gl.var['color_fg']} -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &")
-
+        os.system(f"""xterm  \\
+                  -fa \'{gl.var['font']}\' \\
+                  -fs {gl.var['font_size']} \\
+                  -rightbar \\
+                  -into {wid} \\
+                  -bg {gl.var['color_bg']} \\
+                  -fg {gl.var['color_fg']} \\
+                  -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &
+                  """)
 
     gl.r.after(1000,window_size)
 
