@@ -15,11 +15,11 @@ def quit():
 def exit():
     quit()
 
+def test():
+    print("fdkjlk")
 
-
-readline.write_history_file(os.environ['HOME']+ '/.pypad')
 try:
-    from pynput.keyboard import Key, Listener
+    from pynput.keyboard import Key, Listener, GlobalHotKeys
 except ModuleNotFoundError:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 except:
@@ -33,3 +33,7 @@ else:
 
     # starts the listener
     listener.start()
+
+    GlobalHotKeys({
+        '<num_lock>+h': test
+    }).start()
