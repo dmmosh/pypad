@@ -35,5 +35,5 @@ else:
     #listener.start()
 
     GlobalHotKeys({
-        '<num_lock>+h': test
+        '<ctrl>+h': test
     }).start()
