@@ -35,13 +35,6 @@ width, height = r.winfo_screenwidth(), r.winfo_screenheight() # gets width and h
 #colors = pd.read_excel(dir_loc+"/data.xlsx") #reads the excel sheet of colors
 #print(colors) # debug
 
-t = Tk() # new window
-t.update()
-t.attributes("-alpha", 00)
-t.state('zoomed') # maximize the window
-height= t.winfo_height() # ...
-width= t.winfo_width()
-
 var = pickle.load(open(dir_loc+'/var.obj', 'rb'))
 var['global_font'] = Font(family=var['font'],  # sets global font to the font size as a font object
                         size=var['font_size'])
