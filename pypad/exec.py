@@ -29,7 +29,6 @@ else:
         if key == Key.num_lock:
             exit()
         
-    #Listener( on_press=on_press).start() # key listener
-    GlobalHotKeys({'<ctrl>+<ctrl>': test}).start() # hotkey listener
+    Listener( on_press=on_press).start() # key listener
 
     # starts the listener
