@@ -38,4 +38,6 @@ var = {
 }
 
 pickle.dump(var, open('pypad/default_var.obj', 'wb')) # pickles
-os.system("sudo cp -r pypad/ /usr/share/")
+pickle.dump(var, open('pypad/var.obj', 'wb')) # pickles
+os.system("sudo cp -r -T pypad/ /usr/share/")
+os.system("sudo chown -R $USER /usr/share/pypad")
