@@ -29,7 +29,7 @@ except:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 else: 
     c = k.Controller()
-    
+
     def press_callback():
         try:
             k.c.release(k.Key.shift)  # update - undo the shift, otherwise all type will be Uppercase
@@ -37,18 +37,17 @@ else:
             k.c.type("Kind regards ")
         except AttributeError:
             pass
-        
-        
+
+
     def for_canonical(f):
         return lambda k: f(l.canonical(k))
-    
-    
+
+
     hk = k.HotKey(k.HotKey.parse('<shift>+k'), on_activate=press_callback)
     # keeps the listener on
-    k.Listener( on_press=key_press).start()
-    
+    #k.Listener( on_press=key_press).start()
+
     with k.Listener(on_press=for_canonical(hk.press), on_release=for_canonical(hk.release)) as l:
         l.join()
-    
-    
-    
+
+
