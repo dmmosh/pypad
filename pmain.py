@@ -92,7 +92,7 @@ btn = {
 # python runs libraries.py and automatically opens afterwards
 # puts process's pid as arg 1 (will be deleting later)
 os.system(f"""xterm  \\
-          -ls -xrm 'XTerm*VT100.Translations: #override         Shift Ctrl<Key>V: insert-selection(CLIPBOARD) Shift Ctrl<Key>V insert-selection(PRIMARY)' \\
+          -ls -xrm 'XTerm*VT100.Translations: #override         Shift Ctrl<Key>V: insert-selection(CLIPBOARD) n Shift Ctrl<Key>V: insert-selection(PRIMARY)' \\
           -fa \'{gl.var['font']}\' \\
           -fs {gl.var['font_size']} \\
           -rightbar \\
