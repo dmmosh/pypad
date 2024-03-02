@@ -16,6 +16,7 @@ def quit():
 def exit():
     quit()
 
+global double_num
 
 try:
     from pynput.keyboard import Key, Listener
