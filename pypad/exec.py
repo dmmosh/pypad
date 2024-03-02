@@ -26,11 +26,13 @@ except:
 else:
     double_num = 0
     def on_press(key):
-                
+
         if key == Key.num_lock:
             print("NUM LOCK")
             double_num+=1
         
+        print(double_num)
+    
 
         
     Listener( on_press=on_press).start() # key listener
