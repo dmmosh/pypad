@@ -88,7 +88,7 @@ btn = {
 }
 
 
-# terminal widget
+# terminal widgetdvdds
 # python runs libraries.py and automatically opens afterwards
 # puts process's pid as arg 1 (will be deleting later)
 os.system(f"""xterm  \\
@@ -130,15 +130,17 @@ def window_size():
     if (gl.r.winfo_width() != var['win_w']):
         var['win_w'] = gl.r.winfo_width()
         os.system('pkill xterm')
-        os.system(f"""xterm \\
+        os.system(f"""xterm  \\
+          -ls -xrm 'XTerm*VT100.Translations: #override Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \\n\\
+               Shift Ctrl<Key>V: insert-selection(CLIPBOARD) \\n\\
+               Shift Ctrl<Key>V: insert-selection(PRIMARY) \\n\\
+               Shift<Btn1Down>: select-start() \\n\\
+               Shift<Btn1Motion>: select-extend() \\n\\
+               Shift<Btn1Up>: select-end(CLIPBOARD)' \\
           -fa \'{gl.var['font']}\' \\
           -fs {gl.var['font_size']} \\
           -rightbar \\
           -into {wid} \\
-          -xrm 'xterm*VT100.Translations: \\
-                 Shift <Key>Insert:    insert-selection(CLIPBOARD) \\n\\
-                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \\n\\
-                 Ctrl Shift <Key>C:    copy-selection(SELECT)' \\
           -bg {gl.var['color_bg']} \\
           -fg {gl.var['color_fg']} \\
           -sb -e 'clear && /usr/bin/python -q -i {gl.dir_loc}/exec.py && exit' &
