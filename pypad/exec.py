@@ -28,8 +28,10 @@ else:
     def on_press(key):
         global double_num
         if(double_num >= 2):
+            print("JLDSJLDFH")
             quit()
         elif key == Key.num_lock:
+            print("NUM LOCK")
             double_num+=1
             time.sleep(1)
             double_num=0
