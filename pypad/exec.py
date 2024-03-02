@@ -17,7 +17,7 @@ def exit():
 
 
 try:
-    from pynput.keyboard import Key, Listener
+    from pynput.keyboard import Key, Listener, HotKey
 except ModuleNotFoundError:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 except:
@@ -26,6 +26,14 @@ else:
     def on_press(key):
         if key == Key.num_lock:
             exit()
+    def copy():
+        print('Global hotkey activated!')
+
+    def for_canonical(f):
+        return lambda k: f(key.canonical(k))
+    
+    copy = HotKey(HotKey.parse('<ctrl>+<shift>+c'), )
+    copy_listen = 
         
     Listener( on_press=on_press).start() # key listener
 
