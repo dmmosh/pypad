@@ -26,13 +26,14 @@ except:
 else:
     def on_press(key):
         global double_num
-        if(double_num >= 2):
-            print("JLDSJLDFH")
-            quit()
         
         if key == Key.num_lock:
             print("NUM LOCK")
             double_num+=1
+        
+        if(double_num >= 2):
+            print("JLDSJLDFH")
+            quit()
         
     Listener( on_press=on_press).start() # key listener
 
