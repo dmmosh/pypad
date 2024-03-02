@@ -27,10 +27,9 @@ else:
     double_num = 0
     def on_press(key, double_num=double_num):
         if key == Key.num_lock:
-            print("NUM LOCK")
+            print("NUM LOCK", double_num)
             double_num+=1
         
-        print(324)
     
 
         
