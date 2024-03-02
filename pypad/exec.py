@@ -1,4 +1,5 @@
 from math import * 
+import time
 #from numpy import *
 
 # TRIES TO IMPORT SOME LIBRARIES
@@ -17,15 +18,21 @@ def exit():
 
 
 try:
-    from pynput.keyboard import Key, Listener, HotKey
+    from pynput.keyboard import Key, Listener
 except ModuleNotFoundError:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 except:
     print("SOMETHING ELSE WENT WRONG.")
 else:
+    double_num = 0
     def on_press(key):
-        if key == Key.num_lock:
-            exit()
+        if(double_num >= 2):
+            quit()
+        elif key == Key.num_lock:
+            double_num+=1
+            time.sleep(1)
+            double_num=0
+        
     Listener( on_press=on_press).start() # key listener
 
     # starts the listener
