@@ -18,21 +18,44 @@ def exit():
 
 
 try:
-    from pynput.keyboard import Key, Listener
+    from pynput.keyboard import Key, Listener, Button
 except ModuleNotFoundError:
     print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
 except:
     print("SOMETHING ELSE WENT WRONG.")
 else:
-    double_num = 0
-    def on_press(key, double_num=double_num):
-        if key == Key.num_lock:
-            print("NUM LOCK", str(double_num))
-            double_num+=1
+    previous_left = 0
+
+    def on_click(x, y, button, pressed):
+        global previous_left
+
+        #text = 'Pressed' if pressed else 'Released'
+        #print('{0} {1} at {2}'.format(text, button, (x, y)))
+
+        double_click_left = False
+
+        # double click left button
+        if pressed and button == Button.left:
+            current_left = time.time()
+
+            diff_left = current_left - previous_left
+            print('diff left:', diff_left)
+
+            if diff_left < 0.3:
+                print('double click left')
+                double_click_left = True
+
+            previous_left = current_left
+
+        # other code
+
+        if double_click_left:
+            # Stop listener
+            return False
         
     
 
         
-    Listener( on_press=on_press).start() # key listener
+    Listener( on_press=on_click).start() # key listener
 
     # starts the listener
