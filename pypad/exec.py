@@ -32,7 +32,7 @@ else:
     def for_canonical(f):
         return lambda k: f(key.canonical(k))
     
-    copy = HotKey(HotKey.parse('<ctrl>+<shift>+c'), )
+    copy = HotKey(HotKey.parse('<ctrl>+<shift>+c'), copy)
     copy_listen = 
         
     Listener( on_press=on_press).start() # key listener
