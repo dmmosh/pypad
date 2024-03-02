@@ -30,7 +30,7 @@ else:
             print("NUM LOCK")
             double_num+=1
         
-        print(double_num)
+        print(324)
     
 
         
