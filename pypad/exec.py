@@ -24,16 +24,14 @@ except ModuleNotFoundError:
 except:
     print("SOMETHING ELSE WENT WRONG.")
 else:
+    double_num = 0
     def on_press(key):
-        global double_num
-        
+                
         if key == Key.num_lock:
             print("NUM LOCK")
             double_num+=1
         
-        if(double_num >= 2):
-            print("JLDSJLDFH")
-            quit()
+
         
     Listener( on_press=on_press).start() # key listener
 
