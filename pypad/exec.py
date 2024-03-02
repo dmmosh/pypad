@@ -16,9 +16,7 @@ def quit():
 def exit():
     quit()
 
-global double_num
 
-double_num = 0
 try:
     from pynput.keyboard import Key, Listener
 except ModuleNotFoundError:
@@ -26,7 +24,9 @@ except ModuleNotFoundError:
 except:
     print("SOMETHING ELSE WENT WRONG.")
 else:
+    double_num = 0
     def on_press(key):
+        global double_num
         if(double_num >= 2):
             quit()
         elif key == Key.num_lock:
