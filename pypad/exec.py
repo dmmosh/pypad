@@ -25,8 +25,7 @@ except:
     print("SOMETHING ELSE WENT WRONG.")
 else:
     double_num = 0
-    def on_press(key):
-        global double_num
+    def on_press(key, double_num=double_num):
         if key == Key.num_lock:
             print("NUM LOCK")
             double_num+=1
