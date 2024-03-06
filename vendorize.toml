@@ -1,6 +1,4 @@
 target = "pypad/_vendor"
 packages = [
-    "pynput",
-    "pyinstaller",
-    "altgraph"
+    "pynput"
 ]
