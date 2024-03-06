@@ -1,6 +1,8 @@
 import os
 import sys
-from pypad._vendor.pynput import keyboard as key, mouse
+sys.path.insert(1, '/usr/share/pypad/_vendor')
+
+from pynput import keyboard as key, mouse
 from tkinter import * 
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox

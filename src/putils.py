@@ -1,7 +1,6 @@
+
 from pglobal import *
 import pglobal as gl
-
-
 '''
 
 '''
