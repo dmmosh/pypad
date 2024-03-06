@@ -77,9 +77,6 @@ case "$os" in
 esac
 
 
-#dir path of the executable
-#dir="$(realpath $(dirname $0))"
-dir="$(pwd)"
 
 # have to do sudo user for linux whereas macos keeps it at home variable
 
@@ -103,7 +100,7 @@ then
     echo -e "ALMOST FATAL ERROR:"
     echo -e "   Python not installed.\n"
     read -p "Install Python (y/n)? " install_python
-    case "$install_pyinstaller" in 
+    case "$install_python" in 
         y|Y|yes|YES|Yes|yEs|yeS ) eval "$pkg_manager python";;
         * ) exit 1 ;;
     esac
@@ -120,35 +117,24 @@ then
 home_dir="/home/${SUDO_USER}"
 fi
 
-MYSTRING="Do something in bash"
-echo $MYSTRING
 
-/usr/bin/python 'src/pmain.py' << EOF
-import sys
-print(sys.argv)
-myPyString = "Do something on python"
-print(myPyString)
-
-EOF
-
-
-chmod +x "$dir/dist/pypad"
-chmod +x "$dir/src/pypad.desktop"
-chmod +x "$dir/uninstall.sh"
+chmod +x "./dist/pypad"
+chmod +x "./src/pypad.desktop"
+chmod +x "./uninstall.sh"
 
 echo -e "COPYING HELPER FILES..."
-sudo cp -r -T "$dir/pypad/" "/usr/share/pypad"
+sudo cp -r -T "./pypad/" "/usr/share/pypad"
 sudo chown -R "${SUDO_USER}" "/usr/share/pypad"
 
 
 echo -e "COMPILING THE EXECUTABLE..."
-eval "$dir/pyinstall --onefile $dir/src/pmain.py"
+eval "./pyinstaller --onefile src/pmain.py && mv dist/pmain dist/pypad;"
 
 echo -e "COPYING THE EXECUTABLE..."
-sudo mv "$dir/dist/pypad" "/usr/bin/pypad"
-rm -rf "$dir/dist"
-rm -rf "$dir/build"
-rm "$dir/pmain.spec"
+sudo mv "./dist/pypad" "/usr/bin/pypad"
+rm -rf './build'
+rm -rf './dist'
+rm 'pmain.spec'
 
 
 
@@ -158,5 +144,5 @@ if [ ! "$os" == "Darwin" ]
 then
     # for linux
     echo -e "COPYING THE .DESKTOP FILE..."
-    sudo cp -r "$dir/src/pypad.desktop" "/usr/share/applications"
+    sudo cp -r "./src/pypad.desktop" "/usr/share/applications"
 fi

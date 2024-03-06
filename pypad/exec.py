@@ -1,7 +1,7 @@
 from math import * 
 import sys
-sys.path.insert(1, '/usr/share/pypad/_vendor')
-from pynput import Key, Listener
+sys.path.append('/usr/share/pypad/')
+from _vendor.pynput.keyboard import Key, Listener
 #from numpy import *
 
 # TRIES TO IMPORT SOME LIBRARIES
@@ -10,7 +10,6 @@ from pynput import Key, Listener
 #TODO: change what this closes
 def quit():
     import os
-    import sys
     os.system("pkill -9 -f pypad") #kills the pypad executable
     sys.exit()
 
