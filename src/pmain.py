@@ -1,6 +1,9 @@
+import sys 
+import os
+sys.path.append(os.getcwd())
+import pglobal as gl
+from pglobal import *
 
-import pglobal as gl # global variables
-from pglobal import * # other
 '''
 SOURCE CODE
 
