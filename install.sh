@@ -87,8 +87,6 @@ dir="$(pwd)"
 if [ ! -z "$pkg_manager" ] && [ -z "$(command -v xterm)" ] 
 then
     eval "$pkg_manager xterm"
-    eval "pip install pynput"
-    eval "pip install pyinstaller"
 fi
 
 # checking if dependencies are installed 
@@ -123,12 +121,19 @@ home_dir="/home/${SUDO_USER}"
 fi
 
 
+
 chmod +x "$dir/dist/pypad"
 chmod +x "$dir/src/pypad.desktop"
 chmod +x "$dir/uninstall.sh"
 
+echo -e "COMPILING THE EXECUTABLE..."
+eval "$dir/pypad/_vendor/bin/pyinstaller --onefile src/pmain.py"
+
 echo -e "COPYING THE EXECUTABLE..."
-sudo cp "$dir/dist/pypad" "/usr/bin/pypad"
+sudo mv "$dir/dist/pypad" "/usr/bin/pypad"
+rm -rf "$dir/dist"
+rm -rf "$dir/build"
+rm "$dir/pmain.spec"
 
 echo -e "COPYING HELPER FILES..."
 sudo cp -r -T "$dir/pypad/" "/usr/share/pypad"
