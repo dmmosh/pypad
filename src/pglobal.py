@@ -1,8 +1,8 @@
 import os
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+import sys
+os.chdir(sys.path[0])
 
 from ..pypad._vendor.pynput.keyboard import keyboard as key, mouse
-import sys
 from tkinter import * 
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
