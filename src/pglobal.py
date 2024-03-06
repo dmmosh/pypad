@@ -1,11 +1,12 @@
-import sys
 import os
+os.chdir('.')
+
+import sys
 from tkinter import * 
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
 import pickle
 from ..pypad._vendor.pynput import keyboard as key, mouse
-os.system('pwd')
 
 # GLOBAL VARIABLES
 '''
