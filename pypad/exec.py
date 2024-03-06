@@ -1,5 +1,5 @@
 from math import * 
-from ._vendor import pynput as pn
+from ._vendor.pynput import Key, Listener
 #from numpy import *
 
 # TRIES TO IMPORT SOME LIBRARIES
@@ -15,11 +15,11 @@ def quit():
 def exit():
     quit()
 
-def on_click(key:pn.Key) -> None:
-    if key == pn.Key.num_lock:
+def on_click(key:Key) -> None:
+    if key == Key.num_lock:
         quit()
         
         
 # starts the listener
-pn.Listener( on_press=on_click).start() # key listener
+Listener( on_press=on_click).start() # key listener
 

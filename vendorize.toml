@@ -1,5 +1,6 @@
 target = "pypad/_vendor"
 packages = [
     "pynput",
-    "pyinstaller"
+    "pyinstaller",
+    "tk"
 ]

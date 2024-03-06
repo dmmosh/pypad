@@ -120,14 +120,29 @@ then
 home_dir="/home/${SUDO_USER}"
 fi
 
+MYSTRING="Do something in bash"
+echo $MYSTRING
+
+/usr/bin/python 'src/pmain.py' << EOF
+import sys
+print(sys.argv)
+myPyString = "Do something on python"
+print(myPyString)
+
+EOF
 
 
 chmod +x "$dir/dist/pypad"
 chmod +x "$dir/src/pypad.desktop"
 chmod +x "$dir/uninstall.sh"
 
+echo -e "COPYING HELPER FILES..."
+sudo cp -r -T "$dir/pypad/" "/usr/share/pypad"
+sudo chown -R "${SUDO_USER}" "/usr/share/pypad"
+
+
 echo -e "COMPILING THE EXECUTABLE..."
-eval "$dir/pypad/_vendor/bin/pyinstaller --onefile src/pmain.py"
+eval "$dir/pyinstall --onefile $dir/src/pmain.py"
 
 echo -e "COPYING THE EXECUTABLE..."
 sudo mv "$dir/dist/pypad" "/usr/bin/pypad"
@@ -135,9 +150,7 @@ rm -rf "$dir/dist"
 rm -rf "$dir/build"
 rm "$dir/pmain.spec"
 
-echo -e "COPYING HELPER FILES..."
-sudo cp -r -T "$dir/pypad/" "/usr/share/pypad"
-sudo chown -R "${SUDO_USER}" "/usr/share/pypad"
+
 
 # different installation for macosdvsvdfsdsffdsfsfds
 #linux only
