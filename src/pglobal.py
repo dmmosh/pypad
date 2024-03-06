@@ -1,7 +1,5 @@
 import os
 import sys
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+'/../')
-
 from pypad._vendor.pynput import keyboard as key, mouse
 from tkinter import * 
 from tkinter.font import Font # imports font
