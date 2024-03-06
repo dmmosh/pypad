@@ -5,10 +5,10 @@ from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
 
 
-SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__) + '/../')
 sys.path.append(os.path.dirname(SCRIPT_DIR))
 
-from ..pypad._vendor.pynput import keyboard as key, mouse
+from pypad._vendor.pynput import keyboard as key, mouse
 
 import pickle
 # GLOBAL VARIABLES
