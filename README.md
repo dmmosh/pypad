@@ -1,12 +1,7 @@
 
-```
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-█▀█ █▄█ █▀█ ▄▀█ █▀▄
-█▀▀  █  █▀▀ █▀█ █▄▀
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-```
+![2024-03-06_16-21](https://github.com/wettestsock/pypad/assets/119987092/abddbc2c-aa97-41c1-8458-201651364cf7)
 
-ultimate calculator for the numpad
+A Python terminal, running over xterm, designed for calculator use. This is <u>not</u> a calculator, it is a terminal designed to maximize Python's calculating capabilities.
 
 not numpy, because, well, that exists
 
