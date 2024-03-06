@@ -1,5 +1,10 @@
 
-# PYPAD #
+```
+▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
+█▀█ █▄█ █▀█ ▄▀█ █▀▄
+█▀▀  █  █▀▀ █▀█ █▄▀
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+```
 
 ultimate calculator for the numpad
 
@@ -14,4 +19,4 @@ sudo cp -r -T ./pypad/ /usr/share/pypad
 sudo chown -R $USER /usr/share/pypad
 ```
 
-python -m PyInstaller --onefile src/pmain.py; mv dist/pmain dist/pypad;
+python -m PyInstaller --onefile src/pmain.py --name pypad
