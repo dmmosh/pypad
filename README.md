@@ -5,13 +5,14 @@ A Python terminal, running over xterm, designed for calculator use. This is NOT 
 
 not numpy, because, well, that exists 
 
+## Requirements: ##
+- Linux
+- xterm
+- Python
 
 ## Installation: ## 
 ```
-# to make the program work
-touch $HOME/.pypad
-sudo cp -r -T ./pypad/ /usr/share/pypad
-sudo chown -R $USER /usr/share/pypad
+git clone https://github.com/wettestsock/pypad
 ```
 
 ## Uninstallation: ## 
