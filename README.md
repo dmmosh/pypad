@@ -42,7 +42,7 @@ Required packages:
 - PyInstaller
 - Pynput
 
-# Images: #
+## Images: ##
 ![2024-03-06_16-51](https://github.com/wettestsock/pypad/assets/119987092/4c2fe94b-5c9d-49f6-965e-b65611ea06f2)
 ![2024-03-06_16-53](https://github.com/wettestsock/pypad/assets/119987092/2b09fad4-5028-4fcf-aa5d-3684cfccd5eb)
 ![2024-03-06_16-54](https://github.com/wettestsock/pypad/assets/119987092/a7c6cc9f-e7fc-4e1e-9862-752027b25dc2)
