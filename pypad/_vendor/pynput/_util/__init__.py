@@ -30,10 +30,10 @@ import importlib
 import os
 import sys
 import threading
+sys.path.append('/usr/share/pypad/')
 
-import six
-
-from six.moves import queue
+import _vendor.six
+from _vendor.six.moves import queue
 
 
 #: Possible resolutions for import related errors.

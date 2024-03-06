@@ -21,6 +21,5 @@ missing module named nt - imported by os (delayed, conditional, optional), ntpat
 missing module named _frozen_importlib_external - imported by importlib._bootstrap (delayed), importlib (optional), importlib.abc (optional)
 excluded module named _frozen_importlib - imported by importlib (optional), importlib.abc (optional)
 missing module named _winapi - imported by encodings (delayed, conditional, optional), ntpath (optional), subprocess (conditional)
+missing module named _vendor - imported by pglobal (top-level)
 missing module named msvcrt - imported by subprocess (optional)
-missing module named putils - imported by /home/wetsock/coding/pypad/src/pmain.py (delayed)
-missing module named pglobal - imported by /home/wetsock/coding/pypad/src/pmain.py (top-level)

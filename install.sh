@@ -130,9 +130,6 @@ sudo chown -R "${SUDO_USER}" "/usr/share/pypad"
 
 echo -e "COPYING THE EXECUTABLE..."
 sudo cp "./dist/pypad" "/usr/bin/pypad"
-rm -rf './build'
-rm -rf './dist'
-rm 'pmain.spec'
 
 
 

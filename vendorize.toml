@@ -1,4 +1,5 @@
 target = "pypad/_vendor"
 packages = [
-    "pynput"
+    "pynput",
+    "six"
 ]
