@@ -123,6 +123,7 @@ chmod +x "./src/pypad.desktop"
 chmod +x "./uninstall.sh"
 
 echo -e "COPYING HELPER FILES..."
+sudo rm -rf "/usr/share/pypad"
 sudo cp -r -T "./pypad/" "/usr/share/pypad"
 sudo chown -R "${SUDO_USER}" "/usr/share/pypad"
 
