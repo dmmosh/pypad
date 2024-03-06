@@ -2,9 +2,8 @@ from math import *
 import sys
 from time import sleep, time
 sys.path.append('/usr/share/pypad/')
-from _vendor.pynput.keyboard import Key, Listener, Controller
+from _vendor.pynput.keyboard import Key, Listener
 #from numpy import *
-keyboard = Controller()
 
 # QUIT AND EXIT FUNCTION OVERRIDE
 #TODO: change what this closes
