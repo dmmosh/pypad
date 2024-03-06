@@ -87,6 +87,7 @@ dir="$(pwd)"
 if [ ! -z "$pkg_manager" ] && [ -z "$(command -v xterm)" ] 
 then
     eval "$pkg_manager xterm"
+    eval "pip install pynput"
 fi
 
 # checking if dependencies are installed 
@@ -95,6 +96,13 @@ then
     echo -e "FATAL ERROR:"
     echo -e "   xterm not found.\n   Please install xterm and run 'sudo ./$(basename "$0")' again."
     exit 1
+fi
+
+if [ -z "$(pip list | grep pynput)" ]
+then
+    echo -e "WARNING:"
+    echo -e "   pynput module not installed. Quick exit disabled.\n   Install pynput by typing 'pip install pynput' followed by 'sudo ./$(basename "$0")'."
+    echo -e "   Or not. Your choice."
 fi
 
 [ "$UID" -eq 0 ] || exec sudo bash "$0" "$@"
@@ -109,24 +117,16 @@ home_dir="/home/${SUDO_USER}"
 fi
 
 
-chmod +x "$dir/git-all.sh"
-chmod +x "$dir/git-all.desktop"
+chmod +x "$dir/dist/pypad"
+chmod +x "$dir/pypad.desktop"
 chmod +x "$dir/uninstall.sh"
 
-echo -e "COMPILING THE EXECUTABLE..."
-shc -rf "$dir/git-all.sh" -o "git-all"
-mv "$dir/git-all" "/usr/bin/git-all"
-rm "$dir/git-all.sh.x.c"
+echo -e "COPYING THE EXECUTABLE..."
+sudo cp "$dir/dist/pypad" "/usr/bin/pypad"
 
-echo -e "MAKING CONFIG FOLDER..."
-mkdir -p "$home_dir/.config/ez-scripts"
-mkdir -p "$home_dir/.config/ez-scripts/git-all"
-
-sudo touch "$home_dir/.config/ez-scripts/git-all/git-all-sm.sh"
-chmod +x "$home_dir/.config/ez-scripts/git-all/git-all-sm.sh"
-
-sudo touch "$home_dir/.config/ez-scripts/git-all/git-all-sp.sh"
-chmod +x "$home_dir/.config/ez-scripts/git-all/git-all-sp.sh"
+echo -e "COPYING HELPER FILES..."
+sudo cp -r -T "$dir/pypad/" "/usr/share/pypad"
+sudo chown -R "${SUDO_USER}" "/usr/share/pypad"
 
 # different installation for macosdvsvdfsdsffdsfsfds
 #linux only
@@ -134,5 +134,5 @@ if [ ! "$os" == "Darwin" ]
 then
     # for linux
     echo -e "COPYING THE .DESKTOP FILE..."
-    sudo cp -r $dir/git-all.desktop /usr/share/applications
+    sudo cp -r "$dir/pypad.desktop" "/usr/share/applications"
 fi
