@@ -29,6 +29,9 @@ cd ..
 ```
 
 ## Manual compiling: ##
+Required packages:
+- PyInstaller
+- Pynput
 In case the compiled executable does not work (like on MacOS), manually compile the files and run `./install.sh` again.
 ```
 cd ./pypad
@@ -36,4 +39,3 @@ python -m PyInstaller --onefile src/pmain.py --name pypad
 cd ..
 ```
 
-python -m PyInstaller --onefile src/pmain.py --name pypad
