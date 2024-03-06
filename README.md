@@ -5,6 +5,8 @@ A Python terminal, running over xterm, designed for calculator use. This is NOT 
 
 not numpy, because, well, that exists 
 
+Highly customizable, with a full settings page and serialization in effect.
+
 Pynput package is embedded, and the program is precompiled.
 
 ## Requirements: ##
