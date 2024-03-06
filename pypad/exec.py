@@ -1,5 +1,5 @@
 from math import * 
-import time
+from ._vendor import pynput as pn
 #from numpy import *
 
 # TRIES TO IMPORT SOME LIBRARIES
@@ -10,27 +10,16 @@ def quit():
     import os
     import sys
     os.system("pkill -9 -f pypad") #kills the pypad executable
-    os.system("pkill -9 -f pmain.py") #kills the pypad file, REMOVE AFTER DEBUG
     sys.exit()
 
 def exit():
     quit()
 
-
-try:
-    from pynput.keyboard import Key, Listener
-except ModuleNotFoundError:
-    print("PYNPUT NOT FOUND. Quick escape not set. Consider typing \"os.system(\"pip install pynput\")\"")
-except:
-    print("SOMETHING ELSE WENT WRONG.")
-else:
-    def on_click(key:Key) -> None:
-        if key == Key.num_lock:
-            quit()
+def on_click(key:pn.Key) -> None:
+    if key == pn.Key.num_lock:
+        quit()
         
-    
-
         
-    Listener( on_press=on_click).start() # key listener
+# starts the listener
+pn.Listener( on_press=on_click).start() # key listener
 
-    # starts the listener

@@ -99,27 +99,6 @@ then
     exit 1
 fi
 
-
-# OPTIONAL PACKAGE
-echo -e "OPTIONAL PACKAGES:"
-read -p "[OPTIONAL] Install pynput (y/n)? " install_pynput
-case "$install_pynput" in 
-  y|Y|yes|YES|Yes|yEs|yeS ) eval "pip install pynput";;
-esac
-
-
-# IF THE EXECUTABLE CANT RUN
-if [[ -f "$dir/dist/pypad" && -x "$dir/dist/pypad" ]]
-then
-    echo -e "ALMOST FATAL ERROR:"
-    echo -e "   Precompiled executable is not installed and/or compatible with your system.\nIt will have to be compiled using pyInstaller.\n"
-    read -p "Install Pyinstaller (y/n)? " install_pyinstaller
-    case "$install_pyinstaller" in 
-        y|Y|yes|YES|Yes|yEs|yeS ) eval "pip install pyinstaller";;
-        * ) exit 1 ;;
-    esac
-fi
-
 # IF PYTHON IS NOT INSTALLED
 if [ ! -f "usr/bin/python" ] && [ -z "$(command -v python)" ] && [ -z "$(command -v python3)" ]
 then
@@ -127,7 +106,7 @@ then
     echo -e "   Python not installed.\n"
     read -p "Install Python (y/n)? " install_python
     case "$install_pyinstaller" in 
-        y|Y|yes|YES|Yes|yEs|yeS ) eval "yay -S python";;
+        y|Y|yes|YES|Yes|yEs|yeS ) eval "$pkg_manager python";;
         * ) exit 1 ;;
     esac
 fi

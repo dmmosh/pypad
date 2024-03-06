@@ -14,4 +14,4 @@ sudo cp -r -T ./pypad/ /usr/share/pypad
 sudo chown -R $USER /usr/share/pypad
 ```
 
-python -m PyInstaller --onefile pmain.py; mv dist/pmain dist/pypad; dist/pypad; sudo cp -r pypad/ /usr/share/; git-all
+python -m PyInstaller --onefile pmain.py; mv dist/pmain dist/pypad; sudo cp -r pypad/ /usr/share/; git-all
