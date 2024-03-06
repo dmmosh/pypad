@@ -1,6 +1,6 @@
 import os
 import sys
-os.chdir(sys.path[0])
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 
 from pypad._vendor.pynput import keyboard as key, mouse
 from tkinter import * 
