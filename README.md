@@ -7,14 +7,23 @@ not numpy, because, well, that exists
 
 ## Requirements: ##
 - Linux
-- xterm
+- Xterm
 - Python
 
-## Installation: ## 
+## Install: ## 
 ```
 git clone https://github.com/wettestsock/pypad
+cd ./pypad
+chmod +x ./install.sh
+./install.sh
+cd ..
 ```
 
-## Uninstallation: ## 
+## Uninstall: ## 
+```
+cd ./pypad
+sudo ./uninstall.sh
+cd ..
+```
 
 python -m PyInstaller --onefile src/pmain.py --name pypad
