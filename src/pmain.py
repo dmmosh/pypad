@@ -1,7 +1,6 @@
 
-import pglobal as gl
-from pglobal import *
-
+import pglobal as gl # global variables
+from pglobal import * # the libraries
 
 '''
 SOURCE CODE

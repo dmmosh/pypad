@@ -1,12 +1,10 @@
 import sys
 import os
-
-from tkinter import *  # tkinter
+from tkinter import * 
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
-from pynput import keyboard as key, mouse
+from ..pypad._vendor.pynput import keyboard as key, mouse
 import pickle
-
 # GLOBAL VARIABLES
 '''
 NOTE: to change these, call pglobal.[variable]
