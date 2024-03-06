@@ -27,10 +27,10 @@ The keyboard implementation for *Xorg*.
 # pylint: disable=W0611
 try:
     from ... import pynput
-from ...pynput import _util as ___vendorize__0
-pynput._util = ___vendorize__0
-from ...pynput._util import xorg as ___vendorize__1
-pynput._util.xorg = ___vendorize__1
+    from ...pynput import _util as ___vendorize__0
+    pynput._util = ___vendorize__0
+    from ...pynput._util import xorg as ___vendorize__1
+    pynput._util.xorg = ___vendorize__1
 except Exception as e:
     raise ImportError('failed to acquire X connection: {}'.format(str(e)), e)
 # pylint: enable=W0611
