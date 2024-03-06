@@ -1,12 +1,12 @@
 import os
-os.chdir('.')
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
+from ..pypad._vendor.pynput.keyboard import keyboard as key, mouse
 import sys
 from tkinter import * 
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
 import pickle
-from ..pypad._vendor.pynput import keyboard as key, mouse
 
 # GLOBAL VARIABLES
 '''
