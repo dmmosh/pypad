@@ -92,12 +92,7 @@ btn = {
 # python runs libraries.py and automatically opens afterwards
 # puts process's pid as arg 1 (will be deleting later)
 os.system(f"""xterm  \\
-          -ls -xrm 'XTerm*VT100.Translations: #override Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \\n\\
-               Shift Ctrl<Key>V: insert-selection(CLIPBOARD) \\n\\
-               Shift Ctrl<Key>V: insert-selection(PRIMARY) \\n\\
-               Shift<Btn1Down>: select-start() \\n\\
-               Shift<Btn1Motion>: select-extend() \\n\\
-               Shift<Btn1Up>: select-end(CLIPBOARD)' \\
+          -ls -xrm 'XTerm*VT100.Translations: #override Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \\n\\ Shift Ctrl<Key>V: insert-selection(CLIPBOARD) \\n\\ Shift Ctrl<Key>V: insert-selection(PRIMARY) \\n\\ Shift<Btn1Down>: select-start() \\n\\ Shift<Btn1Motion>: select-extend() \\n\\ Shift<Btn1Up>: select-end(CLIPBOARD)' \\
           -fa \'{gl.var['font']}\' \\
           -fs {gl.var['font_size']} \\
           -rightbar \\
