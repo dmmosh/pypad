@@ -1,5 +1,7 @@
 from math import * 
-from ._vendor.pynput import Key, Listener
+import sys
+sys.path.insert(1, '/usr/share/pypad/_vendor')
+from pynput import Key, Listener
 #from numpy import *
 
 # TRIES TO IMPORT SOME LIBRARIES
