@@ -1,10 +1,5 @@
 
-```
-▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀
-█▀█ █▄█ █▀█ ▄▀█ █▀▄
-█▀▀  █  █▀▀ █▀█ █▄▀
-▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
-```
+![2024-03-06_16-21](https://github.com/wettestsock/pypad/assets/119987092/abddbc2c-aa97-41c1-8458-201651364cf7)
 
 ultimate calculator for the numpad
 
