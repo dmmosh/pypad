@@ -16,7 +16,7 @@ Pynput package is embedded, and the program is precompiled.
 
 ## Install: ## 
 ```
-git clone https://github.com/wettestsock/pypad
+git clone https://github.com/dmmosh/pypad
 cd ./pypad
 chmod +x ./install.sh
 ./install.sh
