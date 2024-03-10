@@ -223,14 +223,19 @@ class settings:
                                       foreground=gl.var['color_bg'])
         self.cursor_box.pack(anchor=W, padx=7, pady=3)
 
+        self.width_height_text = Frame(self.res,
+                            bg=gl.var['color_bg'],
+                            highlightbackground=var['color_fg'],
+                            highlightcolor=var['color_fg'])
+        self.width_height_text.pack(anchor=W, padx= 7, pady= 7)
         self.width_height = Frame(self.res,
                             bg=gl.var['color_bg'],
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'])
-        self.width_height.pack(anchor=W, padx= 7, pady= 7)
+        self.width_height.pack(anchor=W, padx= 7, pady= 3)
 
 
-        text(self.width_height, "Width:").pack(anchor=NW, padx= 7, pady= 3)
+        text(self.width_height_text, "Width:").pack(anchor=NW, padx= 7, pady= 3)
         self.width = Entry(self.width_height, 
                            validate='all', 
                            font=gl.var['global_font'],
@@ -241,7 +246,7 @@ class settings:
         self.width.insert(END, str(gl.var['font_size']))
         self.width.pack(anchor=SW)
 
-        text(self.width_height, "Height:").pack(anchor=NE, padx= 7, pady= 3)
+        text(self.width_height_text, "Height:").pack(anchor=NE, padx= 7, pady= 3)
         self.height = Entry(self.width_height, 
                            validate='all', 
                            font=gl.var['global_font'],
