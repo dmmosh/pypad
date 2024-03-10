@@ -159,7 +159,7 @@ class settings:
         self.settings.bind('<Escape>', lambda event:quit(self.settings))
         self.settings.bind('<BackSpace>', lambda event:quit(self.settings))
         self.settings.bind('<Delete>', lambda event:quit(self.settings))
-        Scrollbar(self.settings).pack(side=RIGHT)
+        Scrollbar(self.settings).pack(side=RIGHT, fill=Y)
 
         # FRAMES
         self.bottom_btn = Frame(self.settings, 
