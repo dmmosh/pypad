@@ -29,9 +29,7 @@ i dont recommend running the program through python because of these issues
 '''
 
 # if theres another pypad instance running, 
-if sys_out('ps -q 1'):
-    sys.exit()
-
+print(sys_out('ps -q 1'))
 
 def settings_window(): # only imports the settings class if it's called
     import putils
