@@ -29,7 +29,7 @@ i dont recommend running the program through python because of these issues
 '''
 
 # if theres another pypad instance running, 
-if sys_out('pidof pypad'):
+if sys_out('ps -q 1'):
     sys.exit()
 
 
