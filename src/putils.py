@@ -160,7 +160,7 @@ class settings:
         self.settings_window.bind('<BackSpace>', lambda event:quit(self.settings_window))
         self.settings_window.bind('<Delete>', lambda event:quit(self.settings_window))
 
-        self.scroll_bar = Scrollbar(self.settings)
+        self.scroll_bar = Scrollbar(self.settings_window)
         self.settings = Canvas(self.settings_window,
                                background=gl.var['color_bg'])
         self.settings.config(yscrollcommand=self.scroll_bar.set)
