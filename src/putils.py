@@ -290,7 +290,7 @@ class settings:
                            font=gl.var['global_font'],
                            background=gl.var['color_fg'],
                            foreground=gl.var['color_bg'],
-                           width=60)
+                           width=12)
          
         self.font_size_input.config(validatecommand=((self.font_size_input.register(self.callback)), '%P'))
         self.font_size_input.insert(END, str(gl.var['font_size']))
