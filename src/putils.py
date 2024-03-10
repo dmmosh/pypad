@@ -289,7 +289,8 @@ class settings:
                            validate='all', 
                            font=gl.var['global_font'],
                            background=gl.var['color_fg'],
-                           foreground=gl.var['color_bg'])
+                           foreground=gl.var['color_bg'],
+                           width=60)
          
         self.font_size_input.config(validatecommand=((self.font_size_input.register(self.callback)), '%P'))
         self.font_size_input.insert(END, str(gl.var['font_size']))
