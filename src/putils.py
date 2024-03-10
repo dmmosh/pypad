@@ -257,7 +257,7 @@ class settings:
         self.height.config(validatecommand=((self.height.register(self.callback)), '%P'))
         self.height.insert(END, str(gl.var['win_h']))
         self.height.pack(side=RIGHT, padx= 7)
-        make_btn(window=self.res, text='Get current').pack(anchor=W, padx= 12, pady= 3)
+        make_btn(window=self.res, text='Get current').pack(anchor=W, padx= 13, pady= 3)
 
         # ----------------------------
 
