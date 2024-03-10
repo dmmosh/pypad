@@ -220,8 +220,8 @@ class settings:
                                       onvalue=True,
                                       offvalue=False,
                                       background=gl.var['color_fg'],
-                                      foreground=gl.var['color_bg']).pack(anchor=W, padx=7, pady=3)
-        
+                                      foreground=gl.var['color_bg'])
+        self.cursor_box.pack(anchor=W, padx=7, pady=3)
 
         self.width_height = Frame(self.res,
                             bg=gl.var['color_bg'],
