@@ -230,7 +230,7 @@ class settings:
         self.width_height.pack(anchor=W, padx= 7, pady= 7)
 
 
-        text(self.width_height, "Width:").pack(anchor=N, padx= 7, pady= 3)
+        text(self.width_height, "Width:").pack(anchor=NW, padx= 7, pady= 3)
         self.width = Entry(self.width_height, 
                            validate='all', 
                            font=gl.var['global_font'],
@@ -239,7 +239,18 @@ class settings:
                            width=5)
         self.width.config(validatecommand=((self.width.register(self.callback)), '%P'))
         self.width.insert(END, str(gl.var['font_size']))
-        self.width.pack(anchor=S)
+        self.width.pack(anchor=SW)
+
+        text(self.width_height, "Height:").pack(anchor=NE, padx= 7, pady= 3)
+        self.height = Entry(self.width_height, 
+                           validate='all', 
+                           font=gl.var['global_font'],
+                           background=gl.var['color_fg'],
+                           foreground=gl.var['color_bg'],
+                           width=5)
+        self.height.config(validatecommand=((self.height.register(self.callback)), '%P'))
+        self.height.insert(END, str(gl.var['font_size']))
+        self.height.pack(anchor=SE)
 
         # ----------------------------
 
