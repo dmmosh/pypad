@@ -121,9 +121,6 @@ btn['quit'].pack(side=TOP, anchor=NW)
 
 # updates width anf height if needed, recursively
 def window_size():
-    print(gl.r.winfo_width(), gl.r.winfo_height())
-    print(gl.width, gl.height)
-    print('TERMINAL INFO: ', term.winfo_width(), term.winfo_height())
     if (gl.r.winfo_width() != var['win_w']) or (gl.r.winfo_height() != var['win_h']):
         var['win_h'] = gl.r.winfo_height()
         var['win_w'] = gl.r.winfo_width()
