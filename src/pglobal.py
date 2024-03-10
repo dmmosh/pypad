@@ -4,6 +4,7 @@ from pynput import keyboard as key, mouse
 from tkinter import * 
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
+import subprocess
 import pickle
 
 # GLOBAL VARIABLES
@@ -34,8 +35,8 @@ def quit_all(arg=None):
     os.system("pkill -9 -f pypad")
     r.destroy()
 
-#def sys_out(input:str)-> str:
-    #return str(subprocess.Popen(input, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()[0])[2:-1]
+def sys_out(input:str)-> str:
+    return str(subprocess.Popen(input, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).communicate()[0])[2:-1]
 
 # COMPUTER INFORMATION
 # res = str(os.popen("(xrandr  | grep \* | cut -d' ' -f4) | head -n 1").read()).replace('\n', '').split('x') # gets the resolution of current screen (in string form)

@@ -1,11 +1,3 @@
-
-import subprocess
-def get_pname(id):
-    p = subprocess.Popen(["ps -o cmd= {}".format(id)], stdout=subprocess.PIPE, shell=True)
-    return str(p.communicate()[0])
-name = get_pname(1)
-print(name)
-
 import sys 
 import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
@@ -36,9 +28,9 @@ i dont recommend running the program through python because of these issues
 
 '''
 
-# if theres another pypad instance running, dont run
-#if sys_out('pidof pypad'):
-    #sys.exit()
+# if theres another pypad instance running, 
+if sys_out('pidof pypad'):
+    sys.exit()
 
 
 def settings_window(): # only imports the settings class if it's called
