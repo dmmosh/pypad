@@ -239,7 +239,7 @@ class settings:
                            width=5)
         self.width.config(validatecommand=((self.width.register(self.callback)), '%P'))
         self.width.insert(END, str(gl.var['font_size']))
-        self.width.pack(anchor=SW)
+        self.width.pack(anchor=S)
 
         # ----------------------------
 
