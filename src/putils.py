@@ -244,7 +244,7 @@ class settings:
                            width=5)
         self.width.config(validatecommand=((self.width.register(self.callback)), '%P'))
         self.width.insert(END, str(gl.var['font_size']))
-        self.width.pack(side=LEFT)
+        self.width.pack(side=LEFT, padx= 7)
 
         text(self.width_height_text, "Height:").pack(side=RIGHT)
         self.height = Entry(self.width_height, 
@@ -255,7 +255,7 @@ class settings:
                            width=5)
         self.height.config(validatecommand=((self.height.register(self.callback)), '%P'))
         self.height.insert(END, str(gl.var['font_size']))
-        self.height.pack(side=RIGHT)
+        self.height.pack(side=RIGHT, padx= 7)
 
         # ----------------------------
 
