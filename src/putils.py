@@ -151,20 +151,14 @@ class settings:
 
     def __init__(self):
         # SETTINGS WINDOW ITSELF
-        self.settings_window = new_window('colors', '500x800')
-        self.settings_window.config(background=gl.var['color_bg'])
+        self.settings = new_window('colors', '500x800')
+        self.settings.config(background=gl.var['color_bg'])
         #color.bind('<Num_Lock>', lambda: quit(color))
-        self.settings_window.title('Settings')
-        self.settings_window.bind('<Return>', lambda event:self.save())
-        self.settings_window.bind('<Escape>', lambda event:quit(self.settings_window))
-        self.settings_window.bind('<BackSpace>', lambda event:quit(self.settings_window))
-        self.settings_window.bind('<Delete>', lambda event:quit(self.settings_window))
-
-        self.settings = Canvas(self.settings_window,
-                               background=gl.var['color_bg'])
-        self.settings.pack(fill=BOTH)
-
-
+        self.settings.title('Settings')
+        self.settings.bind('<Return>', lambda event:self.save())
+        self.settings.bind('<Escape>', lambda event:quit(self.settings))
+        self.settings.bind('<BackSpace>', lambda event:quit(self.settings))
+        self.settings.bind('<Delete>', lambda event:quit(self.settings))
 
         # resolution frame
         # FRAMES
@@ -197,7 +191,7 @@ class settings:
                              command=lambda:self.save())
         self.cancel_btn = make_btn(window=self.bottom_btn, 
                                text='cancel X', 
-                               command=lambda:quit(self.settings_window))
+                               command=lambda:quit(self.settings))
         self.default_btn = make_btn(window=self.bottom_btn, 
                                 text='default ⟳',
                                 command=lambda:self.default())
