@@ -160,13 +160,13 @@ class settings:
         self.settings_window.bind('<BackSpace>', lambda event:quit(self.settings_window))
         self.settings_window.bind('<Delete>', lambda event:quit(self.settings_window))
 
-        scroll_bar = Scrollbar(self.settings, command=self.settings.yview)
-        scroll_bar.pack(side=RIGHT, fill=Y)
         self.settings = Canvas(self.settings_window,
-                               background=gl.var['color_bg'],
-                               yscrollcommand=scroll_bar.set)
-        self.settings.pack(side=LEFT, fill=BOTH)
+                               background=gl.var['color_bg'])
+        self.scroll_bar = Scrollbar(self.settings, command=self.settings.yview)
+        self.settings.config(yscrollcommand=self.scroll_bar.set)
 
+        self.settings.pack(side=LEFT, fill=BOTH)
+        self.scroll_bar.pack(side=RIGHT, fill=Y)
         # FRAMES
         self.bottom_btn = Frame(self.settings, 
                                 bg=gl.var['color_bg'], 
