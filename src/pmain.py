@@ -27,7 +27,7 @@ i dont recommend running the program through python because of these issues
     to fix this, type 'killall python', killing all python xterm clients
 
 '''
-print(sys_out('btxt'))
+print(sys_out('pwd'))
 
 
 def settings_window(): # only imports the settings class if it's called
