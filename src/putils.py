@@ -279,7 +279,7 @@ class settings:
                                 foreground=gl.var['color_bg'],
                                 width=10)
         self.drop_bg.current(self.data['name'].index(gl.var['color_bg']))
-        self.drop_bg.pack(anchor=W, padx= 7, pady= 7)
+        self.drop_bg.pack(anchor=W, padx= 14, pady= 7)
 
         # FOREGROUND COLOR
         text(self.theme, "Foreground color:").pack(anchor=W, padx= 7, pady= 3)
@@ -291,7 +291,7 @@ class settings:
                                 foreground=gl.var['color_bg'],
                                 width=10)
         self.drop_fg.current(self.data['name'].index(gl.var['color_fg']))
-        self.drop_fg.pack(anchor=W, padx= 7, pady= 7)
+        self.drop_fg.pack(anchor=W, padx= 14, pady= 7)
 
 
         # FONT
@@ -303,7 +303,7 @@ class settings:
                                 foreground=gl.var['color_bg'],
                                 width=10)
         self.drop_font.current(self.data['fonts'].index(gl.var['font'])) # fonts have a space in front of them 
-        self.drop_font.pack(anchor=W, padx= 7, pady= 7)
+        self.drop_font.pack(anchor=W, padx= 14, pady= 7)
 
         text(self.theme, "Font size:").pack(anchor=W, padx= 7, pady= 3)
         self.font_size_input = Entry(self.theme, 
@@ -315,7 +315,7 @@ class settings:
          
         self.font_size_input.config(validatecommand=((self.font_size_input.register(self.callback)), '%P'))
         self.font_size_input.insert(END, str(gl.var['font_size']))
-        self.font_size_input.pack(anchor=W, padx= 7, pady= 7)
+        self.font_size_input.pack(anchor=W, padx= 14, pady= 7)
 
 
 
