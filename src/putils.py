@@ -174,7 +174,7 @@ class settings:
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
                             highlightthickness=2)
-        self.res.pack(side=LEFT, anchor=CENTER, padx=15, pady=15)
+        self.res.pack(anchor=CENTER, padx=15, pady=15)
         
 
         # theme frame
@@ -183,7 +183,7 @@ class settings:
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
                             highlightthickness=2)
-        self.theme.pack(side=RIGHT, anchor= CENTER, padx=15, pady=15)
+        self.theme.pack(anchor= CENTER, padx=15, pady=15)
 
         # BOTTOM BUTTONS
         make_btn(window=self.bottom_btn, 
