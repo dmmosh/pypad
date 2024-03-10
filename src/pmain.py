@@ -32,7 +32,9 @@ i dont recommend running the program through python because of these issues
 # if more than 1 instance, itll run 4, 6, etc
 # print(sys_out('pidof pypad').split(' '))
 pids = sys_out('pidof pypad').split(' ')
+print(pids)
 print(os.getpid())
+
 def settings_window(): # only imports the settings class if it's called
     import putils
     putils.settings()
