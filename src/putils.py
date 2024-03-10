@@ -165,7 +165,7 @@ class settings:
         self.scroll_bar = Scrollbar(self.settings, command=self.settings.yview)
         self.settings.config(yscrollcommand=self.scroll_bar.set)
 
-        self.settings.pack(side=LEFT, fill=BOTH)
+        self.settings.pack(fill=BOTH)
         self.scroll_bar.pack(side=RIGHT, fill=Y)
         # FRAMES
         self.bottom_btn = Frame(self.settings, 
