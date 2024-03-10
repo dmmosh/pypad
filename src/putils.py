@@ -236,7 +236,7 @@ class settings:
                            font=gl.var['global_font'],
                            background=gl.var['color_fg'],
                            foreground=gl.var['color_bg'],
-                           width=60)
+                           width=5)
         self.width.config(validatecommand=((self.width.register(self.callback)), '%P'))
         self.width.insert(END, str(gl.var['font_size']))
         self.width.pack(anchor=SW)
