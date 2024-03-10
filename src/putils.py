@@ -231,7 +231,7 @@ class settings:
 
 
         text(self.width_height, "Width:").pack(anchor=NE, padx= 7, pady= 3)
-        self.width = Entry(self.theme, 
+        self.width = Entry(self.width_height, 
                            validate='all', 
                            font=gl.var['global_font'],
                            background=gl.var['color_fg'],
