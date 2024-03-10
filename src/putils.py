@@ -259,14 +259,47 @@ class settings:
         self.height.pack(side=RIGHT, padx= 7)
 
 
-        def get_current():
+        def get_width_height():
             self.height.delete(0, END)
             self.height.insert(END, gl.r.winfo_height())
             self.width.delete(0, END)
             self.width.insert(END, gl.r.winfo_width())
 
-        make_btn(window=self.res, text='Get current', command=get_current).pack(anchor=W, padx= 14, pady= 3)
+        make_btn(window=self.res, text='Get current', command=get_width_height).pack(anchor=W, padx= 14, pady= 3)
+        
+        # SCREEN LOCATION
+        self.screen_text = Frame(self.res,
+                            bg=gl.var['color_bg'],
+                            highlightbackground=var['color_fg'],
+                            highlightcolor=var['color_fg'])
+        self.screen_text.pack(anchor=W, padx= 7, pady= 3)
+        self.screen = Frame(self.res,
+                            bg=gl.var['color_bg'],
+                            highlightbackground=var['color_fg'],
+                            highlightcolor=var['color_fg'])
+        self.screen.pack(anchor=W, padx= 7, pady= 3)
 
+        text(self.screen_text, "Screen X:  ").pack(side=LEFT)
+        self.screen_x = Entry(self.screen, 
+                           validate='all', 
+                           font=gl.var['global_font'],
+                           background=gl.var['color_fg'],
+                           foreground=gl.var['color_bg'],
+                           width=5)
+        self.screen_x.config(validatecommand=((self.screen_x.register(self.callback)), '%P'))
+        self.screen_x.insert(END, gl.r.winfo_roox())
+        self.screen_x.pack(side=LEFT, padx= 7)
+
+        text(self.screen_text, "Screen Y:").pack(side=RIGHT)
+        self.screen_y = Entry(self.screen, 
+                           validate='all', 
+                           font=gl.var['global_font'],
+                           background=gl.var['color_fg'],
+                           foreground=gl.var['color_bg'],
+                           width=5)
+        self.screen_y.config(validatecommand=((self.screen_y.register(self.callback)), '%P'))
+        self.screen_y.insert(END, gl.r.winfo_rooty())
+        self.screen_y.pack(side=RIGHT, padx= 7)
         # ----------------------------
 
         # THEME BUTTONS
