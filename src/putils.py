@@ -151,15 +151,21 @@ class settings:
 
     def __init__(self):
         # SETTINGS WINDOW ITSELF
-        self.settings = new_window('colors', '500x800')
-        self.settings.config(background=gl.var['color_bg'])
+        self.settings_window = new_window('colors', '500x800')
+        self.settings_window.config(background=gl.var['color_bg'])
         #color.bind('<Num_Lock>', lambda: quit(color))
-        self.settings.title('Settings')
-        self.settings.bind('<Return>', lambda event:self.save())
-        self.settings.bind('<Escape>', lambda event:quit(self.settings))
-        self.settings.bind('<BackSpace>', lambda event:quit(self.settings))
-        self.settings.bind('<Delete>', lambda event:quit(self.settings))
-        Scrollbar(self.settings).pack(side=RIGHT, fill=Y)
+        self.settings_window.title('Settings')
+        self.settings_window.bind('<Return>', lambda event:self.save())
+        self.settings_window.bind('<Escape>', lambda event:quit(self.settings_window))
+        self.settings_window.bind('<BackSpace>', lambda event:quit(self.settings_window))
+        self.settings_window.bind('<Delete>', lambda event:quit(self.settings_window))
+
+        scroll_bar = Scrollbar(self.settings, command=self.settings.yview)
+        scroll_bar.pack(side=RIGHT, fill=Y)
+        self.settings = Canvas(self.settings_window,
+                               background=gl.var['color_bg'],
+                               yscrollcommand=scroll_bar.set)
+        self.settings.pack(side=LEFT, fill=BOTH)
 
         # FRAMES
         self.bottom_btn = Frame(self.settings, 
