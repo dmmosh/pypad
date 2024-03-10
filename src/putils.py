@@ -287,7 +287,7 @@ class settings:
                            foreground=gl.var['color_bg'],
                            width=5)
         self.screen_x.config(validatecommand=((self.screen_x.register(self.callback)), '%P'))
-        self.screen_x.insert(END, gl.r.winfo_roox())
+        self.screen_x.insert(END, gl.r.winfo_rootx())
         self.screen_x.pack(side=LEFT, padx= 7)
 
         text(self.screen_text, "Screen Y:").pack(side=RIGHT)
