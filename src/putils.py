@@ -230,7 +230,7 @@ class settings:
         self.width_height.pack(anchor=W, padx= 7, pady= 7)
 
 
-        text(self.width_height, "Width:").pack(anchor=E, padx= 7, pady= 3)
+        text(self.width_height, "Width:").pack(anchor=N, padx= 7, pady= 3)
         self.width = Entry(self.width_height, 
                            validate='all', 
                            font=gl.var['global_font'],
