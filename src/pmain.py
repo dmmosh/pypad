@@ -128,13 +128,7 @@ def window_size():
         var['win_w'] = gl.r.winfo_width()
         os.system('pkill xterm')
         os.system(f"""xterm  \\
-          -ls -xrm ' \\
-               XTerm*VT100.Translations: #override Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \\n\\
-               Shift Ctrl<Key>V: insert-selection(CLIPBOARD) \\n\\
-               Shift Ctrl<Key>V: insert-selection(PRIMARY) \\n\\
-               Shift<Btn1Down>: select-start() \\n\\
-               Shift<Btn1Motion>: select-extend() \\n\\
-               Shift<Btn1Up>: select-end(CLIPBOARD)' \\
+          -ls -xrm 'XTerm*VT100.Translations: #override Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \\n\\ Shift Ctrl<Key>V: insert-selection(CLIPBOARD) \\n\\ Shift Ctrl<Key>V: insert-selection(PRIMARY) \\n\\ Shift<Btn1Down>: select-start() \\n\\ Shift<Btn1Motion>: select-extend() \\n\\ Shift<Btn1Up>: select-end(CLIPBOARD)' \\
           -fa \'{gl.var['font']}\' \\
           -fs {gl.var['font_size']} \\
           -rightbar \\
