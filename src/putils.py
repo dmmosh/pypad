@@ -307,7 +307,7 @@ class settings:
             self.screen_y.delete(0, END)
             self.screen_y.insert(END, gl.r.winfo_rooty())
 
-        make_btn(window=self.res, text='Get current', command=get_screen).pack(anchor=W, padx= 23, pady= 3)
+        make_btn(window=self.res, text='Get current', command=get_screen).pack(anchor=W, padx= 27, pady= 3)
 
         # ----------------------------
 
