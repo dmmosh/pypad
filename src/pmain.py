@@ -34,6 +34,10 @@ def settings_window(): # only imports the settings class if it's called
     putils.settings()
 
 
+# terminal buttons frame
+term_btn = Frame(gl.r, 
+                 background=gl.var['color_bg'])
+term_btn.pack(side=RIGHT, anchor=NE)
 
 # TERMINAL WIDGET  
 term = Frame(gl.r,
@@ -45,10 +49,6 @@ term.bind('<Num_Lock>', gl.quit_all)
 term.focus_set()
 wid = term.winfo_id()
 
-# terminal buttons frame
-term_btn = Frame(gl.r, 
-                 background=gl.var['color_bg'])
-term_btn.pack(side=RIGHT, anchor=NE)
 
 
 # convert screen units to pixels
