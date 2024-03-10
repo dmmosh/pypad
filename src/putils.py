@@ -170,7 +170,6 @@ class settings:
         self.bottom_btn.pack(side=BOTTOM)
         
         self.res = Frame(self.settings,
-                            width=self.settings.winfo_width()//2-100,
                             bg=gl.var['color_bg'],
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
@@ -180,7 +179,6 @@ class settings:
 
         # theme frame
         self.theme = Frame(self.settings,
-                            width=self.settings.winfo_width()//2-100,
                             bg=gl.var['color_bg'],
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
@@ -188,25 +186,16 @@ class settings:
         self.theme.pack(side=RIGHT, padx=15, pady=15, anchor=W)
 
         # BOTTOM BUTTONS
-        self.save_btn = make_btn(window=self.bottom_btn, 
+        make_btn(window=self.bottom_btn, 
                              text='save ✓',
-                             command=lambda:self.save())
-        self.cancel_btn = make_btn(window=self.bottom_btn, 
+                             command=lambda:self.save()).pack(side=LEFT, padx=7, pady=7)
+        make_btn(window=self.bottom_btn, 
                                text='cancel X', 
-                               command=lambda:quit(self.settings))
-        self.default_btn = make_btn(window=self.bottom_btn, 
+                               command=lambda:quit(self.settings)).pack(side=RIGHT, padx=7, pady=7)
+        make_btn(window=self.bottom_btn, 
                                 text='default ⟳',
-                                command=lambda:self.default())
+                                command=lambda:self.default()).pack(padx=7, pady=7)
 
-        
-        
-        # PACKS BOTTOM BUTTONS
-        self.save_btn.pack(side=LEFT, padx=7, pady=7)
-        self.default_btn.pack(side=RIGHT, padx=7, pady=7)
-        self.cancel_btn.pack(padx=7, pady=7)
-
-
-        # ALL SETTINGS BUTTONS (will pack later)
 
         # RESOLUTION BUTTONS
         text(self.res, input="RESOLUTION:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
