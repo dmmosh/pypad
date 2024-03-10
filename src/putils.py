@@ -212,7 +212,7 @@ class settings:
         # RESOLUTION BUTTONS
         text(self.res, input="RESOLUTION:", font_size=23).pack(anchor=W, padx= 7, pady= 7)
 
-
+        # AUTO CURSOR
         text(self.res, "Auto cursor:").pack(anchor=W, padx= 7, pady= 3)
         self.cursor = BooleanVar(value = gl.var['auto_cursor'])
         self.cursor_box = Checkbutton(self.res, 
@@ -223,6 +223,7 @@ class settings:
                                       foreground=gl.var['color_bg'])
         self.cursor_box.pack(anchor=W, padx=12, pady=3)
 
+        # WIDTH AND HEIGHT
         self.width_height_text = Frame(self.res,
                             bg=gl.var['color_bg'],
                             highlightbackground=var['color_fg'],
@@ -235,7 +236,7 @@ class settings:
         self.width_height.pack(anchor=W, padx= 7, pady= 3)
 
 
-        text(self.width_height_text, "Width: ").pack(side=LEFT)
+        text(self.width_height_text, "Width:\t").pack(side=LEFT)
         self.width = Entry(self.width_height, 
                            validate='all', 
                            font=gl.var['global_font'],
