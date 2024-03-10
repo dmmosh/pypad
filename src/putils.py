@@ -257,7 +257,13 @@ class settings:
         self.height.config(validatecommand=((self.height.register(self.callback)), '%P'))
         self.height.insert(END, str(gl.var['win_h']))
         self.height.pack(side=RIGHT, padx= 7)
-        make_btn(window=self.res, text='Get current').pack(anchor=W, padx= 14, pady= 3)
+
+
+        def get_current():
+            self.height.insert(END, gl.r.winfo_height())
+            self.height.insert(END, gl.r.winfo_width())
+
+        make_btn(window=self.res, text='Get current', command=get_current).pack(anchor=W, padx= 14, pady= 3)
 
         # ----------------------------
 
