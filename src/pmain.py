@@ -29,7 +29,7 @@ i dont recommend running the program through python because of these issues
 '''
 
 # if theres another pypad instance running, 
-print(sys_out('pidof pypad'))
+print(sys_out('pidof pypad').replace('\n', '').split(' '))
 
 def settings_window(): # only imports the settings class if it's called
     import putils
