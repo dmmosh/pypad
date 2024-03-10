@@ -27,7 +27,10 @@ i dont recommend running the program through python because of these issues
     to fix this, type 'killall python', killing all python xterm clients
 
 '''
-print(sys_out('pidof pypad'))
+
+# if theres another pypad instance running, dont run
+if sys_out('pidof pypad'):
+    sys.exit()
 
 
 def settings_window(): # only imports the settings class if it's called
