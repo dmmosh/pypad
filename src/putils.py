@@ -299,7 +299,7 @@ class settings:
                            width=5)
         self.screen_y.config(validatecommand=((self.screen_y.register(self.callback)), '%P'))
         self.screen_y.insert(END, gl.r.winfo_rooty())
-        self.screen_y.pack(side=RIGHT, padx= 30)
+        self.screen_y.pack(side=RIGHT, padx= 45)
 
         def get_screen():
             self.screen_x.delete(0, END)
