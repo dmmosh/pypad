@@ -260,7 +260,9 @@ class settings:
 
 
         def get_current():
+            self.height.delete(0, END)
             self.height.insert(END, gl.r.winfo_height())
+            self.width.delete(0, END)
             self.width.insert(END, gl.r.winfo_width())
 
         make_btn(window=self.res, text='Get current', command=get_current).pack(anchor=W, padx= 14, pady= 3)
