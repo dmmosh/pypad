@@ -221,7 +221,7 @@ class settings:
                                       offvalue=False,
                                       background=gl.var['color_fg'],
                                       foreground=gl.var['color_bg'])
-        self.cursor_box.pack(anchor=W, padx=7, pady=3)
+        self.cursor_box.pack(anchor=W, padx=12, pady=3)
 
         self.width_height_text = Frame(self.res,
                             bg=gl.var['color_bg'],
