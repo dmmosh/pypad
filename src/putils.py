@@ -221,7 +221,7 @@ class settings:
                                       offvalue=False,
                                       background=gl.var['color_fg'],
                                       foreground=gl.var['color_bg'])
-        self.cursor_box.pack(anchor=W, padx=12, pady=3)
+        self.cursor_box.pack(anchor=W, padx=14, pady=3)
 
         # WIDTH AND HEIGHT
         self.width_height_text = Frame(self.res,
@@ -257,7 +257,7 @@ class settings:
         self.height.config(validatecommand=((self.height.register(self.callback)), '%P'))
         self.height.insert(END, str(gl.var['win_h']))
         self.height.pack(side=RIGHT, padx= 7)
-        make_btn(window=self.res, text='Get current').pack(anchor=W, padx= 13, pady= 3)
+        make_btn(window=self.res, text='Get current').pack(anchor=W, padx= 14, pady= 3)
 
         # ----------------------------
 
