@@ -170,6 +170,7 @@ class settings:
         self.bottom_btn.pack(side=BOTTOM)
         
         self.res = Frame(self.settings,
+                            width=self.settings.winfo_width()//2,
                             bg=gl.var['color_bg'],
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
@@ -179,6 +180,7 @@ class settings:
 
         # theme frame
         self.theme = Frame(self.settings,
+                            width=self.settings.winfo_width()//2,
                             bg=gl.var['color_bg'],
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
