@@ -258,7 +258,8 @@ class settings:
                                 cursor='arrow',
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
-                                foreground=gl.var['color_bg'])
+                                foreground=gl.var['color_bg'],
+                                width=5)
         self.drop_bg.current(self.data['name'].index(gl.var['color_bg']))
         self.drop_bg.pack(anchor=W, padx= 7, pady= 7)
 
@@ -269,7 +270,8 @@ class settings:
                                 font=gl.var['global_font'],
                                 cursor='arrow',
                                 background=gl.var['color_fg'],
-                                foreground=gl.var['color_bg'])
+                                foreground=gl.var['color_bg'],
+                                width=5)
         self.drop_fg.current(self.data['name'].index(gl.var['color_fg']))
         self.drop_fg.pack(anchor=W, padx= 7, pady= 7)
 
@@ -280,7 +282,8 @@ class settings:
                                 values=self.data['fonts'], 
                                 font=gl.var['global_font'],
                                 background=gl.var['color_fg'],
-                                foreground=gl.var['color_bg'])
+                                foreground=gl.var['color_bg'],
+                                width=5)
         self.drop_font.current(self.data['fonts'].index(gl.var['font'])) # fonts have a space in front of them 
         self.drop_font.pack(anchor=W, padx= 7, pady= 7)
 
