@@ -227,7 +227,7 @@ class settings:
                             bg=gl.var['color_bg'],
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'])
-        self.width_height_text.pack(anchor=W, padx= 7, pady= 7)
+        self.width_height_text.pack(anchor=W, padx= 7, pady= 3)
         self.width_height = Frame(self.res,
                             bg=gl.var['color_bg'],
                             highlightbackground=var['color_fg'],
@@ -235,7 +235,7 @@ class settings:
         self.width_height.pack(anchor=W, padx= 7, pady= 3)
 
 
-        text(self.width_height_text, "Width:").pack(side=LEFT, padx= 7, pady= 3)
+        text(self.width_height_text, "Width:").pack(side=LEFT)
         self.width = Entry(self.width_height, 
                            validate='all', 
                            font=gl.var['global_font'],
@@ -246,7 +246,7 @@ class settings:
         self.width.insert(END, str(gl.var['font_size']))
         self.width.pack(side=LEFT)
 
-        text(self.width_height_text, "Height:").pack(side=RIGHT, padx= 7, pady= 3)
+        text(self.width_height_text, "Height:").pack(side=RIGHT)
         self.height = Entry(self.width_height, 
                            validate='all', 
                            font=gl.var['global_font'],
