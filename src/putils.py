@@ -151,7 +151,7 @@ class settings:
 
     def __init__(self):
         # SETTINGS WINDOW ITSELF
-        self.settings = new_window('colors', '1000x800')
+        self.settings = new_window('colors', '800x500')
         self.settings.config(background=gl.var['color_bg'])
         #color.bind('<Num_Lock>', lambda: quit(color))
         self.settings.title('Settings')
