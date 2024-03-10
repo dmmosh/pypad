@@ -235,7 +235,7 @@ class settings:
         self.width_height.pack(anchor=W, padx= 7, pady= 3)
 
 
-        text(self.width_height_text, "Width:").pack(side=LEFT)
+        text(self.width_height_text, "Width: ").pack(side=LEFT)
         self.width = Entry(self.width_height, 
                            validate='all', 
                            font=gl.var['global_font'],
