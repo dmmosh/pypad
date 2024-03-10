@@ -160,13 +160,10 @@ class settings:
         self.settings_window.bind('<BackSpace>', lambda event:quit(self.settings_window))
         self.settings_window.bind('<Delete>', lambda event:quit(self.settings_window))
 
-        self.scroll_bar = Scrollbar(self.settings_window)
         self.settings = Canvas(self.settings_window,
                                background=gl.var['color_bg'])
-        self.settings.config(yscrollcommand=self.scroll_bar.set)
-
         self.settings.pack(fill=BOTH)
-        self.scroll_bar.pack(side=RIGHT, fill=Y)
+
         # FRAMES
         self.bottom_btn = Frame(self.settings, 
                                 bg=gl.var['color_bg'], 
@@ -183,7 +180,7 @@ class settings:
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
                             highlightthickness=2)
-        self.res.pack(side=TOP, padx=15, pady=15, anchor=W)
+        self.res.pack(side=LEFT, padx=15, pady=15, anchor=W)
         
 
         # theme frame
@@ -192,7 +189,7 @@ class settings:
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
                             highlightthickness=2)
-        self.theme.pack(side=BOTTOM, padx=15, pady=15, anchor=W)
+        self.theme.pack(side=RIGHT, padx=15, pady=15, anchor=W)
 
         # BOTTOM BUTTONS
         self.save_btn = make_btn(window=self.bottom_btn, 
