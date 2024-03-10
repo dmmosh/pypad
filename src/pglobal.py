@@ -4,7 +4,6 @@ from pynput import keyboard as key, mouse
 from tkinter import * 
 from tkinter.font import Font # imports font
 from tkinter.ttk import Combobox
-import subprocess
 import pickle
 
 # GLOBAL VARIABLES

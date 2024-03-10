@@ -1,3 +1,11 @@
+
+import subprocess
+def get_pname(id):
+    p = subprocess.Popen(["ps -o cmd= {}".format(id)], stdout=subprocess.PIPE, shell=True)
+    return str(p.communicate()[0])
+name = get_pname(1)
+print(name)
+
 import sys 
 import os
 sys.path.append(os.path.dirname(os.path.realpath(__file__)))
