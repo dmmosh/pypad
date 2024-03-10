@@ -160,30 +160,38 @@ class settings:
         self.settings.bind('<BackSpace>', lambda event:quit(self.settings))
         self.settings.bind('<Delete>', lambda event:quit(self.settings))
 
-        # resolution frame
+
         # FRAMES
+
+        # bottom buttons
         self.bottom_btn = Frame(self.settings, 
                                 bg=gl.var['color_bg'], 
                                 highlightbackground=var['color_fg'],
                                 highlightcolor=var['color_fg'],
                                 highlightthickness=2)
         self.bottom_btn.pack(side=BOTTOM)
-        
-        self.res = Frame(self.settings,
-                            bg=gl.var['color_bg'],
-                            highlightbackground=var['color_fg'],
-                            highlightcolor=var['color_fg'],
-                            highlightthickness=2)
-        self.res.pack(anchor=CENTER, padx=15, pady=15)
-        
 
-        # theme frame
-        self.theme = Frame(self.settings,
+        # center the settings window
+        self.settings_center = Frame(self.settings,
+                            bg=gl.var['color_bg'],
+                            highlightbackground=var['color_fg'])
+        self.settings_center.pack(anchor=CENTER)
+
+        # resolution box
+        self.res = Frame(self.settings_center,
                             bg=gl.var['color_bg'],
                             highlightbackground=var['color_fg'],
                             highlightcolor=var['color_fg'],
                             highlightthickness=2)
-        self.theme.pack(anchor= CENTER, padx=15, pady=15)
+        self.res.pack(side=LEFT, padx=15, pady=15)
+        
+        # theme box
+        self.theme = Frame(self.settings_center,
+                            bg=gl.var['color_bg'],
+                            highlightbackground=var['color_fg'],
+                            highlightcolor=var['color_fg'],
+                            highlightthickness=2)
+        self.theme.pack(side=RIGHT, padx=15, pady=15)
 
         # BOTTOM BUTTONS
         make_btn(window=self.bottom_btn, 
