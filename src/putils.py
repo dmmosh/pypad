@@ -221,6 +221,24 @@ class settings:
                                       offvalue=False,
                                       background=gl.var['color_fg'],
                                       foreground=gl.var['color_bg']).pack(anchor=W, padx=7, pady=3)
+        
+
+        self.width_height = Frame(self.res,
+                            bg=gl.var['color_bg'],
+                            highlightbackground=var['color_fg'],
+                            highlightcolor=var['color_fg'])
+        self.width_height.pack(anchor=W, padx= 7, pady= 7)
+
+
+        text(self.width_height, "Width:").pack(anchor=NE, padx= 7, pady= 3)
+        self.width = Entry(self.theme, 
+                           validate='all', 
+                           font=gl.var['global_font'],
+                           background=gl.var['color_fg'],
+                           foreground=gl.var['color_bg'])
+        self.width.config(validatecommand=((self.font_size_input.register(self.callback)), '%P'))
+        self.width.insert(END, str(gl.var['font_size']))
+        self.width.pack(anchor=SW)
 
         # ----------------------------
 
@@ -297,7 +315,6 @@ class settings:
                 with open(os.environ['HOME'] + '/.pypad.tmp', 'w') as f:
                     f.write('000000')
                 os.execl(sys.executable, sys.executable, *sys.argv)
-
 
 
     #DEFAULTS ALL THE VALUES
