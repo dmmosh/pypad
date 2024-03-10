@@ -337,6 +337,8 @@ class settings:
             gl.var['font_size'] = int(self.font_size_input.get())
             gl.var['global_font'] = None # cant pickle tkinter objects
             gl.var['auto_cursor'] = self.cursor.get()
+            gl.var['win_w'] = int(self.width.get())
+            gl.var['win_h'] = int(self.height.get())
             dump_var()
         except:
             msg_box('Cannot save due to lacking permissions.\nTry running \"sudo chown $USER /usr/share/pypad/\"', width=700, height=150)
