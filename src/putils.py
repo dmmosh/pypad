@@ -200,7 +200,7 @@ class settings:
                              command=lambda:self.save())
         self.cancel_btn = make_btn(window=self.bottom_btn, 
                                text='cancel X', 
-                               command=lambda:quit(self.settings))
+                               command=lambda:quit(self.settings_window))
         self.default_btn = make_btn(window=self.bottom_btn, 
                                 text='default ⟳',
                                 command=lambda:self.default())
@@ -395,8 +395,6 @@ class settings:
         else:
             if yes_or_no(message='Settings saved.\nRestart now?', width= 300) == 1:
                 #os.execv(sys.executable, [sys.executable, sys.argv[0], 'RESTART'])
-                with open(os.environ['HOME'] + '/.pypad.tmp', 'w') as f:
-                    f.write('000000')
                 os.execl(sys.executable, sys.executable, *sys.argv)
 
 
