@@ -162,7 +162,7 @@ class settings:
 
         self.settings = Canvas(self.settings_window,
                                background=gl.var['color_bg'])
-        self.scroll_bar = Scrollbar(self.settings, command=self.settings.yview)
+        self.scroll_bar = Scrollbar(self.settings_window, command=self.settings.yview)
         self.settings.config(yscrollcommand=self.scroll_bar.set)
 
         self.settings.pack(fill=BOTH)
