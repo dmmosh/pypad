@@ -300,6 +300,15 @@ class settings:
         self.screen_y.config(validatecommand=((self.screen_y.register(self.callback)), '%P'))
         self.screen_y.insert(END, gl.r.winfo_rooty())
         self.screen_y.pack(side=RIGHT, padx= 7)
+
+        def get_screen():
+            self.screen_x.delete(0, END)
+            self.screen_x.insert(END, gl.r.winfo_rootx())
+            self.screen_y.delete(0, END)
+            self.screen_y.insert(END, gl.r.winfo_rooty())
+
+        make_btn(window=self.res, text='Get current', command=get_screen).pack(anchor=W, padx= 14, pady= 3)
+
         # ----------------------------
 
         # THEME BUTTONS
