@@ -38,7 +38,7 @@ def settings_window(): # only imports the settings class if it's called
 # TERMINAL WIDGET  
 term = Frame(gl.r,
              background=gl.var['color_bg'],
-             width=var['win_w']-100,
+             width=var['win_w'],
              height=var['win_h'])
 term.pack(side=LEFT, expand=TRUE, fill=BOTH)
 term.bind('<Num_Lock>', gl.quit_all)
