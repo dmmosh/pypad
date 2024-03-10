@@ -31,9 +31,7 @@ i dont recommend running the program through python because of these issues
 # pypad compiled gives out 2 pids, which are tracked by pidof
 # if more than 1 instance, itll run 4, 6, etc
 # print(sys_out('pidof pypad').split(' '))
-pids = sys_out('pidof pypad').split(' ')
-
-if (len(pids) > 2):
+if (len(sys_out('pidof pypad').split(' ')) > 2):
     sys.exit()
 
 def settings_window(): # only imports the settings class if it's called

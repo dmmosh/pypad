@@ -385,7 +385,7 @@ class settings:
         else:
             if yes_or_no(message='Settings saved.\nRestart now?', width= 300) == 1:
                 #os.execv(sys.executable, [sys.executable, sys.argv[0], 'RESTART'])
-                os.execl(sys.executable, sys.executable, *sys.argv)
+                os.system('pkill pypad && /usr/bin/pypad')
 
 
     #DEFAULTS ALL THE VALUES
@@ -397,7 +397,7 @@ class settings:
         else:
             
             if yes_or_no(message='Settings defaulted.\nRestart now?', width= 400) == 1:
-                os.execl(sys.executable, sys.executable, *sys.argv)
+                os.system('pkill pypad && /usr/bin/pypad')
 
     # checks if input is an integer
     def callback(self, P):
