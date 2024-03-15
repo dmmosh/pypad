@@ -51,8 +51,12 @@ Required packages:
 ![2024-03-06_16-57](https://github.com/wettestsock/pypad/assets/119987092/9a73e4f0-f0a5-4eb1-a4b1-5ef5f765afae)
 ![2024-03-06_16-58](https://github.com/wettestsock/pypad/assets/119987092/3fbae51b-9449-4ce1-9b5c-46794878a10d)
 ![2024-03-06_16-59](https://github.com/wettestsock/pypad/assets/119987092/26f62e42-0523-4b25-aa1a-77e10e477ac6)
-![2024-03-06_16-55_1](https://github.com/wettestsock/pypad/assets/119987092/9c1531f9-80ba-4ce8-ac24-13b7daf6585f)
-![2024-03-06_17-01](https://github.com/wettestsock/pypad/assets/119987092/a5647515-9eb8-4d98-b064-23e52a02e2fd)
+![2024-03-15_14-27](https://github.com/dmmosh/pypad/assets/119987092/0a36d5d5-8e11-4074-a928-0b0c066a7a70)
+![2024-03-15_13-56](https://github.com/dmmosh/pypad/assets/119987092/0a5c1d0b-4e7b-4ae8-8b2c-811a1f8cfda1)
+![2024-03-15_14-31](https://github.com/dmmosh/pypad/assets/119987092/5abe5f9b-81ab-4112-ab4c-48285133fef2)
+![2024-03-15_14-05](https://github.com/dmmosh/pypad/assets/119987092/7d551925-6ff2-4b3f-8c39-07b27bebd754)
+![2024-03-15_14-41](https://github.com/dmmosh/pypad/assets/119987092/1f99bbf5-fc4a-418a-932d-9037c7d6a365)
+![2024-03-15_14-15](https://github.com/dmmosh/pypad/assets/119987092/cb63e0b7-65d6-40fb-883d-4f50f11db73f)
 
 
 
