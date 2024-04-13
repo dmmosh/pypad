@@ -31,9 +31,13 @@ cd ..
 ```
 
 ## Manual compiling: ##
+In case you have an older glibc, or any compiled executable errors, you need to recompile the executable and run these commands.
+Please make sure to install pynput before compiling. You can remove it after compiling.
 ```
 cd ./pypad
-python -m PyInstaller --onefile src/pmain.py --name pypad
+python -m PyInstaller --hidden-import tkinter --onefile src/pmain.py --name pypad
+sudo ./uninstall.sh
+./install.sh
 cd ..
 ```
 In case the compiled executable does not work (like on MacOS), manually compile the files and run `./install.sh` again.
