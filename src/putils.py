@@ -155,10 +155,6 @@ class settings:
         self.settings.config(background=gl.var['color_bg'])
         #color.bind('<Num_Lock>', lambda: quit(color))
         self.settings.title('Settings')
-        self.settings.bind('<Return>', lambda event:self.save())
-        self.settings.bind('<Escape>', lambda event:quit(self.settings))
-        self.settings.bind('<BackSpace>', lambda event:quit(self.settings))
-        self.settings.bind('<Delete>', lambda event:quit(self.settings))
 
 
         # FRAMES
